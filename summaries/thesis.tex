@@ -4,7 +4,17 @@
 
 \section{Introduction}
 
-Fishery managers have only one ``lever" to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within those quotas by exerting various levels of effort, which is the amount of time spent within a given timeframe to catch a particular species or group of species.  Catchability is defined as that effort as it interacts with the efficiency of their fishing gear and the abundence of the target resource.  Effort and catchability have proven to be key parameters for assessing fisheries \cite{ArreguinSanchez1996}. 
+Fishery managers have only one ``lever" to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Both managers and fisherman can understand the implications of their decisions more easily with the assistance of a production model, which is a system of differential equations designed to predict outcomes.  A visualization enhances such a model by making its inner workings more explicit. We hope to show that our visualization of the MS-PROD model is valuable tool to the modellers and stakeholders alike. %Fishermen work within those quotas by exerting various levels of effort, which is the amount of time spent within a given timeframe to catch a particular species or group of species.  Catchability is defined as that effort as it interacts with the efficiency of their fishing gear and the abundence of the target resource.  Effort and catchability have proven to be key parameters for assessing fisheries \cite{ArreguinSanchez1996}. 
+
+\section{Background}
+
+Both the immediate and long-term effects of human exploitation on fish populations are not easily understood.  There are many other ecological factors to consider besides the harvest, particularly predation and competition.  However, despite recommendations to consider all such factors \cite{united1999ecosystem}, very few models do in the context of fisheries.  Many models tend to leave out some ecological factors on the basis they do not contribute significantly to the decline of fish populations. 
+
+The Lotka-Volterra equations are a set of frequently-used differential equations for describing the interactions between a predator species and a prey species \cite{Lotka1926fds, VOL26a}. Usually, these equations are limited to two species and make assumptions, such as the prey has unlimited food supply and the predator eats the prey exclusively.  
+
+%In addition to the absence of important ecological models, 
+
+\subsection{The Model}
 
 Both the direct and indirect effects of harvests on the various fish populations are not easily understood, especially over time.  The growth or decline of one species can easily affect other species in the ecosystem.  The MS-PROD and Kraken models were created using genetic algorithms fitted to historical data to describe population sizes in terms of harvest, predation, competition, and interaction.
 
