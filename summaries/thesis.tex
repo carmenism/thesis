@@ -12,21 +12,33 @@ Fishery managers have only one ``lever" to pull when it comes to fishery managem
 
 \subsection{Ecosystem Models}
 
-Ecosystem models are abstract representations of an ecological system, which could mean anything from an individual species to an entire community of species.  A classic example is the Lotka-Volterra model \cite{Lotka1926fds, VOL26a}.  This is a pair of differential equations for describing the non-linear interactions between a predator species and a prey species.  Usually, these equations are limited to two species and make several simplifications, such as the prey has unlimited food supply and the predator eats the prey exclusively.  However, these equations can easily be extended to consider other ecological factors.
+Both the short- and long-term effects of human exploitation on an ecosystem such as a fishery are not easily understood.  Experiments which would allow ecosystem managers to investigate the impact of different levels of exploitation over many years would be either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
 
-\begin{figure}
-\begin{align*}
-\frac{dx}{dt} &= x(\alpha - \beta y) 
-\\ \frac{dy}{dt} &= -y(\gamma - \delta x)
-\end{align*}
-\caption{The Lotka-Volterra equations, where $x$ is the number of prey, $y$ is the number of predator, $t$ is time, $\alpha$ is the prey's growth rate, $\beta$ is the rate of the predation on the prey, $\gamma$ is the assimilation efficiency of the predator, and $\delta$ is the mortality rate of the predator.}
-\end{figure}
+Ecosystem models are abstract representations of an ecological system, which could mean anything from an individual species to an entire community of species.  A classic example is the Lotka-Volterra model, which is a pair of differential equations for describing the non-linear interactions between a predator species and a prey species. \cite{Lotka1926fds, VOL26a}:
 
-Both the immediate and long-term effects of human exploitation on fish populations are not easily understood.  There are many other ecological factors to consider besides the harvest, particularly predation and competition.  However, despite recommendations to consider all such factors \cite{united1999ecosystem}, very few models do in the context of fisheries.  Many models tend to leave out some ecological factors on the basis they do not contribute significantly to the decline of fish populations. 
+\begin{align}
+   \frac{d x_1}{dt} &=   x_1(\alpha - \beta  x_2) 
+\\ \frac{d x_2}{dt} &= - x_2(\gamma - \delta x_1)
+\end{align}
+where $x_1$ is the number of prey, $x_2$ is the number of predator, $t$ is time, $\alpha$ is the prey's growth rate, $\beta$ is the rate at which the predator destroys the prey, $\gamma$ is the death rate of the predator, and $\delta$ is the rate at which the predator increases from consuming the prey.  The model can be generalized to discuss an arbitrary number of species rather than just a single pair.
 
+The Lotka-Volterra model can be modified to take competition instead of predation into account, as in the Rosenzweig-MacArthur model \cite{Rosenzweig1963Graphical}.  This model also considers carrying capacity, which is the maximum number of a species that can sustained indefinitely:
 
+\begin{align}
+   \frac{d x_1}{dt} &= r_1 x_1 (1 - (\frac{x_1 + \alpha_{12} x_2}{K_1}))
+\\ \frac{d x_2}{dt} &= r_2 x_2 (1 - (\frac{x_2 + \alpha_{21} x_1}{K_2}))
+\end{align}
+where $r_i$ is the growth rate for species $i$, $K_i$ is the carrying capacity for species $i$, and $\alpha_{ij}$ is the effect species $j$ has on species $i$.  As with Lotka-Volterra, Rosenzweig-MacArthur concerns only two species, but it can be generalized to include more than two.
 
-%In addition to the absence of important ecological models, 
+Both Lotka-Volterra and Rosenzweig-MacArthur do not incorporate a factor which is critical when discussing fisheries management: the effect of harvest.  For this, the Schaefer model is most often used \cite{schaefer1957}:
+
+\begin{align}
+   \frac{d x}{dt} &= r x (1 - (\frac{x}{K})) - q E N
+\end{align}
+where $r$ is the growth rate, $K$ is the carrying capacity, $q$ is the catchability coefficient, and $E$ is the fishing effort.
+
+Simple models are much appreciated when correct; since fewer components are needed to describe their real-world counterparts, they are more easily understood.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999ecosystem}.  %Many models tend to leave out some ecological factors on the basis they do not contribute significantly to the decline of fish populations. 
+
 
 \subsection{The Model}
 
