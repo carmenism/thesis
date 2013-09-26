@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -52,7 +53,16 @@ This model is distinguished from other multispecies production models by describ
 
 Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{Christensen1996Report}.  Thus, fisheries management is a time-oriented discussion.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
 
-The line chart was first invented by William Playfair in 1786 to communicate time series data \cite{playfair}.  Today, it remains a common method for visualizing time-oriented data in many fields, including science, economics, and engineering to name a few.  There has been much research done on the effectiveness of time series in various forms, which serves as a starting point for the decisions regarding our visualization of MS-PROD.
+Frank discusses the different types of time-oriented data by defining three criteria: a) linear vs. cyclic, b) time points vs. time intervals, and c) ordered time vs. branching time vs. time with multiple perspectives \cite{frank98times}.  The MS-PROD data consist of discrete time points with definite starting and ending points, falling under the linear time and time points categories.  As for the third criterion, the model outputs one ordered time result for a single execution, however fisheries managers may like to compare alternative scenarios.  Therefore, our domain falls into the branching time category.  Aigner et al. point out that techniques for visualizing branching time and time with multiple perspectives are unfortunately less common \cite{Aigner08visualmethods}, but a common technique for ordered time such as a line chart serves as a good starting point.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=10cm]{figures/PlayfairTimeSeries.eps}
+	\caption{Playfair's original time series chart \cite{playfair}.}
+	\label{fig:playfair}
+\end{figure}
+
+The line chart was first invented by William Playfair in 1786 to communicate time series data, seen in Figure~\ref{fig:playfair} \cite{playfair}.  Today, it remains a common method for visualizing time-oriented data in many fields, including science, economics, planning, and engineering to name a few.  Line charts typically encode time on the horizontal axis, progressing from left to right, and some time-varying value on the vertical axis.  Points in the chart are connected by line segments such that the slope of the line indicates the rate of change between time steps.  There has been much research done on the effectiveness of time series in various forms, which helps to make decisions regarding our visualization of MS-PROD.
 
 %\subsection{The Model}
 
