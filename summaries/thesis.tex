@@ -7,11 +7,11 @@
 
 \section{Introduction}
 
-Fishery managers have only one ``lever" to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Both managers and fisherman can better understand the ecosystem they work within and the implications of their decisions with the assistance of a production model, which is a system of differential equations designed to predict outcomes.  A visualization enhances such a model by making its inner workings more explicit. We hope to show that our visualization of the MS-PROD model is valuable tool to the modellers and stakeholders alike. %Fishermen work within those quotas by exerting various levels of effort, which is the amount of time spent within a given timeframe to catch a particular species or group of species.  Catchability is defined as that effort as it interacts with the efficiency of their fishing gear and the abundence of the target resource.  Effort and catchability have proven to be key parameters for assessing fisheries \cite{ArreguinSanchez1996}. 
+Fishery managers have only one ``lever" to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Both managers and fisherman can better understand the ecosystem they work within and the implications of their decisions with the assistance of a production model, which is a system of differential equations designed to predict outcomes.  A visualization enhances such a model by making its inner workings more explicit. We hope to show that our visualization of the MS-PROD model is valuable tool to the modellers and stakeholders alike. 
 
 \section{Background}
 
-\subsection{The Model}%Ecosystem Models}
+\subsection{The Model}
 
 Both the short- and long-term effects of human exploitation on an ecosystem such as a fishery are not easily understood.  Experiments which would allow ecosystem managers to investigate the impact of different levels of exploitation over many years would be either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
 
@@ -38,7 +38,7 @@ Both Lotka-Volterra and Leslie-Gower do not incorporate a factor which is critic
 \end{align}
 where $r$ is the growth rate, $K$ is the carrying capacity, $q$ is the catchability coefficient, and $E$ is the fishing effort.
 
-Simple models, when available and correct, are appreciated; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, ecosystems are complex systems which require management that recognizes them as such \cite{Christensen1996Report}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999ecosystem}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \cite{Gamble20092570}.%Many models tend to leave out some ecological factors on the basis they do not contribute significantly to the decline of fish populations. 
+Simple models, when available and correct, are appreciated; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, ecosystems are complex systems which require management that recognizes them as such \cite{Christensen1996Report}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999ecosystem}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \cite{Gamble20092570}.
 
 The MS-PROD model is built upon the Schaefer production model by also including Lotka-Volterra terms for predation, Leslie-Gower terms for competition, and carrying capacities for functional groups ($K_G$) as well as for the entire system ($K_{\sigma}$):
 
