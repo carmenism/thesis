@@ -46,7 +46,13 @@ The MS-PROD model is built upon the Schaefer production model by also including 
 \end{align}
 where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the interaction of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $p$ is the number of predators.
 
-This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Ten key species were chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME) from four major functional groups.  Given input parameter set of initial biomass values, a predation matrix, an interaction matrix, catchability values, and harvest effort values, the MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this outputted information has the potential to be valuable to fishery managers, it was lacking an interactive graphical user interface.  
+This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Ten key species were chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME) from four major functional groups.  Given input parameter set of initial biomass values, a predation matrix, an interaction matrix, catchability values, and harvest effort values, the MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this outputted information is potentially valuable to fishery managers, it was lacking an interactive graphical user interface.  
+
+\subsection{Visualization Methods}
+
+Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{Christensen1996Report}.  Thus, fisheries management is a time-oriented discussion.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
+
+The line chart was first invented by William Playfair in 1786 to communicate time series data \cite{playfair}.  Today, it remains a common method for visualizing time-oriented data in many fields, including science, economics, and engineering to name a few.  There has been much research done on the effectiveness of time series in various forms, which serves as a starting point for the decisions regarding our visualization of MS-PROD.
 
 %\subsection{The Model}
 
