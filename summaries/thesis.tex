@@ -55,13 +55,13 @@ The MS-PROD model is built upon the Schaefer production model by also including 
 \end{align}
 where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the interaction of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $p$ is the number of predators.
 
-This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Ten key species were chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME) from four major functional groups.  Given input parameter set of initial biomass values, a predation matrix, an interaction matrix, catchability values, and harvest effort values, the MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this outputted information is potentially valuable to fishery managers, it was lacking an interactive graphical user interface.  
+This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Ten key species were chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME) from four major functional groups.  Given an input parameter set of initial biomass values, a predation matrix, an interaction matrix, catchability values, and harvest effort values, the MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this outputted information is potentially valuable to fishery managers, it was lacking an interactive graphical user interface.  
 
 \subsection{Visualization Methods}
 
 \subsubsection{Time Series}
 
-Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{Christensen1996Report}.  Thus, fisheries management is a time-oriented discussion.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
+Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{Christensen1996Report}.  Thus, fisheries management is a time-oriented endeavor.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
 
 Frank discussed the different types of time-oriented data by defining three criteria: a) linear vs. cyclic, b) time points vs. time intervals, and c) ordered time vs. branching time vs. time with multiple perspectives \cite{frank98times}.  The MS-PROD data consist of discrete time points with definite starting and ending points, falling under the linear time and time points categories.  As for the third criterion, the model outputs one ordered time result for a single execution, however fisheries managers may like to compare alternative scenarios.  Therefore, our domain falls into the branching time category.  Aigner et al. point out that techniques for visualizing branching time and time with multiple perspectives are unfortunately uncommon \cite{Aigner08visualmethods}, but a line chart -- a technique frequently used for ordered time data -- serves as a good starting point.
 
@@ -114,7 +114,7 @@ The input parameters to the MS-PROD model includes predation and interaction mat
 	\label{fig:forcedirected}
 \end{figure}
 
-Networks are often visualized using a force-directed layout, seen in Figure~\ref{fig:forcedirected} \cite{Heer:2010:TTV:1743546.1743567}.  Nodes repel each other, while related nodes become pulled toward each other by links.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of apprimately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships. 
+Networks are often visualized using a force-directed layout, seen in Figure~\ref{fig:forcedirected} \cite{Heer:2010:TTV:1743546.1743567}.  Nodes repel each other, while related nodes become pulled toward each other by links.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships. 
 
 \begin{figure}[h]
 	\centering
@@ -132,7 +132,7 @@ An alternative for force-directed layout is an arc diagram.  First coined by Wat
 	\label{fig:directedEdges}
 \end{figure}
 
-Relationships in a network may be directional; such as a predator-prey relationship.  In a visualization of such a network, the direction of the edges must be encoded so these relationships can be understood.  Holten and van Wijk studied the effectiveness of different techniques for indicating directionality of edges in a graph, seen in Figure~\ref{fig:directedEdges} \cite{Holten:2009:USV:1518701.1519054}.  The traditional arrowhead was found to perform poorly, while a tapered edges performed best.  As for an intensity-based direction cue, a dark-to-light representation was found to be clearer than light-to-dark.
+Relationships in a network may be directional, such as the predator-prey relationship.  In a visualization of such a network, the direction of the edges must be encoded so these relationships can be understood.  Holten and van Wijk studied the effectiveness of different techniques for indicating directionality of edges in a graph, seen in Figure~\ref{fig:directedEdges} \cite{Holten:2009:USV:1518701.1519054}.  The traditional arrowhead was found to perform poorly, while a tapered edges performed best.  As for an intensity-based direction cue, a dark-to-light representation was found to be clearer than light-to-dark.
 
 \subsection{Understanding Models}
 
