@@ -6,7 +6,7 @@
 
 Both the short- and long-term effects of human exploitation on an ecosystem such as a fishery are not easily understood since experiments which would allow ecosystem managers to investigate the impact of different levels of exploitation over many years are either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
 
-Ecosystem models are abstract representations of an ecological system, which could mean anything from an individual species to an entire community of species.  A classic example is the Lotka-Volterra model, which is a pair of differential equations for describing the non-linear interactions between a predator species and a prey species. \cite{Lotka1926fds, VOL26a}:
+Ecosystem models are abstract representations of an ecological system, which could mean anything from an individual species to an entire community of species.  A classic example is the Lotka-Volterra model, which is a pair of differential equations for describing the non-linear interactions between a predator species and a prey species. \cite{lotka1926, volterra1926}:
 
 \begin{align}
    \frac{d N_1}{dt} &=   N_1 \left(\alpha - \beta  N_2\right) 
@@ -14,7 +14,7 @@ Ecosystem models are abstract representations of an ecological system, which cou
 \end{align}
 where $N_1$ is the number of prey, $N_2$ is the number of predator, $t$ is time, $\alpha$ is the prey's growth rate, $\beta$ is the rate at which the predator destroys the prey, $\gamma$ is the death rate of the predator, and $\delta$ is the rate at which the predator increases from consuming the prey.  The model can be generalized to discuss an arbitrary number of species rather than just a single pair.
 
-The Lotka-Volterra model can be modified to take competition instead of predation into account, as in the Rosenzweig-MacArthur model \cite{Rosenzweig1963Graphical} and the Leslie-Gower model \cite{leslie1960}.  These adaptations to the model also consider carrying capacity, which is the maximum number of a species that can sustained indefinitely:
+The Lotka-Volterra model can be modified to take competition instead of predation into account, as in the Rosenzweig-MacArthur model \cite{rosenzweig1963} and the Leslie-Gower model \cite{leslie1960}.  These adaptations to the model also consider carrying capacity, which is the maximum number of a species that can sustained indefinitely:
 
 \begin{align}
    \frac{d N_1}{dt} &= r_1 N_1 \left(1 - \left(\frac{N_1 + \alpha_{12} N_2}{K_1}\right)\right)
@@ -29,7 +29,7 @@ Both Lotka-Volterra and Leslie-Gower do not incorporate a factor which is critic
 \end{align}
 where $N$ is the number (or biomass) of the species, $r$ is the growth rate, $K$ is the carrying capacity, $q$ is the catchability coefficient, and $E$ is the fishing effort.
 
-Simple models, when available and correct, are generally preferred; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, ecosystems are complex systems which require management that recognizes them as such \cite{Christensen1996Report}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999ecosystem}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \cite{Gamble20092570}.
+Simple models, when available and correct, are generally preferred; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, ecosystems are complex systems which require management that recognizes them as such \cite{christensen1996}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \cite{gamble2009}.
 
 The MS-PROD model is built upon the Schaefer production model by also including Lotka-Volterra terms for predation, Leslie-Gower terms for competition, and carrying capacities for functional groups ($K_G$) as well as for the entire system ($K_{\sigma}$):
 
@@ -44,9 +44,9 @@ This model is distinguished from other multispecies production models by describ
 
 \subsection{Time Series}
 
-Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{Christensen1996Report}.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
+Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{christensen1996}.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
 
-Frank discussed the different types of time-oriented data by defining three criteria: a) linear vs. cyclic, b) time points vs. time intervals, and c) ordered time vs. branching time vs. time with multiple perspectives \cite{frank98times}.  The MS-PROD data consist of discrete time points with definite starting and ending points, falling under the linear time and time points categories.  As for the third criterion, the model outputs one ordered time result for a single execution, however fisheries managers may like to compare alternative scenarios.  Therefore, our domain falls into the branching time category.  Aigner et al. point out that techniques for visualizing branching time and time with multiple perspectives are unfortunately uncommon \cite{Aigner08visualmethods}, but a line chart---a technique frequently used for ordered time data---serves as a good starting point.
+Frank discussed the different types of time-oriented data by defining three criteria: a) linear vs. cyclic, b) time points vs. time intervals, and c) ordered time vs. branching time vs. time with multiple perspectives \cite{frank1998}.  The MS-PROD data consist of discrete time points with definite starting and ending points, falling under the linear time and time points categories.  As for the third criterion, the model outputs one ordered time result for a single execution, however fisheries managers may like to compare alternative scenarios.  Therefore, our domain falls into the branching time category.  Aigner et al. point out that techniques for visualizing branching time and time with multiple perspectives are unfortunately uncommon \cite{aigner2008}, but a line chart---a technique frequently used for ordered time data---serves as a good starting point.
 
 \begin{figure}[h]
 	\centering
@@ -80,11 +80,29 @@ The line chart was first invented by William Playfair in 1786 to communicate tim
 		\caption{Horizon graphs.}
 		\label{fig:ts_horizon}
 	\end{subfigure}
-	\caption{Four methods for visualizing multiple time series by Javed et al \cite{Javed:2010:GPM:1907651.1907971}.}
+	\caption{Four methods for visualizing multiple time series by Javed et al \cite{javed2010}.}
 	\label{fig:ts_compare}
 \end{figure}
 
-Multiple time series can be part of a single line chart; each series needs only to be distinguished by a color and/or line style.  However, as the number of time series on a single line chart increases, it becomes more difficult to identify an individual series.  Javed et al. studied different plotting techniques for multiple time series, as seen in Figure~\ref{fig:ts_compare} \cite{Javed:2010:GPM:1907651.1907971}.  The first of their techniques is the ``simple line chart,'' which was Playfair's original line chart with all series plotted together.  A slight variation on that is ``small multiples,'' where each series had its own line chart though all charts share the same axis scales.  Horizon graphs, originally developed by Saito et al., wrap around a baseline in two color tones to save space \cite{saitoTwoTone}.  Lastly, braided graphs feature all series on one chart with the coloring under the curves alternating as series intersect each other.  The user evaluation by Javed et al. revealed that a simple line graph with all time series on one plot or a single graph for each time series is better suited to a variety of tasks than a horizon graph or a braided graph.  They also found that users complete tasks more correctly when there is more display space allocated to the graphs.  They did not recommend using a higher number of simultaneous time series---their study used eight at the most---because it also leads to a decline in correctness of task completion.
+Multiple time series can be part of a single line chart; each series needs only to be distinguished by a color and/or line style.  However, as the number of time series on a single line chart increases, it becomes more difficult to identify an individual series.  Javed et al. studied different plotting techniques for multiple time series, as seen in Figure~\ref{fig:ts_compare} \cite{javed2010}.  The first of their techniques is the ``simple line chart,'' which was Playfair's original line chart with all series plotted together.  A slight variation on that is ``small multiples,'' where each series had its own line chart though all charts share the same axis scales.  Horizon graphs, originally developed by Saito et al., wrap around a baseline in two color tones to save space \cite{saitoTwoTone}.  Lastly, braided graphs feature all series on one chart with the coloring under the curves alternating as series intersect each other.  The user evaluation by Javed et al. revealed that a simple line graph with all time series on one plot or a single graph for each time series is better suited to a variety of tasks than a horizon graph or a braided graph.  They also found that users complete tasks more correctly when there is more display space allocated to the graphs.  They did not recommend using a higher number of simultaneous time series---their study used eight at the most---because it also leads to a decline in correctness of task completion.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/ratioBad.eps}
+		\caption{Shape parameter of 1.0.}
+		\label{fig:ratioBad}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/ratioGood.eps}
+		\caption{Shape parameter of 0.074.}
+		\label{fig:ratioGood}
+	\end{subfigure}
+	\caption{Two visualizations of Canadian lynx trapping data \cite{cleveland1988}.}
+	\label{fig:ratio}
+\end{figure}
+
+Some line charts are more effective at conveying the nature of the data than others because of the way different drawing techniques affect interpretability.  Cleveland et al. found the shape of a line chart---defined as the height of the chart divided by the width of the chart---to be a critical factor \cite{cleveland1988}.   Shape of the chart directly impacts the slopes of line segments, which are interpreted by viewers to understand the dependence of the $y$ variable on the $x$ variable.  Figure~\ref{fig:ratioBad}, a time series of Canadian lynx data, features a shape of 1.0 and seems to imply rapid increases and decreases in the population.  On the other hand, Figure~\ref{fig:ratioGood} has a shape of 0.074 and shows more clearly that the population rises somewhat steadily and declines somewhat rapidly, which Figure~\ref{fig:ratioBad} failed to show.  Their user evaluation found that judgments of two slopes is influenced by the orientation midangle, defined as the average of the minimum slope orientation and the maximum slope orientation.  They proprosed line chart shape should be selected such that orientations are as close to $\pm 45 ^{\circ}$ as is possible, like in Figure~\ref{fig:ratioGood}.
 
 \subsection{Networks}
 
@@ -92,30 +110,46 @@ The input parameters to the MS-PROD model includes predation and interaction mat
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=8cm]{figures/force.eps}
-	\caption{A force-directed node-link diagram \cite{Knuth:1993:SGP:164984}.}
-	\label{fig:forcedirected}
+	\includegraphics[width=8cm]{figures/gaichas.eps}
+	\caption{A multi-year food web based the Gulf of Alaska data visualized with a force-drected layout \cite{gaichas2008}.}
+	\label{fig:gaichas}
 \end{figure}
 
-Networks are often visualized using a force-directed layout, seen in Figure~\ref{fig:forcedirected} \cite{Heer:2010:TTV:1743546.1743567}.  Nodes repel each other, while related nodes become pulled toward each other by links.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships. 
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=8cm]{figures/force.eps}
+%	\caption{A force-directed node-link diagram \cite{Knuth:1993:SGP:164984}.}
+%	\label{fig:forcedirected}
+%\end{figure}
+
+One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \cite{gaichas2008}.  Here, the nodes represent an individual species, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{figures/arcdiagram.eps}
-	\caption{Knuth's arc diagram of \textit{Les Mis\'erables} characters \cite{Knuth:1993:SGP:164984}.}
+	\caption{Knuth's arc diagram of \textit{Les Mis\'erables} characters \cite{knuth1993}.}
 	\label{fig:arcdiagram}
 \end{figure}
 
-An alternative for force-directed layout is an arc diagram.  First coined by Wattenberg \cite{Wattenberg:2002:ADV:857191.857733}, arc diagrams were used by Knuth to illustrate interaction of characters in Victor Hugo's novel \textit{Les} \textit{Mis\'erables}, seen in Figure~\ref{fig:arcdiagram} \cite{Knuth:1993:SGP:164984}.  Each character is represented with a circular node, where size indicates the number of appearances.  The nodes are arranged linearly, colored and ordered according to clusters of characters that appear together frequently.  Semi-transparent arcs are drawn between the characters which appear in the same chapter, with the thickness of the arc representing the number of such appearances.  While the arc diagram may fail to properly depict the structure of a network, Heer et al. point out it is advantageous because the one-dimensionality allows for other features to be easily displayed near the nodes \cite{Heer:2010:TTV:1743546.1743567}.  %Smaller datasets which contain particular clusters of nodes are well suited to arc diagrams. 
+An alternative for force-directed layout is an arc diagram.  First coined by Wattenberg \cite{wattenberg2002}, arc diagrams were used by Knuth to illustrate interaction of characters in Victor Hugo's novel \textit{Les} \textit{Mis\'erables}, seen in Figure~\ref{fig:arcdiagram} \cite{knuth1993}.  Each character is represented with a circular node, where size indicates the number of appearances.  The nodes are arranged linearly, colored and ordered according to clusters of characters that appear together frequently.  Semi-transparent arcs are drawn between the characters which appear in the same chapter, with the thickness of the arc representing the number of such appearances.  While the arc diagram may fail to properly depict the structure of a network, Heer et al. point out it is advantageous because the one-dimensionality allows for other features to be easily displayed near the nodes \cite{heer2010}.  %Smaller datasets which contain particular clusters of nodes are well suited to arc diagrams. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{figures/directedEdges.eps}
-	\caption{Different types of directed edges \cite{Holten:2009:USV:1518701.1519054}.}
+	\caption{Different types of directed edges \cite{holten2009}.}
 	\label{fig:directedEdges}
 \end{figure}
 
-Relationships in a network may be directional, such as the predator-prey relationship.  In a visualization of such a network, the direction of the edges must be encoded so these relationships can be understood.  Holten and van Wijk studied the effectiveness of different techniques for indicating directionality of edges in a graph, seen in Figure~\ref{fig:directedEdges} \cite{Holten:2009:USV:1518701.1519054}.  The traditional arrowhead was found to perform poorly, while a tapered edges performed best.  As for an intensity-based direction cue, a dark-to-light representation was found to be clearer than light-to-dark.
+Relationships in a network may be directional, such as the predator-prey relationship.  In a visualization of such a network, the direction of the edges must be encoded so these relationships can be understood.  Holten and van Wijk studied the effectiveness of different techniques for indicating directionality of edges in a graph, seen in Figure~\ref{fig:directedEdges} \cite{holten2009}.  The traditional arrowhead was found to perform poorly, while a tapered edges performed best.  As for an intensity-based direction cue, a dark-to-light representation was found to be clearer than light-to-dark.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{figures/matrix.eps}
+	\caption{A matrix-based visualization of an adjacency matrix \cite{knuth1993}.}
+	\label{fig:matrix}
+\end{figure}
+
+Node-link diagrams can have occlusion problems when they are highly-connected, so matrix-based representations of a network are a possible alternative \cite{heer2010}.  In many cases, networks are stored as an adjacency matrix, so all that needs to be done is visualize that matrix as a grid, where the cell at the $i$th row and the $j$th column represents the relationship from entity $i$ to entity $j$.  Figure~\ref{fig:matrix} shows Knuth's visualization of \textit{Mis\'erables} characters in matrix-form \cite{knuth1993}.  The color of the cell indicates the presence or type of a relationship, with some neutral color indicating the lack of a relationship.  Ghoniem et al. showed that a matrix-based view is suitable for large or dense networks for tasks that involve finding or counting links or nodes \cite{ghoniem2004}.  With proper ordering of the rows and columns, the structure of the network can be effectively displayed, however path-finding tasks may be difficult.
 
 \section{Understanding Models}
 
@@ -124,8 +158,8 @@ Models of all kinds---ecological, engineering, statistical, etc.---can benefit f
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{figures/influenceExplorer.eps}
-	\caption{An example of the Influence Explorer used for the performance of different light bulb designs; white indicates the design passed, black it failed one specification, and grey it failed two specifications \cite{conf/chi/TweedieSDS95}.}
+	\caption{An example of the Influence Explorer used for the performance of different light bulb designs; white indicates the design passed, black it failed one specification, and grey it failed two specifications \cite{tweedie1995}.}
 	\label{fig:influenceExplorer}
 \end{figure}
 
-A good example of an interaction visualization is the Influence Explorer by Tweedie et al. \cite{conf/chi/TweedieSDS95}.  They developed an interface for understanding the relationships between different attributes in a design process.  Parameter values of the Influence Explorer are initially randomly selected to represent different possible items.  For each attribute, there is a histogram including each of the items.  The attribute ranges are controlled by sliders.  When the user adjusts the slider of a given attribute, all items that are within that range are highlighted on all of the histograms.  Industrial designers found the ability to interactively explore the effects of different parameter ranges to be valuable.
+A good example of an interaction visualization is the Influence Explorer by Tweedie et al. \cite{tweedie1995}.  They developed an interface for understanding the relationships between different attributes in a design process.  Parameter values of the Influence Explorer are initially randomly selected to represent different possible items.  For each attribute, there is a histogram including each of the items.  The attribute ranges are controlled by sliders.  When the user adjusts the slider of a given attribute, all items that are within that range are highlighted on all of the histograms.  Industrial designers found the ability to interactively explore the effects of different parameter ranges to be valuable.
