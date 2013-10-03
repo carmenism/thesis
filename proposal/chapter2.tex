@@ -105,7 +105,7 @@ Multiple time series can be part of a single line chart; each series needs only 
 Some line charts are more effective at conveying the nature of the data than others because of the way different drawing techniques affect interpretability.  Cleveland et al. found the shape of a line chart---defined as the height of the chart divided by the width of the chart---to be a critical factor \cite{cleveland1988}.   Shape of the chart directly impacts the slopes of line segments, which are interpreted by viewers to understand the dependence of the $y$ variable on the $x$ variable.  Figure~\ref{fig:ratioBad}, a time series of Canadian lynx data, features a shape of 1.0 and seems to imply rapid increases and decreases in the population.  On the other hand, Figure~\ref{fig:ratioGood} has a shape of 0.074 and shows more clearly that the population rises somewhat steadily and declines somewhat rapidly, which Figure~\ref{fig:ratioBad} failed to show.  Their user evaluation found that judgments of two slopes is influenced by the orientation midangle, defined as the average of the minimum slope orientation and the maximum slope orientation.  They proprosed line chart shape should be selected such that orientations are as close to $\pm 45 ^{\circ}$ as is possible, like in Figure~\ref{fig:ratioGood}.
 
 \begin{figure}
-	\centering
+\centering
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[height=5cm]{figures/eps/spiral.eps}
 		\caption{Spiral time series.}
@@ -113,12 +113,14 @@ Some line charts are more effective at conveying the nature of the data than oth
 	\end{subfigure}	
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[height=5cm]{figures/eps/themeriver.eps}
-		\caption{ThemeRiver\texttrademark time series.}
+		\caption{ThemeRiver time series.}
 		\label{fig:altThemeriver}
 	\end{subfigure}
 	\caption{Two alternative time series visualizations.}
 	\label{fig:tsAlternatives}
 \end{figure}
+
+There are many alternatives to and variations of Playfair's original time series.  One example is Weber et al.'s spiral time series, seen in Figure~\ref{fig:altSpiral} \cite{weber2001}.  The spiral time series was designed for cyclic data.  Cycles are emphasized in a properly-parameterized spiral visualization, however it may be difficult to describe periodic behavior in unknown datasets or determine if that behavior even exists. Another example is the ThemeRiver by Havre et al, seen in Figure~\ref{fig:altThemeriver} \cite{havre2000}.  Each ``current'' in the ThemeRiver represents an entity or subject and must be of a distinctive color.  Positioning along the y-axis is meaningless, instead the abundance of the entity or subject over time is indicated by the width of the current. 
 
 \subsection{Networks}
 
@@ -127,7 +129,7 @@ The input parameters to the MS-PROD model includes predation and interaction mat
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=7cm]{figures/eps/gaichas.eps}
-	\caption{A multi-year food web based the Gulf of Alaska data visualized with a force-drected layout \cite{gaichas2008}.}
+	\caption{A multi-year food web based the Gulf of Alaska data visualized with a force-directed layout \cite{gaichas2008}.}
 	\label{fig:gaichas}
 \end{figure}
 
