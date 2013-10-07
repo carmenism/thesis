@@ -107,12 +107,14 @@ Some line charts are more effective at conveying the nature of the data than oth
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[height=5cm]{figures/eps/spiral.eps}
+		\centering
+		\includegraphics[height=4.5cm]{figures/eps/spiral.eps}
 		\caption{Spiral time series.}
 		\label{fig:altSpiral}
 	\end{subfigure}	
 	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[height=5cm]{figures/eps/themeriver.eps}
+		\centering
+		\includegraphics[height=4.5cm]{figures/eps/themeriver.eps}
 		\caption{ThemeRiver time series.}
 		\label{fig:altThemeriver}
 	\end{subfigure}
@@ -173,14 +175,25 @@ Node-link diagrams can have occlusion problems when they are highly-connected, s
 
 Models of all kinds---ecological, engineering, statistical, etc.---can benefit from the aid of a visualization.  With even a simple model, patterns and trends may be difficult, if not impossible, to discern from only a table of numerical values.  A simple chart may be all that is necessary to elucidate the mathematics behind a model.  The learning process can be even further enhanced through interaction with the model.  Users can adjust parameter values, perceive a change (or perhaps no change) in the results, and begin to understand the degree of influence different parameters possess.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=6.5cm]{figures/eps/visicalc.eps}
-	\caption{A screenshot of VisiCalc, used under the GNU General Public License.}
-	\label{fig:visicalc}
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.475\textwidth}
+		\centering
+		\includegraphics[height=3.75cm]{figures/eps/visicalc.eps}
+		\caption{A screenshot of VisiCalc (GNU General Public License).}
+		\label{fig:visicalc}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.475\textwidth}
+		\centering
+		\includegraphics[height=3.75cm]{figures/eps/excel.eps}
+		\caption{A chart made using Microsoft Excel (public domain).}
+		\label{fig:excel}
+	\end{subfigure}
+	\caption{Spreadsheet applications.}
+	\label{fig:spreadsheets}
 \end{figure}
 
-VisiCalc was a very early example of software assisting the understanding of models \cite{grad2007}.  As a business student, Dan Bricklin wished there was a faster way to change the input or fix mistakes when working out financial models by hand.  To address this, he worked with Bob Frankston to develop VisiCalc, seen in Figure~\ref{fig:visicalc}.  As the world's first electronic spreadsheet, VisiCalc consisted of rows and columns containing either text, numerical values, or formulas.  Result cells were instantly updated according to changed inputs or adjusted formulas, allowing a user to work with models in a more efficient and dynamic manner.
+VisiCalc was a very early example of software assisting the understanding of models \cite{grad2007}.  As a business student, Dan Bricklin wished there was a faster way to change the input or fix mistakes when working out financial models by hand.  To address this, he worked with Bob Frankston to develop VisiCalc, seen in Figure~\ref{fig:visicalc}.  As the world's first electronic spreadsheet, VisiCalc consisted of rows and columns containing either text, numerical values, or formulas.  Result cells were instantly updated according to changed inputs or adjusted formulas, allowing a user to work with models in a more efficient and dynamic manner.  VisiCalc was superseded by Lotus 1-2-3, which was in turn supplanted by Microsoft Excel.  Microsoft Excel remains popular and features graphing tools which can generate charts, such as in Figure~\ref{fig:excel}.
 
 \begin{figure}[h]
 	\centering
