@@ -36,7 +36,7 @@ The MS-PROD model is built upon the Schaefer production model by also including 
 \begin{align}
 \frac{d N_i}{dt} &= r_i N_i \left(1 - \frac{N_i}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^g \beta_{ij} N_j}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^G \beta_{ij} N_j}{K_{\sigma} - K_G}\right) - N_i \displaystyle\sum\limits_{j=1}^P \alpha_{ij} N_j - H_i N_i
 \end{align}
-where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the interaction of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $p$ is the number of predators.
+where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the interaction of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $P$ is the number of predators.
 
 This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Ten key species were chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME) from four major functional groups.  Given an input parameter set of initial biomass values, a predation matrix, an interaction matrix, catchability values, and harvest effort values, the MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this outputted information is potentially valuable to fishery managers, it was lacking an interactive graphical user interface.  
 
@@ -46,7 +46,7 @@ This model is distinguished from other multispecies production models by describ
 
 Fisheries management is focused on the sustainability of choices concerning fish stocks.  A main purpose of ecosystem management is to ensure future generations can enjoy the same natural resources \cite{christensen1996}.  As such, the MS-PROD model provides biomass forecasts for 30 years.  Therefore, time-oriented visualization techniques must be explored.
 
-Frank discussed the different types of time-oriented data by defining three criteria: a) linear vs. cyclic, b) time points vs. time intervals, and c) ordered time vs. branching time vs. time with multiple perspectives \cite{frank1998}.  The MS-PROD data consist of discrete time points with definite starting and ending points, falling under the linear time and time points categories.  As for the third criterion, the model outputs one ordered time result for a single execution, however fisheries managers may like to compare alternative scenarios.  Therefore, our domain falls into the branching time category.  Aigner et al. point out that techniques for visualizing branching time and time with multiple perspectives are unfortunately uncommon \cite{aigner2008}, but a line chart---a technique frequently used for ordered time data---serves as a good starting point.
+Frank discussed the different types of time-oriented data by defining three criteria: a) linear vs. cyclic, b) time points vs. time intervals, and c) ordered time vs. branching time vs. time with multiple perspectives \cite{frank1998}.  The MS-PROD data consist of discrete time points with definite starting and ending points, falling under the linear time and time points categories.  As for the third criterion, the model outputs one ordered time result for a single execution, however fisheries managers may like to compare alternative scenarios.  Therefore, our domain falls into the branching time category, though in a limited sense.  Aigner et al. point out that techniques for visualizing branching time and time with multiple perspectives are unfortunately uncommon \cite{aigner2008}, but a line chart---a technique frequently used for ordered time data---serves as a good starting point.
 
 \begin{figure}[h]
 	\centering
@@ -80,7 +80,7 @@ The line chart was first invented by William Playfair in 1786 to communicate tim
 		\caption{Horizon graphs.}
 		\label{fig:ts_horizon}
 	\end{subfigure}
-	\caption{Four methods for visualizing multiple time series by Javed et al \cite{javed2010}.}
+	\caption{Four possible methods for visualizing multiple time series \cite{javed2010}.}
 	\label{fig:ts_compare}
 \end{figure}
 
@@ -98,11 +98,11 @@ Multiple time series can be part of a single line chart; each series needs only 
 		\caption{Shape parameter of 0.074.}
 		\label{fig:ratioGood}
 	\end{subfigure}
-	\caption{Two visualizations of Canadian lynx trapping data \cite{cleveland1988}.}
+	\caption{Two effect of chart shape on Canadian lynx data \cite{cleveland1988}.}
 	\label{fig:ratio}
 \end{figure}
 
-Some line charts are more effective at conveying the nature of the data than others because of the way different drawing techniques affect interpretability.  Cleveland et al. found the shape of a line chart---defined as the height of the chart divided by the width of the chart---to be a critical factor \cite{cleveland1988}.   Shape of the chart directly impacts the slopes of line segments, which are interpreted by viewers to understand the dependence of the $y$ variable on the $x$ variable.  Figure~\ref{fig:ratioBad}, a time series of Canadian lynx data, features a shape of 1.0 and seems to imply rapid increases and decreases in the population.  On the other hand, Figure~\ref{fig:ratioGood} has a shape of 0.074 and shows more clearly that the population rises somewhat steadily and declines somewhat rapidly, which Figure~\ref{fig:ratioBad} failed to show.  Their user evaluation found that judgments of two slopes is influenced by the orientation midangle, defined as the average of the minimum slope orientation and the maximum slope orientation.  They proprosed line chart shape should be selected such that orientations are as close to $\pm 45 ^{\circ}$ as is possible, like in Figure~\ref{fig:ratioGood}.
+Some line charts are more effective at conveying the nature of the data than others because of the way different drawing techniques affect interpretability.  Cleveland et al. found the shape of a line chart---defined as the height of the chart divided by the width of the chart---to be a critical factor \cite{cleveland1988}.   Shape of the chart directly impacts the slopes of line segments, which viewers interpret in order to understand the dependence of the $y$ variable on the $x$ variable.  Figure~\ref{fig:ratioBad}, a time series of Canadian lynx trapping data, features a shape of 1.0 and seems to imply rapid increases and decreases in the population.  On the other hand, Figure~\ref{fig:ratioGood} has a shape of 0.074 and shows more clearly that the population rises somewhat steadily and declines somewhat rapidly, which Figure~\ref{fig:ratioBad} failed to show.  Their user evaluation found that judgment of two slopes is influenced by the orientation midangle, defined as the average of the minimum slope orientation and the maximum slope orientation.  They proprosed line chart shape should be selected such that orientations are as close to $\pm 45 ^{\circ}$ as is possible, like in Figure~\ref{fig:ratioGood}.
 
 \begin{figure}
 \centering
@@ -131,7 +131,7 @@ The input parameters to the MS-PROD model includes predation and interaction mat
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=7cm]{figures/eps/gaichas.eps}
-	\caption{A multi-year food web based the Gulf of Alaska data visualized with a force-directed layout \cite{gaichas2008}.}
+	\caption{A force-directed food web of Gulf of Alaska data \cite{gaichas2008}.}
 	\label{fig:gaichas}
 \end{figure}
 
@@ -142,7 +142,7 @@ The input parameters to the MS-PROD model includes predation and interaction mat
 %	\label{fig:forcedirected}
 %\end{figure}
 
-One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \cite{gaichas2008}.  Here, the nodes represent an individual species, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships. 
+One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \cite{gaichas2008}.  Here, the nodes represent an individual species in the Gulf of Alaska, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships. 
 
 \begin{figure}[h]
 	\centering
@@ -169,7 +169,7 @@ Relationships in a network may be directional, such as the predator-prey relatio
 	\label{fig:matrix}
 \end{figure}
 
-Node-link diagrams can have occlusion problems when they are highly-connected, so matrix-based representations of a network are a possible alternative \cite{heer2010}.  In many cases, networks are stored as an adjacency matrix, so all that needs to be done is visualize that matrix as a grid, where the cell at the $i$th row and the $j$th column represents the relationship from entity $i$ to entity $j$.  Figure~\ref{fig:matrix} shows Knuth's visualization of \textit{Mis\'erables} characters in matrix-form \cite{knuth1993}.  The color of the cell indicates the presence or type of a relationship, with some neutral color indicating the lack of a relationship.  Ghoniem et al. showed that a matrix-based view is suitable for large or dense networks for tasks that involve finding or counting links or nodes \cite{ghoniem2004}.  With proper ordering of the rows and columns, the structure of the network can be effectively displayed, however path-finding tasks may be difficult.
+Node-link diagrams can have occlusion problems when they are highly-connected, so a matrix-based representation of a network is a possible alternative \cite{heer2010}.  In many cases, networks are stored as an adjacency matrix, so all that needs to be done is visualize that matrix as a grid, where the cell at the $i$th row and the $j$th column represents the relationship from entity $i$ to entity $j$.  Figure~\ref{fig:matrix} shows Knuth's visualization of \textit{Mis\'erables} characters in matrix-form \cite{knuth1993}.  The color of the cell indicates the presence or type of a relationship, with some neutral color indicating the lack of a relationship.  Ghoniem et al. showed that a matrix-based view is suitable for large or dense networks for tasks that involve finding or counting links or nodes \cite{ghoniem2004}.  With proper ordering of the rows and columns, the structure of the network can be effectively displayed, however path-finding tasks may be difficult.
 
 \section{Understanding Models}
 
@@ -189,7 +189,7 @@ Models of all kinds---ecological, engineering, statistical, etc.---can benefit f
 		\caption{A chart made using Microsoft Excel (public domain).}
 		\label{fig:excel}
 	\end{subfigure}
-	\caption{Spreadsheet applications.}
+	\caption{Two examples of spreadsheet applications.}
 	\label{fig:spreadsheets}
 \end{figure}
 
