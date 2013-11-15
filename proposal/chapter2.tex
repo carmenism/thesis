@@ -204,4 +204,12 @@ VisiCalc was a very early example of software assisting the understanding of mod
 
 The Influence Explorer by Tweedie et al. is a good example of an interactive visualization \cite{tweedie1995}.  They developed an interface for understanding the relationships between different attributes in a design process.  Parameter values of the Influence Explorer are initially randomly selected to represent different possible items.  For each attribute, there is a histogram including each of the items.  The attribute ranges are controlled by sliders.  When the user adjusts the slider of a given attribute, all items that are within that range are highlighted on all of the histograms.  Figure~\ref{fig:influenceExplorer} is a screenshot of the Influence Explorer being used to test the performance of different light bulb designs; white indicates the design passed, black it failed one specification, and grey it failed two specifications.  Industrial designers found the ability to interactively explore the effects of different parameter ranges to be valuable.
 
-% TALK ABOUT VENSIM
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=6cm]{figures/eps/vensim.eps}
+	\caption{A screenshot of the strip graphs in Vensim \cite{eberlein1992}.}
+	\label{fig:vensim}
+\end{figure}
+
+Eberlein and Peterson recognized that both unskilled and skilled modelers have the same need: to quickly obtain a thorough understanding of a model \cite{eberlein1992}.  This motivated their development of Vensim, which is a tool for visualizing and analyzing simulation results.  Vensim allows users to run a model under different conditions with a simple mouse click, enabling the user to learn or even de-bug the model with ease.  Various features enhance this learning process---e.g., ``causal tracing'' strip graphs, shown in Figure~\ref{fig:vensim}.  Rather than simply seeing a chart of the projected population, a user exploring the causal tracing feature can begin to understand the various components that contributed to the population simulations---births and deaths---by seeing each component on its own chart.  A major emphasis of Eberlein and Peterson is that the same visualization tool can and should be used for both the development and teaching phases of a model, especially since those phases may not be discrete.
