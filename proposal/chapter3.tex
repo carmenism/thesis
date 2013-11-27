@@ -55,11 +55,11 @@ The predictions for biomass in this model take inter-species relationships into 
 		\caption{Predation arcs.}
 		\label{fig:arcsPredation}
 	\end{subfigure}	
-	\begin{subfigure}[b]{0.8\textwidth}
+	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{figures/eps/arcs_interaction.eps}
 		\caption{Interaction arcs.}
-		\label{fig:arcsInteractio}
+		\label{fig:arcsInteraction}
 	\end{subfigure}
 	\caption{Arcs drawn between species charts to represent relationships.}
 	\label{fig:betweenSpeciesArcs}
@@ -70,3 +70,16 @@ The arc diagram was selected over other network visualizations because it is eas
 \section{Displaying Change}
 
 The motivation of this visualization is to allow the modelers and other stakeholders to easily run the MS-PROD model in order to compare the effects of different choices of fishing effort.  Thus, the visualization requires some method of comparing alternate biomass forecasts and granting users the ability to decide which fishing effort values seem most sustainable.  Therefore, we have added a feature which allows the user to save a ``base line'' of fishing effort values, change the fishing effort values, and compare the new biomass predictions to those of the original base line.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{figures/eps/msprod_change.eps}
+	\caption{Showing change between different effort values.}
+	\label{fig:msprod_change}
+\end{figure}
+
+Figure~\ref{fig:msprod_change} shows this feature which displays change.  The blended area in a line chart is colored from the current biomass line to the line as it was when the baseline was set; a colored area above the line indicates the biomass declined, while a colored area beneath represents the biomass increased---e.g., the ``skate'' population declined dramatically with the new effort values, the ``winter flounder'' population increased due to the changes, and ``haddock'' seemed to be unaffected.
+
+Underneath the sliders, the colors---if present---indicate how the baseline effort values were set.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
+
+This feature is available in both the ``by group'' and ``by species'' views.  The baseline can be saved at any time with a simple button at the top of the screen.  Buttons are also available to undo or reset changes to the effort values.
