@@ -1,0 +1,41 @@
+\chapter{Proposed Work}
+
+The following work is proposed for the completion of this masters thesis:
+
+\begin{itemize}
+  \item Visualization of change
+  \item Visualization of interactions
+  \item Visualization of uncertainty
+  \item User evaluation
+\end{itemize}
+
+These are described in additional detail below.
+
+\section{Visualization of Change}
+
+In addition to the blended visualization of change mentioned in Section~\ref{sec:displayingChange}, we will introduce an alternative of the prior values represented simple curve without blending between the curves.
+
+\section{Visualization of Interactions}
+
+As described in Section~\ref{sec:betweenSpeciesArcs}, users can toggle between no interspecies arcs, predation arcs, and interaction arcs.  An alternative will be developed where arcs of both types appear only selectively---i.e., an arc representing the effect of ``Species A'' on ``Species B'' will only appear if some change in effort values resulted in the biomass of ``Species B'' changing.
+
+\section{Visualization of Uncertainty}
+
+The output of all scientific models is best understood as a range of expected values, since models are merely simplifications of reality.  Therefore, we will perform Monte Carlo simulations by randomly jittering the non-zero input parameter values \pm 10\% for the MS-PROD model.  The resulting uncertainty will be displayed in one of the following methods:
+
+ \begin{itemize}
+   \item Multi-line (one semi-transparent line per Monte Carlo simulation run)
+   \item Error bars of standard deviations
+   \item Error bands of standard deviations
+   \item Error boxes of quartiles
+ \end{itemize}
+
+\section{User Evaluation}
+
+The user evaluation will be conducted in the manner of a semi-structured interview.  Users will be instructed on the various features of the MS-PROD visualization, then asked to either rate or rank the different features.  Some questions which may be included are:
+
+\begin{itemize}
+  \item Which visualization method did you like the best?
+  \item How useful did you find this feature?
+  \item How well do you think you have understood the model?
+\end{itemize}
