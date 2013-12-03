@@ -1,10 +1,18 @@
 \chapter{Proposed Work}
 
+The goal of this research is to provide an interactive interface to the NOAA MS-PROD model so as to help fishermen, fisheries managers, and other stakeholders understand the implications of decisions, such as changing catch quotas for particular kinds of fishing activity---e.g., bottom trawling versus mid-water trawling.  From using our interactive interface, users should gain insights into:
+\begin{itemize}
+	\item \textbf{Implications of the model:}  E.g., how do two different sets of fishing effort values affect the biomass predictions of the ten species?
+	\item \textbf{The model itself:}  E.g., why does the abundance of one species increase when another species is caught? 
+\end{itemize}
+
+Research for this thesis is being carried out in two phases, 1) a design and implementation phase and 2) an evaluation phase.  In the first phase, various design alternatives have been implemented with some feedback from the originators of the fisheries model (Robert Gamble in particular).  A substantial part of the research, particularly relating to design and implementation has already been completed; most of what remains is the evaluation component.  The following section discusses completed work and the section following that discusses work that remains to be done.%The first phase is almost completed, while the second phase has been planned but not carried out.
+
 The following work is proposed for the completion of this masters thesis:
 
 \begin{itemize}
   \item Visualization of change
-  \item Visualization of interactions
+  \item Visualization of inter-species relationships
   \item Visualization of uncertainty
   \item User evaluation
 \end{itemize}
@@ -15,7 +23,7 @@ These are described in additional detail below.
 
 In addition to the blended visualization of change mentioned in Section~\ref{sec:displayingChange}, we will introduce an alternative of the prior values represented simple curve without blending between the curves.
 
-\section{Visualization of Interactions}
+\section{Visualization of Inter-Species Relationships}
 
 As described in Section~\ref{sec:betweenSpeciesArcs}, users can toggle between no interspecies arcs, predation arcs, and interaction arcs.  An alternative will be developed where arcs of both types appear only selectively---i.e., an arc representing the effect of ``Species A'' on ``Species B'' will only appear if some change in effort values resulted in the biomass of ``Species B'' changing.
 
