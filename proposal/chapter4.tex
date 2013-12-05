@@ -69,13 +69,13 @@ This feature is available in both the ``four panel'' and ``small multiples'' vie
 
 \section{Visualization of Inter-Species Relationships}
 
-Understanding of the model requires understanding of the underlying relationships between species---namely, predation and interaction.  Thus, the interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
+Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{interaction}.  As defined earlier, predation is when one species consumes another and interaction accounts for any way species might impact another that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically, as shown in Figure~\ref{fig:betweenSpeciesArcs}.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
 
+%\subsection{Static Arcs} 
+%\label{sec:betweenSpeciesArcs}
 
-\subsection{Between Species Arcs} 
-\label{sec:betweenSpeciesArcs}
-
-The predictions for biomass in this model take inter-species relationships into account.  These relationships are \textit{predation}, where one species consumes another, and \textit{interaction}, which accounts for the way any species might impact another that is not predation.  Understanding these relationships may be critical to understanding why some a species fish is indirectly affected by fishing efforts of other types of fish.  Therefore, we chose to include a network visualization of these relationships in our application, as seen in Figure~\ref{fig:betweenSpeciesArcs}.
+%The predictions for biomass in this model take inter-species relationships into account.  
+% Understanding these relationships may be critical to understanding why some a species fish is indirectly affected by fishing efforts of other types of fish.  Therefore, we chose to include a network visualization of these relationships in our application, as seen in Figure~\ref{fig:betweenSpeciesArcs}.
 
 \begin{figure}
 \centering
@@ -91,13 +91,15 @@ The predictions for biomass in this model take inter-species relationships into 
 		\caption{Interaction arcs.}
 		\label{fig:arcsInteraction}
 	\end{subfigure}
-	\caption{Arcs drawn between species charts to represent relationships.}
+	\caption{Static arcs drawn between species charts to represent relationships.}
 	\label{fig:betweenSpeciesArcs}
 \end{figure}
 
 The arc diagram was selected over other network visualizations because it is easily integrated into our time series visualizations.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  As mentioned previously, Heer et al. described a major benefit of the arc diagram is that the one-dimensionality allows for other features to be easily displayed near the nodes \cite{heer2010}.  In our case, the time series line charts are the nodes; the line charts are only enhanced, not occluded, by the arcs.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
 
+\subsection{Directionality}
 
+These relationships, predation and interaction, both imply directionality, where one species of fish is the ``source'' and the other species is the ``recipient.''  Therefore, our arcs have been drawn with fading opacity to indicate the direction, since Holten and van Wijk recommended a dark-to-light representation for an intensity-based cue \cite{holten2009}.  Additionally, our arcs follow a clockwise direction.  This is necessary because there may be reciprocal ``Fish A affects Fish B'' and ``Fish B affects Fish A'' relationships, especially for the interaction type of relationship, so arcs must be drawn on both sides of the time series, as seen in Figure~\ref{fig:betweenSpeciesArcs}.  Additionally, triangular marks have been drawn in the middle of the arcs to point from the originator to the recipient species.
 
 \section{Visualization of Uncertainty}
 
