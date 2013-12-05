@@ -51,8 +51,32 @@ In the ``small multiples'' view, the scaling of the $y$-dimension is adjusted to
 
 \section{Visualization of Change}
 
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.8\textwidth}
+		\centering
+		\includegraphics[width=11cm]{figures/eps/msprod_change_none.eps}
+		\caption{The current biomass predictions for two species without depiction of the baseline predictions.}
+		\label{fig:changeNone}
+	\end{subfigure}	\\
+	\begin{subfigure}[b]{0.8\textwidth}
+		\centering
+		\includegraphics[width=11cm]{figures/eps/msprod_change_line.eps}
+		\caption{The baseline prediction represented as dotted lines in addition to the current biomass predictions.}
+		\label{fig:changeLine}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{0.8\textwidth}
+		\centering
+		\includegraphics[width=11cm]{figures/eps/msprod_change_blend.eps}
+		\caption{A blend of fading opacity colored from the current biomass prediction to the baseline prediction.}
+		\label{fig:changeBlend}
+	\end{subfigure}
+	\caption{The three options for depicting change between biomass predictions for two different species.}
+	\label{fig:changeTypes}
+\end{figure}
+
 %This would allow users to compare the effects of different choices of fishing efforts.  
-In order for modelers and other stakeholders to understand to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced a feature that allows the user to save a ``baseline'' of fishing effort values and three alternatives for displaying differences with that baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted.  The second is a dotted line which shows the biomass of the baseline in addition to the current biomass.  The third is a blend of color originating from the curve of the current biomass that diminishes in opacity as it approaches the baseline biomass.
+In order for modelers and other stakeholders to understand to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced a feature that allows the user to save a ``baseline'' of fishing effort values and three alternatives for displaying differences with that baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted, as in Figure~\ref{fig:changeNone}.  The second is a dotted line which shows the biomass of the baseline in addition to the current biomass, shown in Figure~\ref{fig:changeLine}.  The third is a blend of color originating from the curve of the current biomass that diminishes in opacity as it approaches the baseline biomass, as in Figure~\ref{fig:changeBlend}.
 
 \begin{figure}[h]
 	\centering
@@ -61,7 +85,7 @@ In order for modelers and other stakeholders to understand to understand and com
 	\label{fig:msprod_change}
 \end{figure}
 
-Figure~\ref{fig:msprod_change} shows this feature which displays change.  The blended area in a line chart is colored from the current biomass line to the line as it was when the baseline was set; a colored area above the line indicates the biomass declined, while a colored area beneath represents the biomass increased---e.g., the ``skate'' population declined dramatically with the new effort values, the ``winter flounder'' population increased due to the changes, and ``haddock'' seemed to be unaffected.
+Figure~\ref{fig:msprod_change} shows all of the time series in the ``small multiples'' view with the effort sliders and the blended change option enabled.  Again, the blended area in a line chart is colored from the current biomass line to the line as it was when the baseline was set; a colored area above the line indicates the biomass declined, while a colored area beneath represents the biomass increased---e.g., the ``skate'' population declined dramatically with the new effort values, the ``winter flounder'' population increased due to the changes, and ``haddock'' seemed to be unaffected.
 
 Underneath the sliders, the colors---if present---indicate how the baseline effort values were set.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
 
