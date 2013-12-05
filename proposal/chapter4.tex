@@ -56,22 +56,25 @@ In the ``small multiples'' view, the scaling of the $y$-dimension is adjusted to
 	\begin{subfigure}[b]{0.8\textwidth}
 		\centering
 		\includegraphics[width=11cm]{figures/eps/msprod_change_none.eps}
-		\caption{The current biomass predictions for two species without depiction of the baseline predictions.}
+		\caption{None.}		
+		%\caption{The current biomass predictions for two species without depiction of the baseline predictions.}
 		\label{fig:changeNone}
 	\end{subfigure}	\\
 	\begin{subfigure}[b]{0.8\textwidth}
 		\centering
 		\includegraphics[width=11cm]{figures/eps/msprod_change_line.eps}
-		\caption{The baseline prediction represented as dotted lines in addition to the current biomass predictions.}
+		\caption{Line.}
+		%\caption{The baseline prediction represented as dotted lines in addition to the current biomass predictions.}
 		\label{fig:changeLine}
 	\end{subfigure} \\
 	\begin{subfigure}[b]{0.8\textwidth}
 		\centering
 		\includegraphics[width=11cm]{figures/eps/msprod_change_blend.eps}
-		\caption{A blend of fading opacity colored from the current biomass prediction to the baseline prediction.}
+		\caption{Blend.}
+		%\caption{A blend of fading opacity colored from the current biomass prediction to the baseline prediction.}
 		\label{fig:changeBlend}
 	\end{subfigure}
-	\caption{The three options for depicting change between biomass predictions for two different species.}
+	\caption{The three options for depicting change between current biomass predictions and baseline predictions for two different species.}
 	\label{fig:changeTypes}
 \end{figure}
 
@@ -121,11 +124,36 @@ These relationships, predation and interaction, both imply directionality, where
 
 \section{Visualization of Uncertainty}
 
-Since models are merely simplifications of reality, their is best understood as a range of expected values.  Therefore, for the sake of more scientific users, it is better to include the ability to perceive these ranges in our visualization.  Our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.  The resulting uncertainty can be displayed in one of the following methods:
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=7cm]{figures/eps/msprod_uncertainty_multline.eps}
+		\caption{Multi-line.}
+		\label{fig:uncertaintyStreak}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=7cm]{figures/eps/msprod_uncertainty_boxplots.eps}
+		\caption{Box plots.}
+		\label{fig:uncertaintyBoxplots}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=7cm]{figures/eps/msprod_uncertainty_errorbar.eps}
+		\caption{Error bars.}
+		\label{fig:uncertaintyErrorbars}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=7cm]{figures/eps/msprod_uncertainty_errorbands.eps}
+		\caption{Error bands.}
+		\label{fig:uncertaintyErrorbands}
+	\end{subfigure}
+	\caption{The four methods for visualizing uncertainty of MS-PROD model simulations.}
+	\label{fig:uncertainty}
+\end{figure}
 
- \begin{itemize}
-   \item Multi-line (one semi-transparent line per Monte Carlo simulation run)
-   \item Error bars of standard deviations
-   \item Error bands of standard deviations
-   \item Error boxes of quartiles
- \end{itemize}
+Since models are merely simplifications of reality, their is best understood as a range of expected values.  Therefore, for the sake of more scientific users, it is better to include the ability to perceive these ranges in our visualization.  Our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.
+
+The resulting uncertainty can be displayed in four methods.  First, a multi-line option shows the uncertainty by drawing one semi-transparent line for each run of the Monte Carlo simulation, as in Figure~\ref{fig:uncertaintyStreak}. The second option displays a box every five years to indicate the boundaries of the first, second (median), and third quartiles with whiskers stretching to the minimum and maximum values, as in Figure~\ref{fig:uncertaintyBoxplots}.  Third, in Figure~\ref{fig:uncertaintyErrorbars}, the mean of all simulations is displayed as a line, with bars every five years to represent one standard deviation above and below the mean.  Lastly, Figure~\ref{fig:uncertaintyErrorbands} shows the mean as a solid black line with bands to show one and two standard deviations above and below the mean.
