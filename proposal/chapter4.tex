@@ -21,9 +21,9 @@ There were two reasons for the decision to arrange by functional group rather th
 	\label{fig:msprod_group}
 \end{figure}
 
-Early on in the design process, a design was made to organize the time series plots according to functional group.  It was then observed that species of similar functional groups tend to have biomass values in similar numeric ranges.  Figure~\ref{fig:msprod_group} shows a screenshot of biomass predictions produced by the model and displayed by these four functional groups.
+It was observed that species of similar functional groups tend to have biomass values in similar numeric ranges, so a decision was made to make one line chart per functional group for displaying biomasses.  This view is called the ``four panel'' view and is shown in Figure~\ref{fig:msprod_group}.
 
-The major advantage of this ``four panel'' view is that comparisons of species within a group are easy.  For MS-PROD, there are only two or three species per functional group, so the line chart for each group tends to not suffer from occlusion problems, unlike with the initial single line chart approach.  Direct and indirect effects of changes in harvest effort also become more clear with the ``four panel'' approach---e.g., if the user adjusts the effort slider only for elasmobranchs, yet sees the biomasses change on the groundfish chart, then the user can begin to understand there is some kind of relationship between elasmobranchs and groundfish.
+The major advantage of this ``four panel'' view is that comparisons of species within a group are easy.  For MS-PROD, there are only two or three species per functional group, so the line chart for each group tends to not suffer from occlusion problems.  Direct and indirect effects of changes in harvest effort are illustrated with the ``four panel'' approach---e.g., if the user adjusts the effort slider only for elasmobranchs, yet sees the biomasses change on the groundfish chart, then the user can begin to understand there is some kind of relationship between elasmobranchs and groundfish.
 
 \subsection{Small Multiples View}
 
@@ -34,9 +34,9 @@ The major advantage of this ``four panel'' view is that comparisons of species w
 	\label{fig:msprod_species}
 \end{figure}
 
-The alternative to the ``four panel'' view is to view each species on its own plot, as in small multiples, as in Figure~\ref{fig:msprod_species}.  We call this the ``small multiples'' view.  In this style, each plot is sorted and colored according to functional group membership.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
+The alternative to the ``four panel'' view is to view each species on its own plot, which we call the ``small multiple'' view.  Shown in Figure~\ref{fig:msprod_species}, each plot is sorted and colored according to functional group membership.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
 
-With each species on its own plot, it is much easier to interpet the biomass predictions of an individual species, since the $y$-dimension of a plot needs to be scaled to the data of one species only.  It is easier to perceive increases or decreases in biomass because no species suffers from the flattening that can occur when a series is displayed on the same plot as a series that has significantly higher values.  On the other hand, this makes comparison between species somewhat difficult because the user must either refer to the $y$-axis labels or hover over a specific point on a chart in order to determine the absolute value of the biomass at a point in time.
+With each species on its own plot, it is much easier to interpet the biomass predictions of an individual species, since the $y$-dimension of a plot needs to be scaled to the data of one species only.  It is easier to perceive increases or decreases in biomass because no species suffers from the ``flattening'' that can occur when a series is displayed on the same plot as a series that has significantly higher values.  On the other hand, this makes comparison between species somewhat difficult because the user must either refer to the $y$-axis labels or hover over a specific point on a chart, which causes a label to appear, in order to determine the absolute value of the biomass at a point in time.
 
 \subsubsection{Absolute Size Indicators}
 
