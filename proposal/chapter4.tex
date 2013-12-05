@@ -10,13 +10,9 @@ Interaction with the model parameters is done by means of a set of sliders with 
 
 In order for users to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced two alternatives to displaying these changes.  The first is a dotted line which shows the previously projected biomass compared with the currently projected biomass.  The second is a blend of color originating from the current biomass projection that diminishes in opacity as it approaches the previously projected biomass.
 
-%In addition to the blended visualization of change mentioned in Section~\ref{sec:displayingChange}, we will introduce an alternative of the prior values represented simple curve without blending between the curves.
-
 \section{Visualization of Inter-Species Relationships}
 
 Understanding of the model requires understanding of the underlying relationships between species---namely, predation and interaction.  Thus, the interface must grant explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
-
-%As described in Section~\ref{sec:betweenSpeciesArcs}, users can toggle between no interspecies arcs, predation arcs, and interaction arcs.  An alternative will be developed where arcs of both types appear only selectively---i.e., an arc representing the effect of ``Species A'' on ``Species B'' will only appear if some change in effort values resulted in the biomass of ``Species B'' changing.
 
 \section{Visualization of Uncertainty}
 
@@ -32,31 +28,29 @@ Since models are merely simplications of reality, their is best understood as a 
 
 %%%%
 
-\section{Functional Group View}
+\section{Four Panel View}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{figures/eps/msprod_group.eps}
-	\caption{A ``by group'' view of our MS-PROD visualization.}
+	\caption{A ``four panel'' view of our MS-PROD visualization.}
 	\label{fig:msprod_group}
 \end{figure}
 
 Early on in the design process, a design was made to organize the time series plots according to functional group.  A functional group is a biological grouping of species which perform similar functions within their ecosystem---e.g., mackerel and herring are both members of the ``small pelagic'' group since they live in the water column.  There were three reasons for this design decision.  First, it is difficult to select enough distinct colors to represent each species so that all species could be plotted on a single chart.  Second, the biomass of some species was significantly larger than others, which was also problematic when all species were on one chart.  By scaling the $y$-axis according to the largest biomass value in the entire 30-year timespan, the lines representing some species were crowded at the bottom of the chart and seemed to be flat even when they were not.  It was then observed that species of similar functional groups tend to have biomass values in similar numeric ranges.  Third, harvest effort is controlled by functional group, so it made sense to develop a line chart for each functional group.  Figure~\ref{fig:msprod_group} shows a screenshot of biomass predictions produced by the model and displayed by these four functional groups.
 
-%The MS-PROD model requires that the functional group of each species is specified in the input parameter file; the four featured in the input file used for the majority of the development were small pelagics, elasmobranchs, flatfish, and groundfish.  
+The major advantage of this ``four panel'' view is that comparisons of species within a group are easy.  For MS-PROD, there are only two or three species per functional group, so the line chart for each group tends to not suffer from occlusion problems, unlike with the initial single line chart approach.  Direct and indirect effects of changes in harvest effort also become more clear with the ``four panel'' approach---e.g., if the user adjusts the effort slider only for elasmobranchs, yet sees the biomasses change on the groundfish chart, then the user can begin to understand there is some kind of relationship between elasmobranchs and groundfish.
 
-The major advantage of this ``by group'' view is that comparisons of species within a group are easy.  For MS-PROD, there are only two or three species per functional group, so the line chart for each group tends to not suffer from occlusion problems, unlike with the initial single line chart approach.  Direct and indirect effects of changes in harvest effort also become more clear with the ``by group'' approach---e.g., if the user adjusts the effort slider only for elasmobranchs, yet sees the biomasses change on the groundfish chart, then the user can begin to understand there is some kind of relationship between elasmobranchs and groundfish.
-
-\section{Species View}
+\section{Small Multiples View}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=13cm]{figures/eps/msprod_species.eps}
-	\caption{A ``by species'' view of our MS-PROD visualization.}
+	\caption{A ``four panel'' view of our MS-PROD visualization.}
 	\label{fig:msprod_species}
 \end{figure}
 
-The alternative to viewing ``by group'' is to view each species on its own plot, as in small multiples.  In this style, each plot is sorted and colored according to functional group membership, as seen in Figure~\ref{fig:msprod_species}.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
+The alternative to the ``four panel'' view is to view each species on its own plot, as in small multiples, as in Figure~\ref{fig:msprod_species}.  We call this the ``small multiples'' view.  In this style, each plot is sorted and colored according to functional group membership.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
 
 With each species on its own plot, it is much easier to interpet the biomass predictions of an individual species, since the $y$-dimension of a plot needs to be scaled to the data of one species only.  It is easier to perceive increases or decreases in biomass because no species suffers from the flattening that can occur when a series is displayed on the same plot as a series that has significantly higher values.  On the other hand, this makes comparison between species somewhat difficult because the user must either refer to the $y$-axis labels or hover over a specific point on a chart in order to determine the absolute value of the biomass at a point in time.
 
@@ -65,11 +59,11 @@ With each species on its own plot, it is much easier to interpet the biomass pre
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=12cm]{figures/eps/msprod_abssize.eps}
-	\caption{Absolute size indicators overlaying the ``by species'' view.}
+	\caption{Absolute size indicators overlaying the ``small multiples'' view.}
 	\label{fig:msprod_abssize}
 \end{figure}
 
-In the ``by species'' view, the scaling of the $y$-dimension is adjusted to fit the data of each individual chart.  Therefore, as mentioned, it is difficult to ascertain the absolute biomass sizes in order to compare between species.  The introduction of absolute size indicators, seen in Figure~\ref{fig:msprod_abssize}, alleviates this problem by showing the absolute size of the population as the area of a circle.  To avoid occlusion, these indicators are drawn every five years within the thirty-year timespan, but they still make for quick comparison between different species.
+In the ``small multiples'' view, the scaling of the $y$-dimension is adjusted to fit the data of each individual chart.  Therefore, as mentioned, it is difficult to ascertain the absolute biomass sizes in order to compare between species.  The introduction of absolute size indicators, seen in Figure~\ref{fig:msprod_abssize}, alleviates this problem by showing the absolute size of the population as the area of a circle.  To avoid occlusion, these indicators are drawn every five years within the thirty-year timespan, but they still make for quick comparison between different species.
 
 \subsection{Between Species Arcs} 
 \label{sec:betweenSpeciesArcs}
@@ -112,4 +106,4 @@ Figure~\ref{fig:msprod_change} shows this feature which displays change.  The bl
 
 Underneath the sliders, the colors---if present---indicate how the baseline effort values were set.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
 
-This feature is available in both the ``by group'' and ``by species'' views.  The baseline can be saved at any time with a simple button at the top of the screen.  Buttons are also available to undo or reset changes to the effort values.
+This feature is available in both the ``four panel'' and ``small multiples'' views.  The baseline can be saved at any time with a simple button at the top of the screen.  Buttons are also available to undo or reset changes to the effort values.
