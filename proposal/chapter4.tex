@@ -4,13 +4,13 @@ The bulk of the design and implementation has been completed, however this is no
 
 Time series line charts---of both the simple line chart and small multiples varieties---were chosen to display the biomass forecast data output by the model.  A major reason line charts were chosen is that casual viewers can understand them without further instructions, as opposed to, say a horizon graph.  Another advantage to line charts is that they tend to have a reasonable amount of whitespace where additional information can be displayed, such as uncertainty or alternate forecasts. A key design issue concerned the representation of change; line charts granted the ability to display this change.  A number of alternatives for change were implemented and are described in the sections that follow.
 
-Interaction with the model parameters is done by means of a set of sliders with the goal of allowing the user to immediately see the impact of management decisions.  The user can adjust sliders which represent harvest effort and watch the line charts change instantaneously as the model is re-run according to the new effort values.  Like Eberlein and Peterson, we aimed to turn the ``time consuming and tedious'' task of working with a model into a ``fast and fun'' interactive experience \cite{eberlein1992}.  Different views and features of the visualization are discussed in the sections below.  
+Interaction with the model parameters is done by means of a set of sliders with the goal of allowing the user to immediately see the impact of management decisions on fisheries.  The user can adjust sliders which represent harvest effort and watch the line charts change instantaneously as the model is re-run according to the new effort values.  Like Eberlein and Peterson, we aimed to turn the ``time consuming and tedious'' task of working with a model into a ``fast and fun'' interactive experience \cite{eberlein1992}.  Different views and features of the visualization are discussed in the sections below.  
 
 \section{Alternative Screen Layouts}
 
 Two alternative screen layouts were made for displaying these time series on line charts: a ``four panel'' view and a ``small multiple'' view, described in further detail below.  With both views, the time series for the species are organized by functional group.  A functional group is a biological grouping of species which perform similar functions within their ecosystem---e.g., mackerel and herring are both members of the ``small pelagic'' group since they live in the water column
 
-There were two reasons for the decision to arrange by functional group rather than placing all time series on a single line chart.  First, harvest effort is controlled by functional group, so it must be somehow indicated which species are part of which functional group.  With multiple time series, this can be encoded through positioning by arranging the slider of a functional group to be near the time series of that group's species.  Second, it would have been impractical to simply place all time series on a single line chart because would have been difficult to select enough distinct colors to represent each species.  Furthermore, the biomass of some species is significantly larger than others.  By scaling the $y$-axis according to the largest biomass value of all species in the entire 30-year timespan, the lines representing some species would have been crowded at the bottom of the chart and seemed to be flat even when they were not.
+There were two reasons for the decision to arrange by functional group rather than placing all time series on a single line chart.  First, harvest effort is controlled by functional group, so it must be somehow indicated which species are part of which functional group.  With multiple time series, this can be encoded through positioning by arranging the slider of a functional group to be near the time series of that group's species.  Second, it would have been impractical to simply place all time series on a single line chart because would have been difficult to select enough distinct colors to represent each species.  Furthermore, the biomass of some species is significantly larger than others.  By scaling the $y$-axis according to the largest biomass value of all species in the entire 30-year time span, the lines representing some species would have been crowded at the bottom of the chart and seemed to be flat even when they were not.
 
 \subsection{Four Panel View}
 
@@ -36,7 +36,7 @@ The major advantage of this ``four panel'' view is that comparisons of species w
 
 The alternative to the ``four panel'' view is to view each species on its own plot, which we call the ``small multiple'' view.  Shown in Figure~\ref{fig:msprod_species}, each plot is sorted and colored according to functional group membership.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
 
-With each species on its own plot, it is much easier to interpet the biomass predictions of an individual species, since the $y$-dimension of a plot needs to be scaled to the data of one species only.  It is easier to perceive increases or decreases in biomass because no species suffers from the ``flattening'' that can occur when a series is displayed on the same plot as a series that has significantly higher values.  On the other hand, this makes comparison between species somewhat difficult because the user must either refer to the $y$-axis labels or hover over a specific point on a chart, which causes a label to appear, in order to determine the absolute value of the biomass at a point in time.
+With each species on its own plot, it is much easier to interpret the biomass predictions of an individual species, since the $y$-dimension of a plot needs to be scaled to the data of one species only.  It is easier to perceive increases or decreases in biomass because no species suffers from the ``flattening'' that can occur when a series is displayed on the same plot as a series that has significantly higher values.  On the other hand, this makes comparison between species somewhat difficult because the user must either refer to the $y$-axis labels or hover over a specific point on a chart, which causes a label to appear, in order to determine the absolute value of the biomass at a point in time.
 
 \subsubsection{Absolute Size Indicators}
 
@@ -51,29 +51,31 @@ In the ``small multiples'' view, the scaling of the $y$-dimension is adjusted to
 
 \section{Visualization of Change}
 
-In order for users to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced three alternatives to displaying these changes.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted.  The second is a dotted line which shows the previously projected biomass compared with the currently projected biomass.  The third is a blend of color originating from the current biomass projection that diminishes in opacity as it approaches the previously projected biomass.
+%This would allow users to compare the effects of different choices of fishing efforts.  
+In order for modelers and other stakeholders to understand to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced a feature that allows the user to save a ``baseline'' of fishing effort values and three alternatives for displaying differences with that baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted.  The second is a dotted line which shows the biomass of the baseline in addition to the current biomass.  The third is a blend of color originating from the curve of the current biomass that diminishes in opacity as it approaches the baseline biomass.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{figures/eps/msprod_change.eps}
+	\caption{Showing change between different effort values.}
+	\label{fig:msprod_change}
+\end{figure}
+
+Figure~\ref{fig:msprod_change} shows this feature which displays change.  The blended area in a line chart is colored from the current biomass line to the line as it was when the baseline was set; a colored area above the line indicates the biomass declined, while a colored area beneath represents the biomass increased---e.g., the ``skate'' population declined dramatically with the new effort values, the ``winter flounder'' population increased due to the changes, and ``haddock'' seemed to be unaffected.
+
+Underneath the sliders, the colors---if present---indicate how the baseline effort values were set.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
+
+This feature is available in both the ``four panel'' and ``small multiples'' views.  The baseline can be saved at any time with a simple button at the top of the screen.  Buttons are also available to undo or reset changes to the effort values.
 
 \section{Visualization of Inter-Species Relationships}
 
-Understanding of the model requires understanding of the underlying relationships between species---namely, predation and interaction.  Thus, the interface must grant explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
-
-\section{Visualization of Uncertainty}
-
-Since models are merely simplications of reality, their is best understood as a range of expected values.  Therefore, for the sake of more scientific users, it is better to include the ability to perceive these ranges in our visualization.  Our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.  The resulting uncertainty can be displayed in one of the following methods:
-
- \begin{itemize}
-   \item Multi-line (one semi-transparent line per Monte Carlo simulation run)
-   \item Error bars of standard deviations
-   \item Error bands of standard deviations
-   \item Error boxes of quartiles
- \end{itemize}
-
+Understanding of the model requires understanding of the underlying relationships between species---namely, predation and interaction.  Thus, the interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
 
 
 \subsection{Between Species Arcs} 
 \label{sec:betweenSpeciesArcs}
 
-The predictions for biomass in this model take inter-species relationships into account.  These relationships are \textit{predation}, where one species consumes another, and \textit{interaction}, which accounts for the way any spcies might impact another that is not predation.  Understanding these relationships may be critical to understanding why some a species fish is indirectly affected by fishing efforts of other types of fish.  Therefore, we chose to include a network visualization of these relationships in our application, as seen in Figure~\ref{fig:betweenSpeciesArcs}.
+The predictions for biomass in this model take inter-species relationships into account.  These relationships are \textit{predation}, where one species consumes another, and \textit{interaction}, which accounts for the way any species might impact another that is not predation.  Understanding these relationships may be critical to understanding why some a species fish is indirectly affected by fishing efforts of other types of fish.  Therefore, we chose to include a network visualization of these relationships in our application, as seen in Figure~\ref{fig:betweenSpeciesArcs}.
 
 \begin{figure}
 \centering
@@ -95,20 +97,15 @@ The predictions for biomass in this model take inter-species relationships into 
 
 The arc diagram was selected over other network visualizations because it is easily integrated into our time series visualizations.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  As mentioned previously, Heer et al. described a major benefit of the arc diagram is that the one-dimensionality allows for other features to be easily displayed near the nodes \cite{heer2010}.  In our case, the time series line charts are the nodes; the line charts are only enhanced, not occluded, by the arcs.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
 
-\section{Displaying Change}
-\label{sec:displayingChange}
 
-The motivation of this visualization is to allow the modelers and other stakeholders to easily run the MS-PROD model in order to compare the effects of different choices of fishing effort.  Thus, the visualization requires some method of comparing alternate biomass forecasts and granting users the ability to decide which fishing effort values seem most sustainable.  Therefore, we have added a feature which allows the user to save a ``base line'' of fishing effort values, change the fishing effort values, and compare the new biomass predictions to those of the original base line.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=12cm]{figures/eps/msprod_change.eps}
-	\caption{Showing change between different effort values.}
-	\label{fig:msprod_change}
-\end{figure}
+\section{Visualization of Uncertainty}
 
-Figure~\ref{fig:msprod_change} shows this feature which displays change.  The blended area in a line chart is colored from the current biomass line to the line as it was when the baseline was set; a colored area above the line indicates the biomass declined, while a colored area beneath represents the biomass increased---e.g., the ``skate'' population declined dramatically with the new effort values, the ``winter flounder'' population increased due to the changes, and ``haddock'' seemed to be unaffected.
+Since models are merely simplifications of reality, their is best understood as a range of expected values.  Therefore, for the sake of more scientific users, it is better to include the ability to perceive these ranges in our visualization.  Our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.  The resulting uncertainty can be displayed in one of the following methods:
 
-Underneath the sliders, the colors---if present---indicate how the baseline effort values were set.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
-
-This feature is available in both the ``four panel'' and ``small multiples'' views.  The baseline can be saved at any time with a simple button at the top of the screen.  Buttons are also available to undo or reset changes to the effort values.
+ \begin{itemize}
+   \item Multi-line (one semi-transparent line per Monte Carlo simulation run)
+   \item Error bars of standard deviations
+   \item Error bands of standard deviations
+   \item Error boxes of quartiles
+ \end{itemize}
