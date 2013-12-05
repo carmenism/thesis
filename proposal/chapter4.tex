@@ -8,15 +8,19 @@ Interaction with the model parameters is done by means of a set of sliders with 
 
 \section{Visualization of Change}
 
-In addition to the blended visualization of change mentioned in Section~\ref{sec:displayingChange}, we will introduce an alternative of the prior values represented simple curve without blending between the curves.
+In order for users to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced two alternatives to displaying these changes.  The first is a dotted line which shows the previously projected biomass compared with the currently projected biomass.  The second is a blend of color originating from the current biomass projection that diminishes in opacity as it approaches the previously projected biomass.
+
+%In addition to the blended visualization of change mentioned in Section~\ref{sec:displayingChange}, we will introduce an alternative of the prior values represented simple curve without blending between the curves.
 
 \section{Visualization of Inter-Species Relationships}
 
-As described in Section~\ref{sec:betweenSpeciesArcs}, users can toggle between no interspecies arcs, predation arcs, and interaction arcs.  An alternative will be developed where arcs of both types appear only selectively---i.e., an arc representing the effect of ``Species A'' on ``Species B'' will only appear if some change in effort values resulted in the biomass of ``Species B'' changing.
+Understanding of the model requires understanding of the underlying relationships between species---namely, predation and interaction.  Thus, the interface must grant explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
+
+%As described in Section~\ref{sec:betweenSpeciesArcs}, users can toggle between no interspecies arcs, predation arcs, and interaction arcs.  An alternative will be developed where arcs of both types appear only selectively---i.e., an arc representing the effect of ``Species A'' on ``Species B'' will only appear if some change in effort values resulted in the biomass of ``Species B'' changing.
 
 \section{Visualization of Uncertainty}
 
-The output of all scientific models is best understood as a range of expected values, since models are merely simplifications of reality.  Therefore, we will perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.  The resulting uncertainty will be displayed in one of the following methods:
+Since models are merely simplications of reality, their is best understood as a range of expected values.  Therefore, for the sake of more scientific users, it is better to include the ability to perceive these ranges in our visualization.  Our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.  The resulting uncertainty can be displayed in one of the following methods:
 
  \begin{itemize}
    \item Multi-line (one semi-transparent line per Monte Carlo simulation run)
