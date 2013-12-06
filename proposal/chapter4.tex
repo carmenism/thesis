@@ -56,27 +56,26 @@ Absolute biomass indicators, seen in Figure~\ref{fig:msprod_abssize}, were intro
 	\begin{subfigure}[b]{0.8\textwidth}
 		\centering
 		\includegraphics[width=11cm]{figures/eps/msprod_change_none.eps}
-		\caption{None.}	
+		\caption{Change shown by interaction.}	
 		\label{fig:changeNone}
 	\end{subfigure}	\\
 	\begin{subfigure}[b]{0.8\textwidth}
 		\centering
 		\includegraphics[width=11cm]{figures/eps/msprod_change_line.eps}
-		\caption{Line.}
+		\caption{The status quo is shown as the dotted gray line.}
 		\label{fig:changeLine}
 	\end{subfigure} \\
 	\begin{subfigure}[b]{0.8\textwidth}
 		\centering
 		\includegraphics[width=11cm]{figures/eps/msprod_change_blend.eps}
-		\caption{Blend.}
+		\caption{The area between the status quo graph and the new forecast is shaded.}
 		\label{fig:changeBlend}
 	\end{subfigure}
-	\caption{The three options for depicting change between current biomass predictions and baseline predictions for two different species.}
+	\caption{The three options for depicting change between current biomass predictions and status quo predictions for two different species.}
 	\label{fig:changeTypes}
 \end{figure}
 
-%This would allow users to compare the effects of different choices of fishing efforts.  
-In order for modelers and other stakeholders to understand to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced a feature that allows the user to save a ``baseline'' of fishing effort values and three alternatives for displaying differences with that baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted, as in Figure~\ref{fig:changeNone}.  The second is a dotted line which shows the biomass of the baseline in addition to the current biomass, shown in Figure~\ref{fig:changeLine}.  The third is a blend of color originating from the curve of the current biomass that diminishes in opacity as it approaches the baseline biomass, as in Figure~\ref{fig:changeBlend}.
+In order for modelers and other stakeholders to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is necessary.  Therefore, we have introduced a feature that allows the user to compare the forecast effects of a change in fishing effort compared to the forecasts of the status quo. There are three alternatives for displaying differences with that status quo or baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted, as in Figure~\ref{fig:changeNone}.  The second is a dotted gray line which shows the forecast of the status quo in addition to the current forecast, shown in Figure~\ref{fig:changeLine}.  The third is a shaded area originating from the curve of the current forecast that diminishes in opacity as it approaches the status quo forecast, as in Figure~\ref{fig:changeBlend}.
 
 \begin{figure}[h]
 	\centering
@@ -87,14 +86,14 @@ In order for modelers and other stakeholders to understand to understand and com
 
 Figure~\ref{fig:msprod_change} shows all of the time series in the ``small multiples'' view with the effort sliders and the blended change option enabled.  Again, the blended area in a line chart is colored from the current biomass line to the line as it was when the baseline was set; a colored area above the line indicates the biomass declined, while a colored area beneath represents the biomass increased---e.g., the ``skate'' population declined dramatically with the new effort values, the ``winter flounder'' population increased due to the changes, and ``haddock'' seemed to be unaffected.
 
-Underneath the sliders, the colors---if present---indicate how the baseline effort values were set.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
+Underneath each slider, a colored rectangle---if present---indicates differences from the baseline effort settings.  Blue indicates the effort value has been increased since the baseline was set---e.g., again in Figure~\ref{fig:msprod_change}, the effort for ``elasmobranchs'' was originally set to 1.0 and now it is approximately 2.0.  Red represents the effort value has been decreased since the baseline was set---e.g., the effort for ``flatfish'' was originally set to 1.0 and now it is approximately 0.5.
 
-This feature is available in both the ``four panel'' and ``small multiples'' views.  The baseline can be saved at any time with a simple button at the top of the screen.  Buttons are also available to undo or reset changes to the effort values.
+This feature is available in both the ``four panel'' and ``small multiples'' views.  The baseline effort setting can be defined at any time with a simple button at the top of the screen.  This resets the baseline as the current slider settings.  Buttons are also available to undo or reset changes to the effort values.
 
 \section{Visualization of Inter-Species Relationships}
 \label{sec:arc}
 
-Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{interaction}.  As defined earlier, predation is when one species consumes another and interaction accounts for any way species might impact another that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically, as shown in Figure~\ref{fig:betweenSpeciesArcs}.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
+Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{interaction}.  As defined earlier, predation is when one species consumes another and interaction accounts for any way species might impact another in a way that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation or interaction statically, as shown in Figure~\ref{fig:betweenSpeciesArcs}.  Secondly, both predation and interaction can be viewed dynamically, which the arcs being drawn as effort values are adjusted and according to their impact at that moment.
 
 \begin{figure}
 \centering
@@ -114,7 +113,7 @@ Understanding of the model requires understanding of the underlying relationship
 	\label{fig:betweenSpeciesArcs}
 \end{figure}
 
-The arc diagram was selected over other network visualizations because it is easily integrated into our time series visualizations.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  As mentioned previously, Heer et al. described a major benefit of the arc diagram is that the one-dimensionality allows for other features to be easily displayed near the nodes \cite{heer2010}.  In our case, the time series line charts are the nodes; the line charts are only enhanced, not occluded, by the arcs.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
+The arc diagram was selected over other network visualizations because it is easily combined with the small multiples.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  An arc diagram does not suffer from this problem since, in our case, the time series themselves are the nodes.  Furthermore, the arc diagram enhances the entire visualization without occluding the time series.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
 
 \subsection{Directionality}
 
@@ -152,6 +151,6 @@ These relationships, predation and interaction, both imply directionality, where
 	\label{fig:uncertainty}
 \end{figure}
 
-Since models are merely simplifications of reality, their is best understood as a range of expected values.  Therefore, for the sake of more scientific users, it is better to include the ability to perceive these ranges in our visualization.  Our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$ for the MS-PROD model.
+Since models are simplifications of reality, their output is best understood as a range of expected values.  It is possible that a representation of uncertainty may aid decision making.  To add uncertainty visualization to the MS-PROD model, our interface can perform Monte Carlo simulations by randomly jittering the non-zero input parameter values $\pm 10\%$.
 
 The resulting uncertainty can be displayed in four methods.  First, a multi-line option shows the uncertainty by drawing one semi-transparent line for each run of the Monte Carlo simulation, as in Figure~\ref{fig:uncertaintyStreak}. The second option displays a box every five years to indicate the boundaries of the first, second (median), and third quartiles with whiskers stretching to the minimum and maximum values, as in Figure~\ref{fig:uncertaintyBoxplots}.  Third, in Figure~\ref{fig:uncertaintyErrorbars}, the mean of all simulations is displayed as a line, with bars every five years to represent one standard deviation above and below the mean.  Lastly, Figure~\ref{fig:uncertaintyErrorbands} shows the mean as a solid black line with bands to show one and two standard deviations above and below the mean.
