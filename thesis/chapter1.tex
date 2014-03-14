@@ -212,6 +212,31 @@ Relationships in a network may be directional, such as the predator-prey relatio
 
 Node-link diagrams can have occlusion problems when they are highly-connected, so a matrix-based representation of a network is a possible alternative \cite{heer2010}.  In many cases, networks are stored as an adjacency matrix, so all that needs to be done is visualize that matrix as a grid, where the cell at the $i$th row and the $j$th column represents the relationship from entity $i$ to entity $j$.  Figure~\ref{fig:matrix} shows Knuth's visualization of \textit{Mis\'erables} characters in matrix-form \cite{knuth1993}.  The color of the cell indicates the presence or type of a relationship, with some neutral color indicating the lack of a relationship.  Ghoniem et al. showed that a matrix-based view is suitable for large or dense networks for tasks that involve finding or counting links or nodes \cite{ghoniem2004}.  With proper ordering of the rows and columns, the structure of the network can be effectively displayed, however path-finding tasks may be difficult.
 
+\subsection{Uncertainty}
+
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{figures/eps/uncertainty_cone.eps}
+		\caption{Error cone.}
+		\label{fig:uncertaintyCone}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[height=4.5cm]{figures/eps/uncertainty_house.eps}
+		\caption{Cox et al.'s method.}
+		\label{fig:uncertaintyHouse}
+	\end{subfigure}
+	\caption{Two visualizations of uncertainty for a hurricane advisory \cite{cox2013}.}
+	\label{fig:uncertaintyAlternatives}
+\end{figure}
+
+A model is a simplification of reality, therefore it is common for its output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuries when the correct answer is known, while \textit{uncertainty} describes inaccuries when the answer is unknown \cite{hunter1993}.  Therefore, model ouput is best understood as a range of expected values which is likely to contain the true value.  According to Potter et al., scientific data can be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated different portrayals of uncertainty.
+%Uncertainty can arise at several stages---the conceptualization of the model, the collection of the model input, or due to data transformations \cite{}.
+
+%\cite{cox2013}
+
 \section{Understanding Models}
 
 Users studying models can benefit from the aid of a visualization, because patterns and trends may be difficult---if not impossible---to discern from only a table of numerical values.  The learning process can be even further enhanced through interaction with the model.  If interactivity is supported by the visualization, then users can adjust parameter values, perceive a change (or perhaps no change) in the results, and begin to understand the degree of influence different parameters possess.
