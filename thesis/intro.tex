@@ -45,9 +45,9 @@ The MS-PROD model forecasts biomass for species separated into functional groups
 \begin{align}
 \frac{d N_i}{dt} &= r_i N_i \left(1 - \frac{N_i}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^g \beta_{ij} N_j}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^G \beta_{ij} N_j}{K_{\sigma} - K_G}\right) - N_i \displaystyle\sum\limits_{j=1}^P \alpha_{ij} N_j - H_i N_i
 \end{align}
-where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the interaction of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $P$ is the number of predators.
+where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the competition of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $P$ is the number of predators.
 
-This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Each species to be included in the simulation must be specified in the parameter file by listing growth rate, functional group membership, initial biomass, carrying capacity, and catchability.  Additionally, matrices representing inter-species relationships must be provided to describe the relationship between every pair of species.  Such matrices are required for \textit{predation}, where one species consumes the other, and \textit{interaction}, where one species affects the other in any manner besides predation.
+This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Each species to be included in the simulation must be specified in the parameter file by listing growth rate, functional group membership, initial biomass, carrying capacity, and catchability.  Additionally, matrices representing inter-species relationships must be provided to describe the relationship between every pair of species.  Such matrices are required for \textit{predation}, where one species consumes the other, and \textit{competition}, where one species affects the other in any manner besides predation.  (In ecology, the word ``interaction'' is often used instead of ``competition,'' but we have chosen to use ``competition'' so that the term ``interaction'' will not be overloaded.)
 
 The MS-PROD authors provided us with a parameter file which listed ten key species chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME), listed here by functional group:%, predation with each of the other species, and interaction with each of the other species.  
 \begin{itemize}
@@ -159,7 +159,7 @@ There are many alternatives to and variations of Playfair's original time series
 
 \subsection{Networks}
 
-The input parameters to the MS-PROD model includes predation and interaction matrices.  These are relationships which may be better understood if incorporated into the visualization. Relationships are often visualized through a node-link diagram, which typically represents entities as nodes and links as relationships between the nodes they connect.  There are many types of node-link diagrams used for illustrating networks; those which are relevant to our research are discussed in the following sections.
+The input parameters to the MS-PROD model includes predation and competition matrices.  These are relationships which may be better understood if incorporated into the visualization. Relationships are often visualized through a node-link diagram, which typically represents entities as nodes and links as relationships between the nodes they connect.  There are many types of node-link diagrams used for illustrating networks; those which are relevant to our research are discussed in the following sections.
 
 \subsubsection{Force-Directed Layouts}
 

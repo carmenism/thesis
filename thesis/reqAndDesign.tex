@@ -100,7 +100,7 @@ This feature is available in both the ``four panel'' and ``small multiples'' vie
 \section{Visualization of Inter-Species Relationships}
 \label{sec:arc}
 
-Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{interaction}.  As defined earlier, predation is when one species consumes another and interaction accounts for any way species might impact another in a way that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, interaction as in Figure~\ref{fig:arcsInteraction}, or both as static displays.  Secondly, predation, interaction or both can be viewed dynamically, with the arcs being selectively drawn according to their impact as effort values are adjusted.
+Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}.  As defined earlier, predation is when one species consumes another and competition accounts for any way species might impact another in a way that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both as static displays.  Secondly, predation, competition or both can be viewed dynamically, with the arcs being selectively drawn according to their impact as effort values are adjusted.
 
 \begin{figure}
 \centering
@@ -113,8 +113,8 @@ Understanding of the model requires understanding of the underlying relationship
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[height=4.5cm]{figures/eps/arcs_interaction.eps}
-		\caption{Interaction arcs.}
-		\label{fig:arcsInteraction}
+		\caption{Competition arcs.}
+		\label{fig:arcsCompetition}
 	\end{subfigure}
 	\caption{Static arcs drawn between species charts to represent relationships.}
 	\label{fig:betweenSpeciesArcs}
@@ -124,7 +124,7 @@ The arc diagram was selected over other network visualizations because it is eas
 
 \subsection{Directionality}
 
-These relationships, predation and interaction, both imply directionality, where one species of fish is the ``source'' and the other species is the ``recipient.''  Therefore, our arcs have been drawn with fading opacity to indicate the direction, since Holten and van Wijk recommended a dark-to-light representation for an intensity-based cue \cite{holten2009}.  Additionally, our arcs follow a clockwise direction.  This is necessary because there may be reciprocal ``Fish A affects Fish B'' and ``Fish B affects Fish A'' relationships, especially for the interaction type of relationship, so arcs must be drawn on both sides of the time series, as seen in Figure~\ref{fig:betweenSpeciesArcs}.  Additionally, triangular marks have been drawn in the middle of the arcs to point from the originator to the recipient species.
+These relationships, predation and competition, both imply directionality, where one species of fish is the ``source'' and the other species is the ``recipient.''  Therefore, our arcs have been drawn with fading opacity to indicate the direction, since Holten and van Wijk recommended a dark-to-light representation for an intensity-based cue \cite{holten2009}.  Additionally, our arcs follow a clockwise direction.  This is necessary because there may be reciprocal ``Fish A affects Fish B'' and ``Fish B affects Fish A'' relationships, especially for the competition type of relationship, so arcs must be drawn on both sides of the time series, as seen in Figure~\ref{fig:betweenSpeciesArcs}.  Additionally, triangular marks have been drawn in the middle of the arcs to point from the originator to the recipient species.
 
 \section{Visualization of Uncertainty}
 
