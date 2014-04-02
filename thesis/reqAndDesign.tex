@@ -136,11 +136,16 @@ The interface provides a few options for viewing the inter-species relationships
 
 \subsubsection{Static}
 
-With the static style of the arcs, all arcs are drawn at all times, as shown in all three subfigures of Figure~\ref{fig:betweenSpeciesArcs}.  The width of an arc corresponds to the magnitude of the relationship, as defined in the predation coefficient matrix or the competition coefficient matrix in the original parameter file.  The user can mouse over a particular arc, which causes that arc to highlight while the other arcs fade and displays a label which spells out the relationship in words and shows the original coefficient---e.g., ``Skates compete with Winter Flounder (0.6).''  A benefit of this type of arc is that it is possible to see all interactions between the species at all times.  However, the downside is that viewing all arcs at once can be overwhelming because the display is somewhat cluttered.
-
-%%%%%%%%%%%%%%%%%%%%%
+With the static style of the arcs, all arcs are drawn at all times, as shown in all three subfigures of Figure~\ref{fig:betweenSpeciesArcs}.  The width of an arc corresponds to the magnitude of the relationship, as defined in the predation coefficient matrix or the competition coefficient matrix in the original parameter file.  The user can mouse over a particular arc, which causes that arc to highlight while the other arcs fade and displays a label which spells out the relationship in words and shows the original coefficient---e.g., ``Skates compete with Winter Flounder (0.6).''  A benefit of this type of arc is that it is possible to see all interactions between the species at all times.  However, the downside is that viewing all arcs at once can be overwhelming because the display becomes somewhat cluttered.
 
 \subsubsection{Dynamic}
+
+Dynamic arcs were motivated by need to eliminate or at least reduce the visual clutter created by the static arcs.  We also considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences in forecasts.  The width of each arc is proportional to a weight $w$:
+
+\begin{align}
+w = \frac{100000}{r_{0} + 100000} \cdot (s_{30} - s_{30}')
+\end{align}
+where $r_{0}$ represents the initial biomass of the recipient species, $s_{30}$ is the biomass at year 30 for the source species according to the current forecast, and $s_{30}'$ is the biomass at year 30 for the source species according to the baseline forecast.
 
 \subsubsection{Dynamic with Animation}
 
