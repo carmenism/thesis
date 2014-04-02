@@ -13,9 +13,11 @@ First and foremost, we had to decide how to display the thirty-year biomass fore
 
 Interaction with the model parameters is done by means of a set of sliders with the goal of allowing the user to immediately see the impact of management decisions on fisheries.  The user can adjust sliders which represent harvest effort and watch the line charts change instantaneously as the model is re-run according to the new effort values.  Like Eberlein and Peterson, we aimed to turn the ``time consuming and tedious'' task of working with a model into a ``fast and fun'' interactive experience \cite{eberlein1992}.  Different views and features of the model visualization are described and discussed in the sections below.  
 
+It is important to note that the MS-PROD model allows for different fishing effort values for each species for each year in the thirty-year period that the model produces forecasts for.  This is to reflect that fishing quotas can change from year to year.  Since there are ten species and thirty years, this means there are potentially 300 separate fishing effort values that could be set by a user.  However, it would be cluttered and confusing to have an effort slider for each of those 300 values.  Therefore, two simplifications were made.  First, fishing effort should be controlled by functional group rather than individual; the model authors requested this because it is more realistic than fishing by individual species.  Second, fishing effort for a functional group is constant across all thirty years; while this is unrealistic, it is easier to understand and perhaps, in a sustainable, ``perfect world,'' fishing quotas would not need adjusting over the years.  Thus, each slider controls the fishing effort for all thirty years for a particular functional group.
+
 \section{Alternative Screen Layouts}
 
-Once it was decided that time series were most appropriate for our task, we had to choose how many individual charts should be used to display the data and how to arrange them.  Two alternative screen layouts were developed for displaying these time series on line charts: a ``four panel'' view in Figure~\ref{fig:msprod_group} and a ``small multiple'' view in Figure~\ref{fig:msprod_species}, described in further detail below.  With both views, the time series for the species are organized by functional group.  A functional group is a biological grouping of species which perform similar functions within their ecosystem---e.g., mackerel and herring are both members of the ``small pelagic'' group since they live in the water column
+Once it was decided that time series were most appropriate for our task, we had to choose how many individual charts should be used to display the data and how to arrange them.  Two alternative screen layouts were developed for displaying these time series on line charts: a ``four panel'' view in Figure~\ref{fig:msprod_group} and a ``small multiple'' view in Figure~\ref{fig:msprod_species}, described in further detail below.  With both views, the time series for the species are organized by functional group.  A functional group is a biological grouping of species which perform similar functions within their ecosystem---e.g., mackerel and herring are both members of the ``small pelagic'' group since they live in the water column.
 
 There were several reasons for the decision to arrange by functional group rather than placing all time series on a single line chart.  First, harvest effort is controlled by functional group using the sliders, so it must be somehow indicated which species are part of which functional group.  With multiple time series, this can be encoded through positioning by arranging the slider of a functional group to be near the time series of that group's species.  Second, it would have been impractical to simply place all time series on a single line chart because would have been difficult to select enough distinct colors to represent each of the ten species.  Furthermore, the biomass of some species is significantly larger than others.  By scaling the $y$-axis according to the largest biomass value of all species in the entire 30-year time span, the lines representing some species would have been crowded at the bottom of the chart and seemed to be flat even when they were not.
 
@@ -100,27 +102,47 @@ This feature is available in both the ``four panel'' and ``small multiples'' vie
 \section{Visualization of Inter-Species Relationships}
 \label{sec:arc}
 
-Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}.  As defined earlier, predation is when one species consumes another and competition accounts for any way species might impact another in a way that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both as static displays.  Secondly, predation, competition or both can be viewed dynamically, with the arcs being selectively drawn according to their impact as effort values are adjusted.
+Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}.  As defined earlier, predation is when one species consumes another and competition accounts for any way species might impact another in a way that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  
 
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[height=4.5cm]{figures/eps/arcs_predation.eps}
+		\includegraphics[width=1\textwidth]{figures/eps/arcs_predation.eps}
 		\caption{Predation arcs.}
 		\label{fig:arcsPredation}
 	\end{subfigure}	
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.33\textwidth}
 		\centering
-		\includegraphics[height=4.5cm]{figures/eps/arcs_interaction.eps}
+		\includegraphics[width=1\textwidth]{figures/eps/arcs_interaction.eps}
 		\caption{Competition arcs.}
 		\label{fig:arcsCompetition}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/eps/arcs_static.eps}
+		\caption{Both types of arcs.}
+		\label{fig:arcsBoth}
 	\end{subfigure}
 	\caption{Static arcs drawn between species charts to represent relationships.}
 	\label{fig:betweenSpeciesArcs}
 \end{figure}
 
 The arc diagram was selected over other network visualizations because it is easily combined with the small multiples.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  An arc diagram does not suffer from this problem since, in our case, the time series themselves are the nodes.  Furthermore, the arc diagram enhances the entire visualization without occluding the time series.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
+
+\subsection{Arc Type}
+
+The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.
+
+\subsubsection{Static}
+
+With the static style of the arcs, all arcs are drawn at all times.
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Dynamic}
+
+\subsubsection{Dynamic with Animation}
 
 \subsection{Directionality}
 
