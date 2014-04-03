@@ -130,6 +130,10 @@ Understanding of the model requires understanding of the underlying relationship
 
 The arc diagram was selected over other network visualizations because it is easily combined with the small multiples.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  An arc diagram does not suffer from this problem since, in our case, the time series themselves are the nodes.  Furthermore, the arc diagram enhances the entire visualization without occluding the time series.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
 
+\subsection{Directionality}
+
+These relationships, predation and competition, both imply directionality, where one species of fish is the ``source'' and the other species is the ``recipient.''  Therefore, our arcs have been drawn with fading opacity to indicate the direction, since Holten and van Wijk recommended a dark-to-light representation for an intensity-based cue \cite{holten2009}.  Additionally, our arcs follow a clockwise direction.  This is necessary because there may be reciprocal ``Fish A affects Fish B'' and ``Fish B affects Fish A'' relationships, especially for the competition type of relationship, so arcs must be drawn on both sides of the time series, as seen in Figure~\ref{fig:betweenSpeciesArcs}.  Additionally, triangular marks have been drawn in the middle of the arcs to point from the originator to the recipient species.
+
 \subsection{Arc Type}
 
 The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.  Regardless of the selected arc type, all predation arcs are colored orange and all competition arcs are colored sky-blue.
@@ -153,13 +157,13 @@ To summarize, the width of an arc in dynamic mode is (a) proportional to the dif
 
 Additionally, the weight $w$ is negative if $(s_{30} < s_{30}')$.  This is significant in explaining \textit{how} the change in the source species affects the recipient species---i.e., was the change that the source species experienced ``good'' or ``bad'' from the perspective of the recipient species?  Both relationships, competition and predation, inhibit the growth of the recipient species because the source species either consumes the recipient species itself or its resources.  Therefore, if source species biomass decreases, then the recipient species biomass may be able to grow more.  Of course, other species may be dampening the growth of the recipient species, so the recipient species may not necessarily experience a growth, but the potential is there.  Conversely, if the source species biomass increases, then the recipient species may suffer more and experience a decrease in biomass.  Therefore, it was necessary to indicate the signage of a dynamic arc.  We chose to use plus signs ($+$) for the cases where $w$ is negative---i.e., when the source species declines between forecasts which is ``good'' for the recipient species---and minus sign ($-$) for the cases where $w$ is positive---i.e., when the source species increases between forecasts which is ``bad'' for the recipient species---as Kadaba et al.\ used in their static causal visualizations \cite{kadaba2007}.  Plus signs were drawn in black and minus signs were drawn in white with a black outline to allow for some redundant coding.  Several sign glyphs are drawn along each arc to allow the user to easily determine the signage of a dynamic arc.
 
-
-
 \subsubsection{Dynamic with Animation}
 
-\subsection{Directionality}
 
-These relationships, predation and competition, both imply directionality, where one species of fish is the ``source'' and the other species is the ``recipient.''  Therefore, our arcs have been drawn with fading opacity to indicate the direction, since Holten and van Wijk recommended a dark-to-light representation for an intensity-based cue \cite{holten2009}.  Additionally, our arcs follow a clockwise direction.  This is necessary because there may be reciprocal ``Fish A affects Fish B'' and ``Fish B affects Fish A'' relationships, especially for the competition type of relationship, so arcs must be drawn on both sides of the time series, as seen in Figure~\ref{fig:betweenSpeciesArcs}.  Additionally, triangular marks have been drawn in the middle of the arcs to point from the originator to the recipient species.
+
+\section{Visualization of Harvest Influences}
+
+
 
 \section{Visualization of Uncertainty}
 
