@@ -9,12 +9,12 @@ The motivation of this research is to provide an interactive interface to the NO
 	\item \textbf{The model itself:}  E.g., why does the abundance of one species increase when another species is caught? 
 \end{itemize} 
 
-To accomplish this goal, we determined the visualization of the MS-PROD model would need to convey:
+To accomplish this goal, we determined our interactive interface of the MS-PROD model would need to visualize:
 
 \begin{itemize}
 	\item The predicted biomass over time,
 	\item Changes in predicted biomass as a result of changes in fishing effort,
-	\item Relationships between the species (i.e., causal effects in the model), and
+	\item Causal relationships which help to explain indirect or unintuitive results,
 	\item Uncertainty of the model
 \end{itemize} 
 
@@ -110,10 +110,12 @@ Underneath each slider, a colored rectangle---if present---indicates differences
 
 This feature is available in both the ``four panel'' and ``small multiples'' views.  The baseline effort setting can be defined at any time with a simple button at the top of the screen.  This resets the baseline as the current slider settings.  Buttons are also available to undo or reset changes to the effort values.
 
-\section{Visualization of Inter-Species Relationships}
-\label{sec:arc}
+\section{Visualization of Causal Relationships}
+%\label{sec:arc}
 
-Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}.  As defined earlier, predation is when one species consumes another and competition accounts for any way species might impact another in a way that is not predation.  Our interface must explain to users which species impact each other and the magnitude of those relationships.  These are illustrated with arc diagram network visualizations between time series.  
+Understanding of the model requires understanding of the underlying relationships between species---namely, \textit{predation}, \textit{competition}, and \textit{harvest}.  As defined earlier, predation is when one species consumes another and competition accounts for any way species might impact another in a way that is not predation.  Harvest is process of humans trying to catch fish in the wild.  Our interface must explain to users which species impact each other, how harvesting impacts the species, and the magnitude of those relationships.  These relationships are illustrated by a node-link diagram, where the nodes are the time series of the fish species and the harvest effort sliders.
+
+\subsection{Inter-Species Relationships}
 
 \begin{figure}
 \centering
@@ -139,9 +141,11 @@ Understanding of the model requires understanding of the underlying relationship
 	\label{fig:betweenSpeciesArcs}
 \end{figure}
 
+The inter-species relationships are illustrated with arc diagram network visualizations between time series, as in Figure~\ref{fig:betweenSpeciesArcs}.  In the input parameter file, predation and competition coefficient matrices are defined to represent the relationship between each pair of species.  Each non-zero coefficient is represented with an arc connecting the time series plots of the corresponding species.  This is only available in the small multiples view because there are multiple species represented in each plot of the four panel view.
+
 The arc diagram was selected over other network visualizations because it is easily combined with the small multiples.  A separate node-link diagram, such as one with a force-directed layout, may have been confusing because it would require the user to mentally associate nodes in the network with line charts.  An arc diagram does not suffer from this problem since, in our case, the time series themselves are the nodes.  Furthermore, the arc diagram enhances the entire visualization without occluding the time series.  Arc diagrams are also well suited to smaller datasets with clusters of nodes, which applies to our dataset since the fish are segmented into functional groups.
 
-\subsection{Directionality}
+\subsubsection{Directionality}
 
 \begin{figure}[h]
 	\centering
@@ -152,15 +156,15 @@ The arc diagram was selected over other network visualizations because it is eas
 
 These relationships, predation and competition, both imply directionality, where one species of fish is the ``source'' and the other species is the ``recipient.''  Therefore, our arcs have been drawn with fading opacity to indicate the direction, since Holten and van Wijk recommended a dark-to-light representation for an intensity-based cue \cite{holten2009}.  Additionally, our arcs follow a clockwise direction.  This is necessary because there may be reciprocal ``Fish A affects Fish B'' and ``Fish B affects Fish A'' relationships, especially for the competition type of relationship, so arcs must be drawn on both sides of the time series, as seen in Figure~\ref{fig:betweenSpeciesArcs}.  Additionally, triangular marks have been drawn in the middle of the arcs to point from the originator to the recipient species.  These three directionality cues can be seen in Figure~\ref{fig:arcs_directionality}.
 
-\subsection{Arc Type}
+\subsubsection{Arc Type}
 
 The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.  Regardless of the selected arc type, all predation arcs are colored orange and all competition arcs are colored sky-blue.
 
-\subsubsection{Static}
+\paragraph{Static}
 
 With the static style of the arcs, all arcs are drawn at all times, as shown in all three subfigures of Figure~\ref{fig:betweenSpeciesArcs}.  The width of an arc corresponds to the magnitude of the relationship, as defined in the predation coefficient matrix or the competition coefficient matrix in the original parameter file.  The user can mouse over a particular arc, which causes that arc to highlight while the other arcs fade and displays a label which spells out the relationship in words and shows the original coefficient---e.g., ``Skates compete with Winter Flounder (0.6).''  A benefit of this type of arc is that it is possible to see all interactions between the species at all times.  However, the downside is that viewing all arcs at once can be overwhelming because the display becomes somewhat cluttered.
 
-\subsubsection{Dynamic}
+\paragraph{Dynamic}
 
 Dynamic arcs, shown in Figure~\ref{fig:arcs_dynamic}, were motivated by need to eliminate or at least reduce the visual clutter created by the static arcs.  We also considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences in between the current forecast and the baseline forecast.
 
@@ -186,11 +190,11 @@ Additionally, the weight $w$ is negative if $(s_{30} < s_{30}')$.  This is signi
 
 We have realized it is possible for dynamic arcs to be misinterpreted.  Users may incorrectly assume that that absence of an arc indicates that the relationship is no longer present---e.g., if the predation arc from spiny dogfish to cod is not present, then the spiny dogfish are not eating the cod.  However, we believe that users will understand the true meaning of the arcs after a brief explanation---e.g., the arc between spiny dogfish and cod is no longer being drawn because there are no changes in the cod population that might be explained by the spiny dogfish.  When informally showing the model to users during and after development, we found that users properly interpreted the arcs after a demonstration or interaction with the model.  Another possible criticism of the dynamic arcs is that sometimes many arcs are drawn and it can become cluttered, such as when several sliders are pulled to the extremes.  However, generally less arcs are drawn in dynamic mode than static mode even in extreme cases.  Also, fishery managers may potentially be more interested in comparing the long-term effects of slight adjustments to fishing quota than dramatic adjustments that either eliminate fishing completely or wipe out entire stocks through overfishing.
 
-\subsubsection{Dynamic with Animation}
+\paragraph{Dynamic with Animation}
 
 
 
-\section{Visualization of Harvest Influences}
+\subsection{Harvest Influences}
 
 
 
