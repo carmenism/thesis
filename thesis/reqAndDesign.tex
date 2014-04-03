@@ -132,7 +132,7 @@ The arc diagram was selected over other network visualizations because it is eas
 
 \subsection{Arc Type}
 
-The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.
+The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.  Regardless of the selected arc type, all predation arcs are colored orange and all competition arcs are colored sky-blue.
 
 \subsubsection{Static}
 
@@ -140,12 +140,20 @@ With the static style of the arcs, all arcs are drawn at all times, as shown in 
 
 \subsubsection{Dynamic}
 
-Dynamic arcs were motivated by need to eliminate or at least reduce the visual clutter created by the static arcs.  We also considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences in forecasts.  The width of each arc is proportional to a weight $w$:
+Dynamic arcs were motivated by need to eliminate or at least reduce the visual clutter created by the static arcs.  We also considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences in between the current forecast and the baseline forecast.
+
+In dynamic mode, the width of each arc is proportional to a weight $w$:
 
 \begin{align}
 w = \frac{100000}{r_{0} + 100000} \cdot (s_{30} - s_{30}')
 \end{align}
-where $r_{0}$ represents the initial biomass of the recipient species, $s_{30}$ is the biomass at year 30 for the source species according to the current forecast, and $s_{30}'$ is the biomass at year 30 for the source species according to the baseline forecast.
+where $r_{0}$ represents the initial biomass of the recipient species, $s_{30}$ is the biomass at year 30 for the source species according to the current forecast, and $s_{30}'$ is the biomass at year 30 for the source species according to the baseline forecast.  If the source species biomass at year 30 did not change between the species, then $(s_{30} - s_{30}')$ equals zero, resulting in a $w$ of zero, so the arc will not be drawn.  In other words, the source species must have experienced change between the two forecasts in order to possibly explain a change that occurred in the recipient species.  The width of the arc increases as the difference between the two forecasts for the source at year 30 increases.  The portion of the equation with $r_{0}$ is to prevent arcs from being drawn simply because the source species experienced an increase or a decrease.  If the recipient biomass at time zero is sufficiently large, then the impact the source species will have on the recipient is not as significant as it would have been if the initial recipient biomass was small.
+
+To summarize, the width of an arc in dynamic mode is (a) proportional to the difference for the final values of the baseline and current forecasts for the source species and (b) inversely proportional to the initial biomass of the recipient species.  Therefore, no arcs are drawn when the current forecast and the baseline forecast are the same.  As the sliders are adjusted either positively or negatively, more arcs may appear to assist in explaining indirect effects.  An arc grows in width as the source species experiences more dramatic change between the forecasts.
+
+Additionally, the weight $w$ is negative if $(s_{30} < s_{30}')$.  This is significant in explaining \textit{how} the change in the source species affects the recipient species---i.e., was the change that the source species experienced ``good'' or ``bad'' from the perspective of the recipient species?  Both relationships, competition and predation, inhibit the growth of the recipient species because the source species either consumes the recipient species itself or its resources.  Therefore, if source species biomass decreases, then the recipient species biomass may be able to grow more.  Of course, other species may be dampening the growth of the recipient species, so the recipient species may not necessarily experience a growth, but the potential is there.  Conversely, if the source species biomass increases, then the recipient species may suffer more and experience a decrease in biomass.  Therefore, it was necessary to indicate the signage of a dynamic arc.  We chose to use plus signs ($+$) for the cases where $w$ is negative---i.e., when the source species declines between forecasts which is ``good'' for the recipient species---and minus sign ($-$) for the cases where $w$ is positive---i.e., when the source species increases between forecasts which is ``bad'' for the recipient species---as Kadaba et al.\ used in their static causal visualizations \cite{kadaba2007}.  Plus signs were drawn in black and minus signs were drawn in white with a black outline to allow for some redundant coding.  Several sign glyphs are drawn along each arc to allow the user to easily determine the signage of a dynamic arc.
+
+
 
 \subsubsection{Dynamic with Animation}
 
