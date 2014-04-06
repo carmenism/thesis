@@ -1,7 +1,7 @@
-\documentclass[11pt,doublespace]{unhthesis}
-
-%\usepackage[T1]{fontenc}
-
+%\documentclass[11pt,doublespace]{unhthesis}
+\documentclass[11pt]{report}
+\usepackage{unhthesis}
+\usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -14,14 +14,15 @@
 
 \begin{document}
 
-\title{Using Interactive Visualization to Enhance Understanding of a Fisheries Model} 
-\author{Carmen St.\ Jean}                               % Your name
-\prevdegrees{B.S., University of New Hampshire (2010)}  % Your old degree
-\major{Computer Science}                                % Your new major
-\degree{Master of Science}                              % Your new degree
-\degreemonth{May}                                       % When awarded.
-\degreeyear{2014}                                       %
-\thesisdate{March 13, 2014}                            % Date of document.
+
+\title{Using Interactive Visualization to Enhance Understanding of a Fisheries Model}     % Your title
+\author{Carmen Rose St.\ Jean}				   % Your name
+\prevdegrees{B.S., University of New Hampshire, 2010}
+\major{Computer Science}				   % Your new major
+\degree{Master of Science}				   % Your new degree
+\degreemonth{May}					   % When awarded.
+\degreeyear{2014}					   %
+\thesisdate{\today}					   % Date of document.
 \DOCUMENTtype{THESIS}                          % or DISSERTATION
 \Documenttype{Thesis}                          % or Dissertation
 \documenttype{thesis}                          % or dissertation
@@ -51,11 +52,15 @@
 %     This is the foreword.                              % Delete these if
 %\end{foreword}                                          % no foreword page.
 
-                                                        % OTHER PAGES
-                                                        %======================
-\tableofcontents                                        % Always needed...
-%\listoftables                                           % Delete if no tables.
-\listoffigures   
+							%======================
+\tableofcontents					% Always needed...}
+%\listoftables						% Delete if no tables.
+%\addcontentsline{toc}{section}{LIST OF TABLES}
+\listoffigures						% Delete if no figures.
+\addcontentsline{toc}{section}{LIST OF FIGURES}
+
+\pagenumbering{arabic}
+\renewcommand{\thepart}{{\Roman{part}}}
 
 \include{intro}                       
 %\include{chapter2} 
