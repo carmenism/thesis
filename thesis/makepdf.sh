@@ -4,4 +4,5 @@ bibtex $1
 latex $1
 latex $1
 dvips -Ppdf $1
-dvipdf $1
+#dvipdf $1
+ps2pdf $1.ps
