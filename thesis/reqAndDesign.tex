@@ -264,7 +264,7 @@ Dynamic harvest spline curves, as in Figure~\ref{fig:arcs_dynamic_animated}, are
 	\label{fig:uncertainty}
 \end{figure}
 
-Since models are simplifications of reality, their output is best understood as a range of expected values.  It is possible that a representation of uncertainty may aid decision making.  To add uncertainty visualization to the MS-PROD model, our interface can perform Monte Carlo simulations by jittering the non-zero input parameter values $\pm 10\%$ with a normal distribution.
+Since models are simplifications of reality, their output is best understood as a range of expected values.  It is possible that a representation of uncertainty may aid decision making.  To add uncertainty visualization to the MS-PROD model, our interface can perform Monte Carlo simulations by jittering the non-zero input parameter values $\pm 10\%$ using a normal distribution.
 
 The resulting uncertainty can be displayed in four styles.  First, a multi-line option shows the uncertainty by drawing one semi-transparent line for each run of the Monte Carlo simulation, as in Figure~\ref{fig:uncertaintyStreak}. This was inspired by Cox et al.'s new method for displaying hurricane tracks \cite{cox2013}.  The second option displays a traditional box plot every five years, as in Figure~\ref{fig:uncertaintyBoxplots}.  Third, in Figure~\ref{fig:uncertaintyErrorbars}, a summary line is drawn, with bars every five years.  Lastly, Figure~\ref{fig:uncertaintyErrorbands} shows a summary line in solid black line with bands.
 
