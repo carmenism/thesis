@@ -15,13 +15,13 @@ Both the short- and long-term effects of human exploitation on an ocean ecosyste
 
 \subsection{Lotka-Volterra Equations}
 
-Ecosystem models are abstract representations of an ecological system, and can range from an individual species in its environment to an entire community of species.  A classic example is the Lotka-Volterra model, which is a pair of differential equations for describing the non-linear interactions between a predator species and a prey species. \cite{lotka1926, volterra1926}:
+Ecosystem models are abstract representations of an ecological system, and can range from an individual species in its environment to an entire community of species.  A classic example is the Lotka-Volterra model, which is a pair of differential equations for describing the non-linear interactions between a predator species and a prey species \cite{lotka1926, volterra1926}:
 
 \begin{align}
    \frac{d N_1}{dt} &=   N_1 \left(\alpha - \beta  N_2\right) 
 \\ \frac{d N_2}{dt} &= - N_2 \left(\gamma - \delta N_1\right)
 \end{align}
-where $N_1$ is the number of prey, $N_2$ is the number of predator, $t$ is time, $\alpha$ is the prey's growth rate, $\beta$ is the rate at which the predator destroys the prey, $\gamma$ is the death rate of the predator, and $\delta$ is the rate at which the predator increases from consuming the prey.  The model can be generalized to discuss an arbitrary number of species rather than just a single pair.
+where $N_1$ is the number of prey animals, $N_2$ is the number of predator animals, $t$ is time, $\alpha$ is the prey animals' growth rate, $\beta$ is the rate at which the predators destroys the prey animals, $\gamma$ is the death rate of the predators, and $\delta$ is the rate at which the predators increase from consuming the prey animals.  The model can be generalized to discuss an arbitrary number of species rather than just a single pair.
 
 The Lotka-Volterra model can be modified to take competition instead of predation into account, as in the Rosenzweig-MacArthur model \cite{rosenzweig1963} and the Leslie-Gower model \cite{leslie1960}.  These adaptations to the model also consider carrying capacity, which is the maximum number of a species that can be sustained indefinitely in a particular environment:
 
@@ -45,7 +45,7 @@ Simple models, when available and correct, are generally preferred; since fewer 
 The MS-PROD model forecasts biomass for species separated into functional groups, which are biological groupings of species that perform similar functions within their ecosystem.  The model is built upon the Schaefer production model and also includes Lotka-Volterra terms for predation, Leslie-Gower terms for competition, and carrying capacities for functional groups ($K_G$) as well as for the entire system ($K_{\sigma}$):
 
 \begin{align}
-\frac{d N_i}{dt} &= r_i N_i \left(1 - \frac{N_i}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^g \beta_{ij} N_j}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^G \beta_{ij} N_j}{K_{\sigma} - K_G}\right) - N_i \displaystyle\sum\limits_{j=1}^P \alpha_{ij} N_j - H_i N_i
+\frac{d N_i}{dt} &= \underbrace{r_i}_\text{Growth rate} N_i \left(\underbrace{1 - \underbrace{\frac{N_i}{K_G}}_\text{Carrying capacity}}_\text{Prevents infinite growth} - \underbrace{\frac{\displaystyle\sum\limits_{j=1}^g \beta_{ij} N_j}{K_G} - \frac{\displaystyle\sum\limits_{j=1}^G \beta_{ij} N_j}{K_{\sigma} - K_G}}_\text{Competition} \right) - \underbrace{N_i \displaystyle\sum\limits_{j=1}^P \alpha_{ij} N_j}_{Predation} - \underbrace{H_i N_i}_\text{Harvest}
 \end{align}
 where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r_i$ is growth rate for species $i$, $\beta_{ij}$ is the competition of species $j$ on $i$, $\alpha_{ij}$ is the predation of species $j$ on $i$, $H_i$ is the harvest rate on species $i$, $g$ is the number of species within species $i$'s group, $G$ is the number of groups, and $P$ is the number of predators.
 
