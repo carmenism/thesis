@@ -1,4 +1,3 @@
-%\documentclass[11pt,doublespace]{unhthesis}
 \documentclass[11pt]{report}
 \usepackage{unhthesis}
 \usepackage{amssymb}
@@ -8,6 +7,10 @@
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage{enumerate}
+\usepackage{natbib}
+
+\renewcommand{\citep}[1]{\citeauthor{#1}~(\citeyear{#1})}
+\renewcommand{\cite}[1]{(\citeauthor{#1},~\citeyear{#1})}
 
 \hyphenation{Hu-go}
 %\hyphenation{Mi-s\'e-ra-bles}
@@ -66,7 +69,7 @@
 \include{evaluation}
 
 
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 
 \bibliography{sources}
 
