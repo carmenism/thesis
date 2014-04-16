@@ -8,9 +8,28 @@
 \usepackage{url}
 \usepackage{enumerate}
 \usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{mathtools}
+
 
 \renewcommand{\citep}[1]{\citeauthor{#1}~(\citeyear{#1})}
 \renewcommand{\cite}[1]{(\citeauthor{#1},~\citeyear{#1})}
+
+\makeatletter
+\newcommand{\redub}{}
+\def\redub#1{%
+  \@ifnextchar_%
+    {\@redub{#1}}
+    {\@latex@warning{Missing argument for \string\redub}\@redub{#1}_{}}%
+}
+\def\@redub#1_#2{%
+    \colorlet{currentcolor}{.}%
+    \color{red}%
+    \underbrace{\color{currentcolor}#1}_{\color{red}#2}%
+    \color{currentcolor}%
+}
+\makeatother
+
 
 \hyphenation{Hu-go}
 %\hyphenation{Mi-s\'e-ra-bles}
