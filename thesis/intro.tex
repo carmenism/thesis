@@ -7,7 +7,7 @@
 \renewcommand{\thepart}{{\Roman{part}}}				% <- Do this command only for
                                                 %    the first chapter!
 
-Fishery managers have only one ``lever'' to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Production models have been designed to help managers and fisherman understand the ecosystem they work within and the implications of their decisions.  In this context, a production model is a mathematical model, based on data, that simulates interactions between species and predicts species biomass as a function of fishing effort, climate change, and other variables.  MS-PROD is a multispecies production model developed by NOAA scientists Gamble and Link \cite{gamble2009}.  A visualization may enhance such a model by making its inner workings more explicit and may be useful for decision making. The goal of this research has been to explore design alternatives and evaluate the effectiveness of different modes of portrayal and interaction to make a visualization of the MS-PROD model that will be a valuable tool to the modelers and stakeholders alike. 
+Fishery managers have only one ``lever'' to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Production models have been designed to help managers and fisherman understand the ecosystem they work within and the implications of their decisions.  In this context, a production model is a mathematical model, based on data, that simulates interactions between species and predicts species biomass as a function of fishing effort, climate change, and other variables.  MS-PROD is a multispecies production model developed by NOAA scientists Gamble and Link \citeyearpar{gamble2009}.  A visualization may enhance such a model by making its inner workings more explicit and may be useful for decision making. The goal of this research has been to explore design alternatives and evaluate the effectiveness of different modes of portrayal and interaction to make a visualization of the MS-PROD model that will be a valuable tool to the modelers and stakeholders alike. 
 
 \section{Models}
 
@@ -38,7 +38,7 @@ Both Lotka-Volterra and Leslie-Gower do not incorporate a factor which is critic
 \end{align}
 where $N$ is the number (or biomass) of the species, $r$ is the growth rate, $K$ is the carrying capacity, $q$ is the catchability coefficient, and $E$ is the fishing effort.
 
-Simple models, when available and correct, are generally preferred; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, in reality, ecosystems are complex systems which require management that recognizes them as such \cite{christensen1996}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \cite{gamble2009}.
+Simple models, when available and correct, are generally preferred; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, in reality, ecosystems are complex systems which require management that recognizes them as such \cite{christensen1996}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \citeyearpar{gamble2009}.
 
 \subsection{The MS-PROD Model}
 
@@ -74,7 +74,7 @@ Fisheries management is focused on the sustainability of choices concerning fish
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/eps/PlayfairTimeSeries.eps}
-	\caption[Playfair's original time series chart.]{Playfair's original time series chart \citeyear{playfair}.  Public domain.}
+	\caption[Playfair's original time series chart.]{Playfair's original time series chart (\citeyear{playfair}).  Public domain.}
 	\label{fig:playfair}
 \end{figure}
 
@@ -103,11 +103,12 @@ The line chart was first invented by William Playfair in 1786 to communicate tim
 		\caption{Horizon graphs.}
 		\label{fig:ts_horizon}
 	\end{subfigure}
-	\caption[Four possible methods for visualizing multiple time series.]{Four possible methods for visualizing multiple time series.  Reprinted from ``Graphical perception of multiple time series'' by \citeauthor{javed2010} with permission.  \textcopyright  \citeyear{javed2010} IEEE.}% \cite{javed2010}.}
+	\caption[Four possible methods for visualizing multiple time series.]{Four possible methods for visualizing multiple time series.  Reprinted from \textit{IEEE Transactions on Visualization and Computer Graphics}, Vol 16, \citeauthor{javed2010}, Graphical perception of multiple time series, 927--934, \textcopyright \citeyear{javed2010}, with permission from IEEE.}
+
 	\label{fig:ts_compare}
 \end{figure}
 
-Multiple time series can be part of a single line chart; each series needs only to be distinguished by a color and/or line style.  However, as the number of time series on a single line chart increases, it becomes more difficult to identify an individual series.  Javed et al. evaluated the four different plotting techniques for multiple time series illustrated in Figure~\ref{fig:ts_compare} \cite{javed2010}.  The first of the techniques is the ``simple line chart,'' which was Playfair's original line chart with all series plotted together.  A slight variation on that is ``small multiples,'' where each series had its own line chart though all charts share the same axis scales.  Horizon graphs, originally developed by Saito et al., wrap around a baseline in two color tones to save space \cite{saitoTwoTone}.  Lastly, braided graphs feature all series on one chart with the coloring under the curves alternating as series intersect each other.  The user evaluation by Javed et al. revealed that a simple line graph with all time series on one plot or a single graph for each time series is better suited to a variety of tasks than a horizon graph or a braided graph.  They also found that users complete tasks more correctly when there is more display space allocated to the graphs.  They did not recommend using a higher number of simultaneous time series---their study used eight at the most---because it leads to a decline in correctness of task completion.
+Multiple time series can be part of a single line chart; each series needs only to be distinguished by a color and/or line style.  However, as the number of time series on a single line chart increases, it becomes more difficult to identify an individual series.  Javed et al. evaluated the four different plotting techniques for multiple time series illustrated in Figure~\ref{fig:ts_compare} \citeyearpar{javed2010}.  The first of the techniques is the ``simple line chart,'' which was Playfair's original line chart with all series plotted together.  A slight variation on that is ``small multiples,'' where each series had its own line chart though all charts share the same axis scales.  Horizon graphs, originally developed by Saito et al., wrap around a baseline in two color tones to save space \citeyearpar{saitoTwoTone}.  Lastly, braided graphs feature all series on one chart with the coloring under the curves alternating as series intersect each other.  The user evaluation by Javed et al. revealed that a simple line graph with all time series on one plot or a single graph for each time series is better suited to a variety of tasks than a horizon graph or a braided graph.  They also found that users complete tasks more correctly when there is more display space allocated to the graphs.  They did not recommend using a higher number of simultaneous time series---their study used eight at the most---because it leads to a decline in correctness of task completion.
 
 \begin{figure}
 	\centering
@@ -121,11 +122,11 @@ Multiple time series can be part of a single line chart; each series needs only 
 		\caption{Shape parameter of 0.074.}
 		\label{fig:ratioGood}
 	\end{subfigure}
-	\caption{Two effects of chart shape on Canadian lynx data \cite{cleveland1988}.}
+	\caption[Two effects of chart shape on Canadian lynx data.]{Two effects of chart shape on Canadian lynx data.  Reprinted from \textit{Journal of the American Statistical Association}, Vol 83, \citeauthor{cleveland1988}, The Shape Parameter of a Two-Variable Graph, 289--300, \textcopyright \citeyear{cleveland1988}, with permission from Taylor \& Francis.}
 	\label{fig:ratio}
 \end{figure}
 
-Some line charts are more effective at conveying the nature of the data than others because of the way different drawing techniques affect interpretability.  Cleveland et al. found the shape of a line chart---defined as the height of the chart divided by the width of the chart---to be a critical factor \cite{cleveland1988}.   The shape of the chart directly impacts the slopes of line segments, which viewers interpret in order to understand the dependence of the $y$ variable on the $x$ variable.  Figure~\ref{fig:ratioBad}, a time series of Canadian lynx trapping data, features a shape of 1.0 and seems to imply rapid increases and decreases in the population.  On the other hand, Figure~\ref{fig:ratioGood} has a shape of 0.074 and shows more clearly that the population rises somewhat steadily and declines somewhat rapidly, which Figure~\ref{fig:ratioBad} failed to show.  Their user evaluation found that judgment of two slopes is influenced by the orientation mid-angle, defined as the average of the minimum slope orientation and the maximum slope orientation.  They proposed line chart shape should be selected such that orientations are as close to $\pm 45 ^{\circ}$ as is possible, like in Figure~\ref{fig:ratioGood}.
+Some line charts are more effective at conveying the nature of the data than others because of the way different drawing techniques affect interpretability.  Cleveland et al. found the shape of a line chart---defined as the height of the chart divided by the width of the chart---to be a critical factor \citeyearpar{cleveland1988}.   The shape of the chart directly impacts the slopes of line segments, which viewers interpret in order to understand the dependence of the $y$ variable on the $x$ variable.  Figure~\ref{fig:ratioBad}, a time series of Canadian lynx trapping data, features a shape of 1.0 and seems to imply rapid increases and decreases in the population.  On the other hand, Figure~\ref{fig:ratioGood} has a shape of 0.074 and shows more clearly that the population rises somewhat steadily and declines somewhat rapidly, which Figure~\ref{fig:ratioBad} failed to show.  Their user evaluation found that judgment of two slopes is influenced by the orientation mid-angle, defined as the average of the minimum slope orientation and the maximum slope orientation.  They proposed line chart shape should be selected such that orientations are as close to $\pm 45 ^{\circ}$ as is possible, like in Figure~\ref{fig:ratioGood}.
 
 \begin{figure}
 \centering
@@ -133,7 +134,7 @@ Some line charts are more effective at conveying the nature of the data than oth
 		\centering
 		\includegraphics[height=5cm]{figures/eps/spiral.eps}
 
-\caption[Spiral time series.]{Spiral time series.  Reprinted from ``Visualizing time-series on spirals'' by \citeauthor{weber2001} with permission.  \textcopyright  \citeyear{weber2001} IEEE.}
+\caption[Spiral time series.]{Spiral time series.  Reprinted from \textit{IEEE Symposium on Information Visualization}, \citeauthor{weber2001}, Visualizing time-series on spirals, 7--13, \textcopyright \citeyear{weber2001}, with permission from IEEE.}
 
 		\label{fig:altSpiral}
 	\end{subfigure}	
@@ -142,7 +143,8 @@ Some line charts are more effective at conveying the nature of the data than oth
 		\includegraphics[height=5cm]{figures/eps/themeriver.eps}
 		%\caption{ThemeRiver time series.}
 
-\caption[ThemeRiver time series.]{ThemeRiver time series.  Reprinted from ``ThemeRiver: visualizing theme changes over time'' by \citeauthor{havre2000} with permission.  \textcopyright  \citeyear{havre2000} IEEE.}
+\caption[ThemeRiver time series.]{ThemeRiver time series.  Reprinted from \textit{IEEE Symposium on Information Visualization}, \citeauthor{havre2000}, ThemeRiver: visualizing theme changes over time, 115--123, \textcopyright \citeyear{havre2000}, with permission from IEEE.}
+
 		\label{fig:altThemeriver}
 	\end{subfigure}
 	\caption{Two alternative time series visualizations.}
@@ -151,7 +153,7 @@ Some line charts are more effective at conveying the nature of the data than oth
 
 \subsubsection{Alternatives}
 
-There are many alternatives to and variations of Playfair's original time series.  One example is Weber et al.'s spiral time series, seen in Figure~\ref{fig:altSpiral} \cite{weber2001}.  The spiral time series was designed for cyclic data.  Cycles are emphasized in a properly-parameterized spiral visualization, however it may be difficult to describe periodic behavior in unknown datasets or determine if that behavior even exists. Another example is the ThemeRiver by Havre et al, seen in Figure~\ref{fig:altThemeriver} \cite{havre2000}.  Each ``current'' in the ThemeRiver represents an entity or subject and must be of a distinctive color.  Positioning along the y-axis is meaningless, instead the abundance of the entity or subject over time is indicated by the width of the band of color.  The overall width of the stream is the sum of the widths of all individual bands. 
+There are many alternatives to and variations of Playfair's original time series.  One example is Weber et al.'s spiral time series, seen in Figure~\ref{fig:altSpiral} \citeyearpar{weber2001}.  The spiral time series was designed for cyclic data.  Cycles are emphasized in a properly-parameterized spiral visualization, however it may be difficult to describe periodic behavior in unknown datasets or determine if that behavior even exists. Another example is the ThemeRiver by Havre et al, seen in Figure~\ref{fig:altThemeriver} \citeyearpar{havre2000}.  Each ``current'' in the ThemeRiver represents an entity or subject and must be of a distinctive color.  Positioning along the y-axis is meaningless, instead the abundance of the entity or subject over time is indicated by the width of the band of color.  The overall width of the stream is the sum of the widths of all individual bands. 
 
 \subsection{Networks}
 
@@ -162,7 +164,7 @@ The input parameters to the MS-PROD model includes predation and competition mat
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.85\textwidth]{figures/eps/gaichas.eps}
-	\caption[A force-directed visualization of a food web of Gulf of Alaska data.]{A force-directed visualization of a food web of Gulf of Alaska data. Reprinted from \textit{Canadian Journal of Fisheries and Aquatic Sciences}, Vol 65, \citeauthor{gaichas2008}, ``Network models for ecosystem-based fishery analysis: a review of concepts and application to the Gulf of Alaska marine food web,'' 129-130, \textcopyright \citeyear{gaichas2008}, with permission from Elsevier.}
+	\caption[A force-directed visualization of a food web of Gulf of Alaska data.]{A force-directed visualization of a food web of Gulf of Alaska data. Reprinted from \textit{Canadian Journal of Fisheries and Aquatic Sciences}, Vol 65, \citeauthor{gaichas2008}, Network models for ecosystem-based fishery analysis: a review of concepts and application to the Gulf of Alaska marine food web, 129--130, \textcopyright \citeyear{gaichas2008}, with permission from Elsevier.}
 	\label{fig:gaichas}
 \end{figure}
 
@@ -173,7 +175,7 @@ The input parameters to the MS-PROD model includes predation and competition mat
 %	\label{fig:forcedirected}
 %\end{figure}
 
-One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \cite{gaichas2008}.  Here, the nodes represent an individual species in the Gulf of Alaska, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships.  Depending on the size of the network, a force-directed layout can be dense, like in Figure~\ref{fig:gaichas}, making it difficult to discern individual nodes or links.  Interactive methods can alleviate this by allowing the user to zoom or to click a node and see only the subset of the network directly connected to that node.
+One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \citeyearpar{gaichas2008}.  Here, the nodes represent an individual species in the Gulf of Alaska, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships.  Depending on the size of the network, a force-directed layout can be dense, like in Figure~\ref{fig:gaichas}, making it difficult to discern individual nodes or links.  Interactive methods can alleviate this by allowing the user to zoom or to click a node and see only the subset of the network directly connected to that node.
 
 \subsubsection{Arc Diagrams}
 
@@ -184,7 +186,7 @@ One option for showing fish species interactions would be to use a force-directe
 	\label{fig:arcdiagram}
 \end{figure}
 
-An alternative for force-directed layout is an arc diagram.  The name arc diagram was coined by Wattenberg \cite{wattenberg2002}, though they were invented earlier.  Knuth used arc diagrams to illustrate interaction of characters in Victor Hugo's novel \textit{Les} \textit{Mis\'erables}, seen in Figure~\ref{fig:arcdiagram} \cite{knuth1993}.  Each character is represented with a circular node, where size indicates the number of appearances in the novel.  The nodes are arranged linearly, colored and ordered according to clusters of characters that appear together frequently.  Semi-transparent arcs are drawn between the characters which appear in the same chapter, with the thickness of the arc representing the number of such appearances.  While the arc diagram may fail to properly depict the structure of a network, Heer et al. point out it is advantageous because the one-dimensionality allows for other features to be easily displayed near the nodes \cite{heer2010}, such as text labels.
+An alternative for force-directed layout is an arc diagram.  The name arc diagram was coined by Wattenberg \citeyearpar{wattenberg2002}, though they were invented earlier.  Knuth used arc diagrams to illustrate interaction of characters in Victor Hugo's novel \textit{Les} \textit{Mis\'erables}, seen in Figure~\ref{fig:arcdiagram} \citeyearpar{knuth1993}.  Each character is represented with a circular node, where size indicates the number of appearances in the novel.  The nodes are arranged linearly, colored and ordered according to clusters of characters that appear together frequently.  Semi-transparent arcs are drawn between the characters which appear in the same chapter, with the thickness of the arc representing the number of such appearances.  While the arc diagram may fail to properly depict the structure of a network, Heer et al. point out it is advantageous because the one-dimensionality allows for other features to be easily displayed near the nodes \citeyearpar{heer2010}, such as text labels.
 
 \subsubsection{Directed Edges}
 
@@ -195,7 +197,7 @@ An alternative for force-directed layout is an arc diagram.  The name arc diagra
 	\label{fig:directedEdges}
 \end{figure}
 
-Relationships in a network may be directional, such as the predator-prey relationship.  In a visualization of such a network, the direction of the edges must be encoded so these relationships can be understood.  Holten and van Wijk studied the effectiveness of different techniques for indicating directionality of edges in a graph, seen in Figure~\ref{fig:directedEdges} \cite{holten2009}.  The traditional arrowhead was found to perform poorly, while tapered edges performed best.  As for an intensity-based direction cue, a dark-to-light representation was found to be clearer than light-to-dark.
+Relationships in a network may be directional, such as the predator-prey relationship.  In a visualization of such a network, the direction of the edges must be encoded so these relationships can be understood.  Holten and van Wijk studied the effectiveness of different techniques for indicating directionality of edges in a graph, seen in Figure~\ref{fig:directedEdges} \citeyearpar{holten2009}.  The traditional arrowhead was found to perform poorly, while tapered edges performed best.  As for an intensity-based direction cue, a dark-to-light representation was found to be clearer than light-to-dark.
 
 \subsubsection{Matrix Representations}
 
@@ -206,7 +208,7 @@ Relationships in a network may be directional, such as the predator-prey relatio
 	\label{fig:matrix}
 \end{figure}
 
-Node-link diagrams can have occlusion problems when they are highly-connected, so a matrix-based representation of a network is a possible alternative \cite{heer2010}.  In many cases, networks are stored as an adjacency matrix, so all that needs to be done is visualize that matrix as a grid, where the cell at the $i$th row and the $j$th column represents the relationship from entity $i$ to entity $j$.  Figure~\ref{fig:matrix} shows Knuth's visualization of \textit{Les} \textit{Mis\'erables} characters in matrix-form \cite{knuth1993}.  The color of the cell indicates the presence or type of a relationship, with some neutral color indicating the lack of a relationship.  Ghoniem et al. showed that a matrix-based view is suitable for large or dense networks for tasks that involve finding or counting links or nodes \cite{ghoniem2004}.  With proper ordering of the rows and columns, the structure of the network can be effectively displayed, however path-finding tasks may be difficult.
+Node-link diagrams can have occlusion problems when they are highly-connected, so a matrix-based representation of a network is a possible alternative \cite{heer2010}.  In many cases, networks are stored as an adjacency matrix, so all that needs to be done is visualize that matrix as a grid, where the cell at the $i$th row and the $j$th column represents the relationship from entity $i$ to entity $j$.  Figure~\ref{fig:matrix} shows Knuth's visualization of \textit{Les} \textit{Mis\'erables} characters in matrix-form \cite{knuth1993}.  The color of the cell indicates the presence or type of a relationship, with some neutral color indicating the lack of a relationship.  Ghoniem et al. showed that a matrix-based view is suitable for large or dense networks for tasks that involve finding or counting links or nodes \citeyearpar{ghoniem2004}.  With proper ordering of the rows and columns, the structure of the network can be effectively displayed, however path-finding tasks may be difficult.
 
 \subsection{Causality}
 
@@ -234,12 +236,12 @@ Gamble and Link found that both inter-species relationships and harvesting by hu
 	\end{subfigure}
 	%\caption{Three metaphors for conveying causality \cite{ware1999}.}
 
-\caption[Three metaphors for conveying causality.]{Three metaphors for conveying causality.  Reprinted from ``Visualizing causal relations'' by \citeauthor{ware1999} with permission.  \textcopyright  \citeyear{ware1999} IEEE.}
+\caption[Three metaphors for conveying causality.]{Three metaphors for conveying causality.  Reprinted from \textit{IEEE Symposium on Information Visualization: Late Breaking Hot Topics}, \citeauthor{ware1999}, Visualizing causal relations, 39--42, \textcopyright \citeyear{ware1999}, with permission from IEEE.}
 
 	\label{fig:vcv}
 \end{figure}
 
-Michotte and Thin\'es suggested that viewers infer causality after viewing an object being set into motion after being struck by another object \cite{michotte1963}.  This served as a basis for Ware et al.'s visual causality vector (VCV), which communicates causal relationships between two nodes in a network visualization \cite{ware1999}.  They studied how several animated metaphors---shown in Figure~\ref{fig:vcv}---and different timing rules for a VCV affect the perception of causality.  Their evaluation showed that temporal synchrony between the animation of the metaphor and the changes in the recipient node is more critical than the type of metaphor for showing causal relationships.  Ware later revisited this work in the context of multi-touch screens to convey causal effect enhancements, causal effect reductions, and causal blocking effects using colored pulses \cite{ware2013}.  The user evaluation conducted by Ware showed that causal blocking effects and positive enhancements were well understood with this design, while negative causal effects were less reliably judged.  Still, these methods were recommended for showing simple causal relationships.
+Michotte and Thin\'es suggested that viewers infer causality after viewing an object being set into motion after being struck by another object \citeyearpar{michotte1963}.  This served as a basis for Ware et al.'s visual causality vector (VCV), which communicates causal relationships between two nodes in a network visualization \citeyearpar{ware1999}.  They studied how several animated metaphors---shown in Figure~\ref{fig:vcv}---and different timing rules for a VCV affect the perception of causality.  Their evaluation showed that temporal synchrony between the animation of the metaphor and the changes in the recipient node is more critical than the type of metaphor for showing causal relationships.  Ware later revisited this work in the context of multi-touch screens to convey causal effect enhancements, causal effect reductions, and causal blocking effects using colored pulses \citeyearpar{ware2013}.  The user evaluation conducted by Ware showed that causal blocking effects and positive enhancements were well understood with this design, while negative causal effects were less reliably judged.  Still, these methods were recommended for showing simple causal relationships.
 
 \begin{figure}
 \centering
@@ -256,13 +258,12 @@ Michotte and Thin\'es suggested that viewers infer causality after viewing an ob
 		\label{fig:kadabaAnimated}
 	\end{subfigure}
 	%\caption{Two alternatives for visualizing causal influences \cite{kadaba2007}.}
-\caption[Two alternatives for visualizing causal influences.]{Two alternatives for visualizing causal influences.  Reprinted from ``Visualizing causal semantics using animations'' by \citeauthor{kadaba2007} with permission.  \textcopyright  \citeyear{kadaba2007} IEEE.}
-
+\caption[Two alternatives for visualizing causal influences.]{Two alternatives for visualizing causal influences.  Reprinted from \textit{IEEE Transactions on Visualization and Computer Graphics}, Vol. 13, \citeauthor{kadaba2007}, Visualizing Causal Semantics using Animations, 1254--1261, \textcopyright \citeyear{kadaba2007}, with permission from IEEE.}
 
 	\label{fig:kadaba}
 \end{figure}
 
-Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static and animated causal visualizations \cite{kadaba2007}.  In their static design, positive influences were indicated with a plus sign ($+$) glyph and negative influences were indicated with a minus sign ($-$) glyph attached to the link between two entities in the network, as in Figure~\ref{fig:kadabaStatic}.  The size of the glyph represented the magnitude of the influence on the recipient node and glyphs of the same color described a multiplication effect on the recipient.   Their animated design featured bullets traveling along the links toward the recipient node to indicate causal influences, shown in Figure~\ref{fig:kadabaAnimated}.  As a bullet hit the recipient node, the size of the recipient node changed.  They found that subjects can interpret animated and static representations equally accurately, but subjects formed responses slightly quicker with animated representations.
+Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static and animated causal visualizations \citeyearpar{kadaba2007}.  In their static design, positive influences were indicated with a plus sign ($+$) glyph and negative influences were indicated with a minus sign ($-$) glyph attached to the link between two entities in the network, as in Figure~\ref{fig:kadabaStatic}.  The size of the glyph represented the magnitude of the influence on the recipient node and glyphs of the same color described a multiplication effect on the recipient.   Their animated design featured bullets traveling along the links toward the recipient node to indicate causal influences, shown in Figure~\ref{fig:kadabaAnimated}.  As a bullet hit the recipient node, the size of the recipient node changed.  They found that subjects can interpret animated and static representations equally accurately, but subjects formed responses slightly quicker with animated representations.
 
 \subsection{Uncertainty}
 
@@ -280,14 +281,17 @@ Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static an
 		\caption{Cox et al.'s method.}
 		\label{fig:uncertaintyHouse}
 	\end{subfigure}
-	\caption{Two visualizations of uncertainty for a hurricane advisory \cite{cox2013}.}
+	%\caption{Two visualizations of uncertainty for a hurricane advisory \cite{cox2013}.}
+
+\caption[Two visualizations of uncertainty for a hurricane advisory.]{Two visualizations of uncertainty for a hurricane advisory.  Reprinted from \textit{International Journal for Uncertainty Quantification}, Vol. 3, \citeauthor{cox2013}, Visualizing Uncertainty in Predicted Hurricane Tracks, 143--156, \textcopyright \citeyear{cox2013}, with permission from Begell House, Inc.}
+
 	\label{fig:uncertaintyAlternatives}
 \end{figure}
 
 A model is a simplification of reality, therefore there are many reasons why it may be inaccurate.  There may be inaccurately estimated parameters used in the model, such as the predation matrix coeffecients or the starting values for the numbers of fish species.  Furthemore, relevant factors may not have been taken into account when designing the model, such as climate.  Inaccuracies may even result from approximation techniques, such as the use of a Runge-Kutta method.  Therefore, it is common for a model's output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuracies when the correct answer is known, while \textit{uncertainty} describes inaccuracies when the answer is unknown \cite{hunter1993}.  Due to uncertainty, model output is best understood as a range of expected values which is likely to contain the true value.  According to Potter et al., scientific data should be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated some different portrayals of uncertainty.
 %Uncertainty can arise at several stages---the conceptualization of the model, the collection of the model input, or due to data transformations \cite{}.
 
-Cox et al. explored methods for depicting uncertainty for hurricane advisories \cite{cox2013}.  The traditional error cone, as in Figure~\ref{fig:uncertaintyCone}, is used by NOAA's National Hurricane Center, but it can be poorly understood by the average citizen.  They designed their own alternative representation, as in Figure~\ref{fig:uncertaintyHouse}, where many possible hurricane tracks are drawn to describe the range of possible outcomes.  Their user evaluation found that neither method was significantly better than the other for all cases, but a qualitative analysis showed that nearly all users prefer their new method over the error cone.
+Cox et al. explored methods for depicting uncertainty for hurricane advisories \citeyearpar{cox2013}.  The traditional error cone, as in Figure~\ref{fig:uncertaintyCone}, is used by NOAA's National Hurricane Center, but it can be poorly understood by the average citizen.  They designed their own alternative representation, as in Figure~\ref{fig:uncertaintyHouse}, where many possible hurricane tracks are drawn to describe the range of possible outcomes.  Their user evaluation found that neither method was significantly better than the other for all cases, but a qualitative analysis showed that nearly all users prefer their new method over the error cone.
 
 \section{Understanding Models}
 
@@ -313,7 +317,7 @@ Users studying models can benefit from the aid of a visualization, because patte
 	\label{fig:spreadsheets}
 \end{figure}
 
-VisiCalc was a very early example of software assisting the understanding of models through visualizations \cite{grad2007}.  As a business student, Bricklin wished there was a faster way to change the input or fix mistakes when working out financial models by hand \cite{bricklin1999}.  To address this, he worked with Frankston to develop VisiCalc, seen in Figure~\ref{fig:visicalc}.  As the world's first electronic spreadsheet, VisiCalc consisted of rows and columns containing either text, numerical values, or formulas.  Result cells were instantly updated according to changed inputs or adjusted formulas, allowing a user to work with models in a more efficient and dynamic manner.  VisiCalc was superseded by Lotus 1-2-3, which was in turn supplanted by Microsoft Excel.  Microsoft Excel remains popular and features graphing tools which can generate charts, such as in Figure~\ref{fig:excel}.
+VisiCalc was a very early example of software assisting the understanding of models through visualizations \cite{grad2007}.  As a business student, Bricklin wished there was a faster way to change the input or fix mistakes when working out financial models by hand \citeyearpar{bricklin1999}.  To address this, he worked with Frankston to develop VisiCalc, seen in Figure~\ref{fig:visicalc}.  As the world's first electronic spreadsheet, VisiCalc consisted of rows and columns containing either text, numerical values, or formulas.  Result cells were instantly updated according to changed inputs or adjusted formulas, allowing a user to work with models in a more efficient and dynamic manner.  VisiCalc was superseded by Lotus 1-2-3, which was in turn supplanted by Microsoft Excel.  Microsoft Excel remains popular and features graphing tools which can generate charts, such as in Figure~\ref{fig:excel}.
 
 \subsection{The Influence Explorer}
 
@@ -324,15 +328,15 @@ VisiCalc was a very early example of software assisting the understanding of mod
 	\label{fig:influenceExplorer}
 \end{figure}
 
-The Influence Explorer by Tweedie et al. is a good example of a more complex interactive visualization \cite{tweedie1995}.  They developed an interface for understanding the relationships between different attributes in a design process.  Design parameter values of the Influence Explorer are initially randomly selected in a Monte Carlo simulation to represent many different possible designs.  Each cell in the histogram is a simulation run.  For each attribute, there is a histogram including each of the items.  The attribute ranges are controlled by sliders.  When the user adjusts the slider of a given attribute, all items that are within that range are highlighted on all of the histograms.  Figure~\ref{fig:influenceExplorer} is a screenshot of the Influence Explorer being used to test the performance of different light bulb designs; white indicates the design passed, black it failed one specification, and grey it failed two specifications.  In a user evaluation, industrial designers found the ability to interactively explore the effects of different parameter ranges to be valuable.
+The Influence Explorer by Tweedie et al. is a good example of a more complex interactive visualization \citeyearpar{tweedie1995}.  They developed an interface for understanding the relationships between different attributes in a design process.  Design parameter values of the Influence Explorer are initially randomly selected in a Monte Carlo simulation to represent many different possible designs.  Each cell in the histogram is a simulation run.  For each attribute, there is a histogram including each of the items.  The attribute ranges are controlled by sliders.  When the user adjusts the slider of a given attribute, all items that are within that range are highlighted on all of the histograms.  Figure~\ref{fig:influenceExplorer} is a screenshot of the Influence Explorer being used to test the performance of different light bulb designs; white indicates the design passed, black it failed one specification, and grey it failed two specifications.  In a user evaluation, industrial designers found the ability to interactively explore the effects of different parameter ranges to be valuable.
 
 \subsection{Vensim}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=6cm]{figures/eps/vensim.eps}
-	\caption[A screenshot of the strip graphs in Vensim.]{A screenshot of the strip graphs in Vensim.  Reprinted from \textit{European Journal of Operational Research}, Vol 59, \citeauthor{eberlein1992}, ``Understanding models with Vensim\texttrademark,'' 216-219, \textcopyright  \citeyear{eberlein1992}, with permission from Elsevier.}
+	\caption[A screenshot of the strip graphs in Vensim.]{A screenshot of the strip graphs in Vensim.  Reprinted from \textit{European Journal of Operational Research}, Vol 59, \citeauthor{eberlein1992}, Understanding models with Vensim\texttrademark, 216--219, \textcopyright  \citeyear{eberlein1992}, with permission from Elsevier.}
 	\label{fig:vensim}
 \end{figure}
 
-Eberlein and Peterson recognized that both unskilled and skilled model users have the same need: to quickly obtain a thorough understanding of a model and its implications \cite{eberlein1992}.  This motivated their development of Vensim, which is a commercial tool for visualizing and analyzing simulation results.  Vensim allows users to run a model under different conditions with a simple mouse click, enabling the user to learn the effects of different actions with ease.  Various features enhance this learning process---e.g., ``causal tracing'' strip graphs, shown in Figure~\ref{fig:vensim}.  Rather than simply seeing a chart of the projected population, a user exploring the causal tracing feature can begin to understand the various components that contributed to the population simulations---births and deaths---by seeing each component on its own chart.  A major emphasis of Eberlein and Peterson is that the same visualization tool can and should be used for both the development and teaching phases of a model, especially since those phases may not be discrete.
+Eberlein and Peterson recognized that both unskilled and skilled model users have the same need: to quickly obtain a thorough understanding of a model and its implications \citeyearpar{eberlein1992}.  This motivated their development of Vensim, which is a commercial tool for visualizing and analyzing simulation results.  Vensim allows users to run a model under different conditions with a simple mouse click, enabling the user to learn the effects of different actions with ease.  Various features enhance this learning process---e.g., ``causal tracing'' strip graphs, shown in Figure~\ref{fig:vensim}.  Rather than simply seeing a chart of the projected population, a user exploring the causal tracing feature can begin to understand the various components that contributed to the population simulations---births and deaths---by seeing each component on its own chart.  A major emphasis of Eberlein and Peterson is that the same visualization tool can and should be used for both the development and teaching phases of a model, especially since those phases may not be discrete.
