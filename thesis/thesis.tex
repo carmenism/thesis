@@ -11,7 +11,11 @@
 \usepackage{xcolor}
 \usepackage{mathtools}
 \usepackage{textcomp}
-\usepackage{bibentry}
+%\usepackage{bibentry}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{pdfpages}
 
 \renewcommand{\citep}[1]{\citeauthor{#1}~(\citeyear{#1})}
 \renewcommand{\cite}[1]{(\citeauthor{#1},~\citeyear{#1})}
@@ -82,15 +86,15 @@
 \listoffigures						% Delete if no figures.
 \addcontentsline{toc}{section}{LIST OF FIGURES}
 
-\include{intro}                       
-%\include{chapter2} 
-\include{reqAndDesign} 
-%\include{chapter4}
+\include{intro}
+\include{reqAndDesign}
 \include{evaluation}
 
+%\include{appendices}
 
 \bibliographystyle{plainnat}
 
 \bibliography{sources}
+
 
 \end{document}
