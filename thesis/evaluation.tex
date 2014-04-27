@@ -4,29 +4,7 @@ The intention behind this work has been to develop an interactive visualization 
 
 \section{Formal Evaluation of Dynamic Arcs}
 
-We were interested in how different visualization alternatives enhance a user's understanding of the complex relationships between the fish species and the effects of those relationships.  In other words, is there a benefit to using dynamic, animated arcs---the most complicated representation of the relationships---over another method or even displaying no arcs at all?  To investigate this question, we designed and conducted a user study to the performance of different arc depiction alternatives.
-
-Our hypothesis was that the condition which features no arcs would be the least effective, as it requires the user to guess why indirect or unexpected changes in biomass occured.  We also hypothesized that the dynamic arcs would be more effective than the static arcs, because dynamic arcs filter to show the relevant information, while static arcs show all information at once which could be overwhelming.  Finally, we hypothesized that the animated, dynamic arcs would be at least slightly more effective than the non-animted, dynamic arcs, since they have more visual cues for directionality.
-
-\subsection{Method}
-
-The study was conducted at a screened-off table in a student union building at the University of New Hampshire.  A paid undergraduate research assistant conducted the study.
-
-The research assistant explained the MS-PROD model and our visualization, and showed a training example before leaving the participant to the experiment.  Feedback was received only during the traiing phase.  A single experiment lasted approximately ten minutes.
-
-Responses from the study were graded by two paid undergraduate research assistants.
-
-\subsection{Participants}
-
-There were 80 participants who took part in the study, all of which were recruited by a poster affixed to the backside of the privacy screen.  Participants were voluntary and were compensated with a pack of pens or a notebook.  They were required to read and sign an IRB consent form before participating in the study.
-
-\subsection{Apparatus}
-
-We conducted the experiment using a standard Dell laptop with an extra Dell monitor.  The window with the model visualization was maximized on the extra screen, while the window with the experiment questions was maximized on the laptop screen.  Participants used the mouse to interact with the model visualization and recorded their answers using the laptop keyboard.
-
-\subsection{Experimental Conditions}
-
-Each participant conducted the experiment task for only one of the four conditions:
+We were interested in how different visualization alternatives enhance a user's understanding of the complex relationships between the fish species and the effects of those relationships.  In other words, is there a benefit to using dynamic, animated arcs---the most complicated representation of the relationships---over another method or even displaying no arcs at all?  To investigate this question, we designed and conducted a user study to the performance of different arc depiction alternatives.  The experimental conditions were as follows:
 
 \begin{enumerate}[(A)]
 \item No arcs
@@ -35,7 +13,21 @@ Each participant conducted the experiment task for only one of the four conditio
 \item Dynamic arcs with animation
 \end{enumerate}
 
-Explanations and training phases were tailored according to the experimental condition---e.g., arcs were explained only for conditions B, C, and D; dynamic arcs were explained only for conditions C and D.
+Our hypothesis was that the Condition A would be the least effective, as it requires the user to guess why indirect or unexpected changes in biomass occurred since no arcs are drawn.  We also hypothesized that Condition C and Condition D would be more effective than Condition B, because dynamic arcs filter to show the relevant information, while static arcs show all information at once which could be overwhelming.  Finally, we hypothesized that Condition D would be at least slightly more effective than Condition C, since there are more visual cues for directionality with the animated arcs versus the non-animated arcs.
+
+\subsection{Method}
+
+The study was conducted at a screened-off table in a student union building at the University of New Hampshire.  A paid undergraduate research assistant conducted the study and responses from the study were graded by two paid undergraduate research assistants.
+
+The research assistant conducting the experiment explained the MS-PROD model and our visualization, and showed a training example before leaving the participant to the experiment.  Each participant conducted the experiment task for only one of the four conditions.  Explanations and training phases were tailored according to the experimental condition---e.g., arcs were explained only for conditions B, C, and D; the meaning of dynamic arcs were explained only for conditions C and D.  Feedback was received only during the training phase.  A single experiment lasted approximately fifteen minutes.
+
+\subsection{Apparatus}
+
+We conducted the experiment using a standard Dell laptop with an extra Dell monitor.  The window with the model visualization was maximized on the extra screen, while the window with the experiment questions was maximized on the laptop screen.  Participants used the mouse to interact with the model visualization and recorded their answers using the laptop keyboard.
+
+\subsection{Participants}
+
+There were 80 participants who took part in the study, all of which were recruited by a poster affixed to the backside of the privacy screen.  They could have been undergraduate or graduate students; we only required that participants had to be at least 18 years of age.  Participants were voluntary and were compensated with a pack of pens or a notebook.  They were required to read and sign an IRB consent form before participating in the study.
 
 \subsection{Task}
 
@@ -59,10 +51,11 @@ Users answered this question with one of five options from a drop-down menu:
 
 Finally, the user was asked, ``\textit{Why? [Try to explain in no more than three sentences.]}''  A large text box was provided for the participant to type a response.  If this question was the last question in its set, then the sliders are all reset to one and a new instruction is given for the next set of questions. 
 
-In total, there were three instructions and eight questions.  All participants were given the same instructions and asked the same questions in the same order, regardless of condition.
+In total, there were three instructions for adjusting the harvest effort and seven questions.  All participants were given the same instructions and asked the same questions in the same order, regardless of condition.
 
 \subsection{Results}
 
+(Coming soon)
 
 \section{Informal Evaluations}
 
@@ -74,7 +67,7 @@ Dr.\ Michael Fogerty and Robert Gamble---members of the NOAA's National Marine F
 
 Before we developed our visualization, they were using Microsoft Excel spreadsheets to graph the CSV output of the model after each run.  Therefore, they were excited to gain the abilities to (a) change fishing effort parameters and see an instantaneous result and (b) easily perceive differences between forecasts that resulted from changes in fishing effort.  Dr.\ Fogerty suggested that the user should be able to set the baseline forecast at any moment, which we implemented.  Mr.\ Gamble expressed interest in keeping all alternative depictions in the final visualization, as he liked the ability to toggle between the various options.  He said he could see himself using the small multiples view to understand the relationships between the species, while he might use the four-panel view to prepare figures for future publications.
 
-The feature that Dr.\ Fogerty and Mr.\ Gamble have been most enthusiastic about is the dynamic, animated arcs.  This feature was first demonstrated at a NMFS meeting on January 24, 2014.  Other members in attendance were also excited about the dynamic, animated arcs.  Mr.\ Gamble expressed that even sometimes he can become confused about the counter-intuitive effects of the underlying relationships and must refer to the predation and competition matrices in the original parameter file to understand them; the dynamic arcs eliminate the need for this extra work by making the relevant relationships more obvious.  Members in attendance were very interested in the potential to adapt the visualization to other models.  Furthemore, they believed the visualization would allow them to make convincing arguments to fishery managers or other import decision makers to use the MS-PROD model or similar models.
+The feature that Dr.\ Fogerty and Mr.\ Gamble have been most enthusiastic about is the dynamic, animated arcs.  This feature was first demonstrated at a NMFS meeting on January 24, 2014.  Other members in attendance were also excited about the dynamic, animated arcs.  Mr.\ Gamble expressed that even sometimes he can become confused about the counter-intuitive effects of the underlying relationships and must refer to the predation and competition matrices in the original parameter file to understand them; the dynamic arcs eliminate the need for this extra work by making the relevant relationships more obvious.  Members in attendance were very interested in the potential to adapt the visualization to other models.  Furthermore, they believed the visualization would allow them to make convincing arguments to fishery managers or other import decision makers to use the MS-PROD model or similar models.
 
 Dr.\ Michael Fogerty and Robert Gamble have been further developing the MS-PROD model to include types of fishing (e.g., bottom trawl, midwater trawl, long lines, dredges) with different catchabilities for each pair of fish species and fishing type.  They have also introduced climate factors (e.g., average sea floor temperature).  They have expressed interest in incorporating these new factors into the visualization, as well as the ability to include more species and/or functional groups.  Furthermore, Dr.\ Michael Fogerty is interested in developing a version of the visualization that is compatible with browsers for usage by the general public.
 
@@ -86,6 +79,6 @@ On April 1, 2014, we conducted an informal interview with David Goethel.  David 
 
 Mr.\ Goethel found both the small multiple and four panel views useful.  He did not have a preference over either view and said that he might choose which one to use depending on his intended audience or what he was investigating in the model.  Similarly, he said he liked all options for uncertainty visualization and would choose based on his audience; he might use error bands when presenting to the general public, but use box plots for fishery managers.  He had previously believed that stock assessments should be presented more like hurricane tracks, with multiple forecasts to show multiple opinions, therefore he found the range of forecasts shown in the uncertainty view to be particularly helpful.
 
-As for the different depictions of change, Mr.\ Goethel prefered the blended, shaded area between the two forecasts over instantaneous change only or the dotted line for the previous forecast.  He said he would always use the blended option because it was more informative.  For understanding the relationships between fish, he prefered the dynamic, animated arc over all other options.  This option allows the user to ``follow the flow [of the relationships] more easily,'' while he found it ``harder to see the conclusion'' of the effects of the harvest without animation.  He was excited to see a visualization of these relationships because they can be counter-intuitive even to someone with as much experience as him.
+As for the different depictions of change, Mr.\ Goethel preferred the blended, shaded area between the two forecasts over instantaneous change only or the dotted line for the previous forecast.  He said he would always use the blended option because it was more informative.  For understanding the relationships between fish, he preferred the dynamic, animated arc over all other options.  This option allows the user to ``follow the flow [of the relationships] more easily,'' while he found it ``harder to see the conclusion'' of the effects of the harvest without animation.  He was excited to see a visualization of these relationships because they can be counter-intuitive even to someone with as much experience as him.
 
 Overall, Mr.\ Goethel was interested in the model, saying that its visualization would help to convince people that more complex models like MS-PROD are necessary.  He said fishery managers typically prefer single species models and make decisions for ten-year periods.  However, Mr.\ Goethel finds it important to considering multiple species as well as other factors and to think about management for longer time periods, like MS-PROD.  He said that MS-PROD ``might reflect reality more,'' and our visualization might help to persuading managers of this.  He said he would recommend restricting access of the model to scientific community only for now and wait before presenting it to the general public.
