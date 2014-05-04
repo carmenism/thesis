@@ -1,0 +1,122 @@
+{\setlength{\parskip}{10pt plus 1pt minus 1pt} {\setlength{\parindent}{0cm}
+
+\subsection{Abstract}
+
+MS-PROD is an ecological fisheries model which models the biomass of fish over 30 years.  In the model, the biomass of each fish species depends on effects from harvesting and interactions with the other fish species.  Therefore, the visualization of this model requires representations for the biomass as well as the different inter-species relationships that impact the biomass.  We represent the biomasses over time with time series and the relationships with links between the different time series charts.  Users can interactively change the fishing levels to understand what fish species will be affected and why.  The purpose of this study is to explore the extent to which different depictions of inter-species relationships help to explain the complex inter-species relationships in an understandable manner.
+
+\subsection{Key}
+
+Here is a key for the different types of text in the Script and Training Example sections:
+
+\begin{itemize}
+\item \textit{Italic text indicates an instruction to the evaluation proctor.}
+\item \textit{\underline{Italic underlined text indicates an instruction to stop or start reading the} \\ \underline{instructions based on the experimental condition.}}
+\item Normal text indicates something the evaluation proctor should say out loud to the participant. 
+\end{itemize}
+
+\subsection{Conditions}
+
+There are four conditions in the experiment:
+
+\begin{enumerate}[(A)]
+\item No between-species links
+\item Static between-species links
+\item Dynamic between-species links
+\item Dynamic, animated between-species links
+\end{enumerate}
+
+\subsection{Script}
+
+[\textit{Run KRAKEN.exe and click the ``RUN'' button. Select the condition for the participant using the drop-down menu.}]
+
+Here we have a visualization for a model called MS-PROD, which predicts the effects of fishing on ten species, while also taking into account how the fish affect each other.  The purpose of this visualization is to help people understand how fishing impacts the fish over a few decades.
+
+MS-PROD is a mathematical model which makes 30-year biomass forecasts for ten species of fish.  Here you can see there are ten charts, one for each fish species.  [\textit{Point to the ten charts.}]
+
+We have time, measured in years, on the x-axis and biomass on the y-axis.  [\textit{Point to the x-axis of the bottom-most chart.}]  Biomass is the amount of a species in an ecosystem at a time, measured in Megatons.
+
+Since biomasses vary between species, each fish species has its own chart with its own y-axis scale.  [\textit{Motion to the different y-axes scales.}]  Therefore, these gray circles show the absolute size of the biomass to allow for comparisons between species.  [\textit{Motion to the gray biomass indicators.}]
+
+The biomass of an individual species is predicated by the MS-PROD model according to a few factors:
+
+\begin{itemize}
+\item growth of the species,
+\item losses due to harvesting by humans, and
+\item losses due to interactions with the other nine species
+\end{itemize}
+
+These ten species are divided into four functional groups.  A functional group is a biological grouping of species that perform similar functions within their ecosystem.  We have colored and positioned the ten species according to the functional groups [\textit{point toward each functional group}]:
+
+\begin{itemize}
+\item Elasmobranchs 
+\item Small pelagics 
+\item Groundfish
+\item Flatfish
+\end{itemize}
+
+The fish are harvested according to functional group.  The sliders on the left-hand side represent the harvest effort for each functional group.  [\textit{Point to the sliders.}]  The harvest effort represents how hard the fishermen are trying to catch the fish in that group.  Right now, all of the sliders are set to one.
+
+Changing a slider causes the model to instantaneously recalculate the biomass forecasts.  You can increase how hard the fishermen are trying by pulling the slider to the right and decrease by pulling to the left.  [\textit{Slowly pull the groundfish slider (green) down to 0.75 and up to 1.5.  Leave it at 1.5.}]
+
+We have drawn a shaded ``ghost'' to help you compare the current forecast with a ``baseline'' forecast.  The ``baseline'' forecast is from when all of the harvest efforts were set to one.  The ``ghost'' is drawn above or below the current forecast, extending toward the baseline forecast.
+
+[\textit{Motion to the large shaded area on the cod plot.}]  This shaded area shows us that cod’s biomass has decreased from the baseline forecast.
+
+[\textit{Motion to the blue rectangle under the slider.}] This marker helps us keep track of where the effort was before we changed it.  [\textit{Click the ``RESET'' button next to the groundfish slider.}]
+
+[\underline{\textit{Condition A ends here; resume at \textbf{Training Example}}}]
+
+%%%
+\fbox{%
+  \begin{minipage}{\textwidth}
+
+[\underline{\textit{Conditions B, C, and D continue}}]
+
+Before we mentioned that species face losses due to either harvesting from humans or because of interactions with other fish.  There are two types of interactions that occur between species:
+
+\begin{itemize}
+\item predation, which is when one species is consumed by another species, [\textit{motion to the orange arrows going between some of the charts}] and
+\item competition, which is when one species suffers due to its resources being consumed or utilized by another species [\textit{motion to the blue arrows going between some of the charts}]
+\end{itemize}
+
+These semi-circle links going between the charts indicate the presence of one of these relationships between two species.  The width of these links represents the strength of the relationship; wider links means the recipient species is impacted heavily by the source species.
+
+The direction of the links is indicated by the triangle in the middle.  For example, Spiny Dogfish eat cod. [\textit{Hover over the Spiny Dogfish to Cod link, which is the largest orange one on the right.}]  Additionally, the links are drawn clockwise, so the arrows on the right-hand side can be read top-to-bottom and the arrows on the left-hand side can be read bottom-to-top.
+
+[\underline{\textit{Condition B ends here; resume at \textbf{Training Example}}}]
+\end{minipage}
+}
+
+%%%%%%
+
+\fbox{%
+  \begin{minipage}{\textwidth}
+[\underline{\textit{Condition C and D continue}}]
+
+However, there are many links being drawn here.  Instead, we can draw the links selectively.
+
+%[\textit{Change the program to Condition C or D, depending on which condition this experiment is for.}]
+
+[\textit{Slowly pull the groundfish slider (green) again down to 0.75 and up to 1.5.}]
+
+Now, the links are only being drawn to explain the differences between the baseline forecast and the current forecast.  A link grows as that relationship becomes more relevant in explaining the differences when the two forecasts.  If a link isn’t relevant at all, then the link isn’t shown.
+
+A link disappearing does not mean the relationship isn’t part of the model anymore.  It simply means that relationship does help to explain the changes from the baseline to the current forecast.
+
+There are plus and minus signs drawn to indicate the nature of the relationship from the perspective of the recipient species.
+
+For example, if a predator species is fished more, then this is good from the perspective of a prey species, because there are less of the predator eating the prey.  In this situation, you would see a plus sign drawn on the arc from the predator to the prey.
+
+A predator being fished less is bad from the perspective of the prey, because then the prey will be eat more.  In this case, you would see a minus sign drawn on the arc from the predator to the prey.
+
+Similarly, plus and minus signs are drawn on the links between the sliders and fish charts, to show the perspective of the fish on the change in effort.
+
+%[\textit{Click the ``RESET'' button next to the groundfish slider.}]
+
+[\underline{\textit{Conditions C and D end here; resume at \textbf{Training Example}}}]
+
+\end{minipage}
+}
+%%%%%%
+
+}}
