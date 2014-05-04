@@ -73,7 +73,7 @@ Fisheries management is focused on the sustainability of choices concerning fish
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/eps/PlayfairTimeSeries.eps}
+	\includegraphics[width=0.9\textwidth]{figures/png/PlayfairTimeSeries.png}
 	\caption[Playfair's original time series chart.]{Playfair's original time series chart (\citeyear{playfair}).  Public domain.}
 	\label{fig:playfair}
 \end{figure}
@@ -82,27 +82,12 @@ The line chart was first invented by William Playfair in 1786 to communicate tim
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/eps/ts_simplelinegraph.eps}
-		\caption{A simple line graph.}
-		\label{fig:ts_simple}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/eps/ts_braidedgraph.eps}
-		\caption{A braided graph.}
-		\label{fig:ts_braid}
-	\end{subfigure}
-	\\
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/eps/ts_smallmultiples.eps}
-		\caption{Small multiples.}
-		\label{fig:ts_smmult}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/eps/ts_horizongraphs.eps}
-		\caption{Horizon graphs.}
-		\label{fig:ts_horizon}
-	\end{subfigure}
+	
+		\subfigure[A simple line graph.]{\label{fig:ts_simple}\includegraphics[width=0.48\textwidth]{figures/png/ts_simplelinegraph.png}} 
+		\subfigure[A braided graph.]{\label{fig:ts_braid}\includegraphics[width=0.48\textwidth]{figures/png/ts_braidedgraph.png}} \\
+		\subfigure[Small multiples.]{\label{fig:ts_smmult}\includegraphics[width=0.48\textwidth]{figures/png/ts_smallmultiples.png}}
+		\subfigure[Horizon graphs.]{\label{fig:ts_horizon}\includegraphics[width=0.48\textwidth]{figures/png/ts_horizongraphs.png}}
+	
 	\caption[Four possible methods for visualizing multiple time series.]{Four possible methods for visualizing multiple time series.  Reprinted from \textit{IEEE Transactions on Visualization and Computer Graphics}, Vol 16, \citeauthor{javed2010}, Graphical perception of multiple time series, 927--934, \textcopyright \citeyear{javed2010}, with permission from IEEE.}
 
 	\label{fig:ts_compare}
@@ -112,16 +97,8 @@ Multiple time series can be part of a single line chart; each series needs only 
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/eps/ratioBad.eps}
-		\caption{Shape parameter of 1.0.}
-		\label{fig:ratioBad}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/eps/ratioGood.eps}
-		\caption{Shape parameter of 0.074.}
-		\label{fig:ratioGood}
-	\end{subfigure}
+	\subfigure[Shape parameter of 1.0.]{\label{fig:ratioBad}\includegraphics[width=0.45\textwidth]{figures/png/ratioBad.png}} 
+	\subfigure[Shape parameter of 0.074.]{\label{fig:ratioGood}\includegraphics[width=0.45\textwidth]{figures/png/ratioGood.png}}
 	\caption[Two effects of chart shape on Canadian lynx data.]{Two effects of chart shape on Canadian lynx data.  Reprinted from \textit{Journal of the American Statistical Association}, Vol 83, \citeauthor{cleveland1988}, The Shape Parameter of a Two-Variable Graph, 289--300, \textcopyright \citeyear{cleveland1988}, with permission from Taylor \& Francis.}
 	\label{fig:ratio}
 \end{figure}
@@ -130,23 +107,10 @@ Some line charts are more effective at conveying the nature of the data than oth
 
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[height=5cm]{figures/eps/spiral.eps}
 
-\caption[Spiral time series.]{Spiral time series.  Reprinted from \textit{IEEE Symposium on Information Visualization}, \citeauthor{weber2001}, Visualizing time-series on spirals, 7--13, \textcopyright \citeyear{weber2001}, with permission from IEEE.}
+\subfigure[Spiral time series.  Reprinted from \textit{IEEE Symposium on Information Visualization}, \citeauthor{weber2001}, Visualizing time-series on spirals, 7--13, \textcopyright \citeyear{weber2001}, with permission from IEEE.]{\label{fig:altSpiral}\includegraphics[width=0.45\textwidth]{figures/png/spiral.png}} 
+\subfigure[ThemeRiver time series.  Reprinted from \textit{IEEE Symposium on Information Visualization}, \citeauthor{havre2000}, ThemeRiver: visualizing theme changes over time, 115--123, \textcopyright \citeyear{havre2000}, with permission from IEEE.]{\label{fig:altThemeriver}\includegraphics[width=0.45\textwidth]{figures/png/themeriver.png}}
 
-		\label{fig:altSpiral}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[height=5cm]{figures/eps/themeriver.eps}
-		%\caption{ThemeRiver time series.}
-
-\caption[ThemeRiver time series.]{ThemeRiver time series.  Reprinted from \textit{IEEE Symposium on Information Visualization}, \citeauthor{havre2000}, ThemeRiver: visualizing theme changes over time, 115--123, \textcopyright \citeyear{havre2000}, with permission from IEEE.}
-
-		\label{fig:altThemeriver}
-	\end{subfigure}
 	\caption{Two alternative time series visualizations.}
 	\label{fig:tsAlternatives}
 \end{figure}
@@ -163,14 +127,14 @@ The input parameters to the MS-PROD model includes predation and competition mat
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.85\textwidth]{figures/eps/gaichas.eps}
+	\includegraphics[width=0.85\textwidth]{figures/png/gaichas.png}
 	\caption[A force-directed visualization of a food web of Gulf of Alaska data.]{A force-directed visualization of a food web of Gulf of Alaska data. Reprinted from \textit{Canadian Journal of Fisheries and Aquatic Sciences}, Vol 65, \citeauthor{gaichas2008}, Network models for ecosystem-based fishery analysis: a review of concepts and application to the Gulf of Alaska marine food web, 129--130, \textcopyright \citeyear{gaichas2008}, with permission from Elsevier.}
 	\label{fig:gaichas}
 \end{figure}
 
 %\begin{figure}[h]
 %	\centering
-%	\includegraphics[width=8cm]{figures/eps/force.eps}
+%	\includegraphics[width=8cm]{figures/png/force.png}
 %	\caption{A force-directed node-link diagram \cite{Knuth:1993:SGP:164984}.}
 %	\label{fig:forcedirected}
 %\end{figure}
@@ -181,7 +145,7 @@ One option for showing fish species interactions would be to use a force-directe
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/eps/arcdiagram.eps}
+	\includegraphics[width=0.95\textwidth]{figures/png/arcdiagram.png}
 	\caption{Knuth's arc diagram of \textit{Les Mis\'erables} characters \cite{knuth1993}.}
 	\label{fig:arcdiagram}
 \end{figure}
@@ -192,7 +156,7 @@ An alternative for force-directed layout is an arc diagram.  The name arc diagra
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/eps/directedEdges.eps}
+	\includegraphics[width=0.95\textwidth]{figures/png/directedEdges.png}
 	\caption{Different types of directed edges \cite{holten2009}.}
 	\label{fig:directedEdges}
 \end{figure}
@@ -203,7 +167,7 @@ Relationships in a network may be directional, such as the predator-prey relatio
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/eps/matrix.eps}
+	\includegraphics[width=0.95\textwidth]{figures/png/matrix.png}
 	\caption{A matrix-based visualization of an adjacency matrix \cite{knuth1993}.}
 	\label{fig:matrix}
 \end{figure}
@@ -216,25 +180,10 @@ Gamble and Link found that both inter-species relationships and harvesting by hu
 
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{figures/eps/vcv_pinball.eps}
-		\caption{Pinball.}
-		\label{fig:vcvPinball}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{figures/eps/vcv_prod.eps}
-		\caption{Prod.}
-		\label{fig:vcvProd}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{figures/eps/vcv_wave.eps}
-		\caption{Wave.}
-		\label{fig:vcvWave}
-	\end{subfigure}
-	%\caption{Three metaphors for conveying causality \cite{ware1999}.}
+
+\subfigure[Pinball.]{\label{fig:vcvPinball}\includegraphics[width=0.31\textwidth]{figures/png/vcv_pinball.png}} 
+\subfigure[Prod.]{\label{fig:vcvProd}\includegraphics[width=0.31\textwidth]{figures/png/vcv_prod.png}} 
+\subfigure[Wave.]{\label{fig:vcvWave}\includegraphics[width=0.31\textwidth]{figures/png/vcv_wave.png}}
 
 \caption[Three metaphors for conveying causality.]{Three metaphors for conveying causality.  Reprinted from \textit{IEEE Symposium on Information Visualization: Late Breaking Hot Topics}, \citeauthor{ware1999}, Visualizing causal relations, 39--42, \textcopyright \citeyear{ware1999}, with permission from IEEE.}
 
@@ -245,18 +194,9 @@ Michotte and Thin\'es suggested that viewers infer causality after viewing an ob
 
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.47\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{figures/eps/kadaba_static.eps}
-		\caption{Static.}
-		\label{fig:kadabaStatic}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.47\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{figures/eps/kadaba_animated.eps}
-		\caption{Animated.}
-		\label{fig:kadabaAnimated}
-	\end{subfigure}
+\subfigure[Static.]{\label{fig:kadabaStatic}\includegraphics[width=0.46\textwidth]{figures/png/kadaba_static.png}} 
+\subfigure[Animated.]{\label{fig:kadabaAnimated}\includegraphics[width=0.46\textwidth]{figures/png/kadaba_animated.png}}
+
 	%\caption{Two alternatives for visualizing causal influences \cite{kadaba2007}.}
 \caption[Two alternatives for visualizing causal influences.]{Two alternatives for visualizing causal influences.  Reprinted from \textit{IEEE Transactions on Visualization and Computer Graphics}, Vol. 13, \citeauthor{kadaba2007}, Visualizing Causal Semantics using Animations, 1254--1261, \textcopyright \citeyear{kadaba2007}, with permission from IEEE.}
 
@@ -269,18 +209,10 @@ Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static an
 
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[height=4.5cm]{figures/eps/uncertainty_cone.eps}
-		\caption{Error cone.}
-		\label{fig:uncertaintyCone}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[height=4.5cm]{figures/eps/uncertainty_house.eps}
-		\caption{Cox et al.'s method.}
-		\label{fig:uncertaintyHouse}
-	\end{subfigure}
+
+\subfigure[Error cone.]{\label{fig:uncertaintyCone}\includegraphics[height=4.5cm]{figures/png/uncertainty_cone.png}} 
+\subfigure[Cox et al.'s method.]{\label{fig:uncertaintyHouse}\includegraphics[height=4.5cm]{figures/png/uncertainty_house.png}}
+
 	%\caption{Two visualizations of uncertainty for a hurricane advisory \cite{cox2013}.}
 
 \caption[Two visualizations of uncertainty for a hurricane advisory.]{Two visualizations of uncertainty for a hurricane advisory.  Reprinted from \textit{International Journal for Uncertainty Quantification}, Vol. 3, \citeauthor{cox2013}, Visualizing Uncertainty in Predicted Hurricane Tracks, 143--156, \textcopyright \citeyear{cox2013}, with permission from Begell House, Inc.}
@@ -301,18 +233,10 @@ Users studying models can benefit from the aid of a visualization, because patte
 
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.4\textwidth}
-		\centering
-		\includegraphics[height=4cm]{figures/eps/visicalc.eps}
-		\caption[A screenshot of VisiCalc.]{A screenshot of VisiCalc.  GNU General Public License.}
-		\label{fig:visicalc}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.4\textwidth}
-		\centering
-		\includegraphics[height=4cm]{figures/eps/excel.eps}
-		\caption[A chart made using Microsoft Excel.]{A chart made using Microsoft Excel.  Public domain.}
-		\label{fig:excel}
-	\end{subfigure}
+
+\subfigure[A screenshot of VisiCalc.  GNU General Public License.]{\label{fig:visicalc}\includegraphics[height=4cm]{figures/png/visicalc.png}} 
+\subfigure[A chart made using Microsoft Excel.  Public domain.]{\label{fig:excel}\includegraphics[height=4cm]{figures/png/excel.png}}
+
 	\caption{Two examples of spreadsheet applications.}
 	\label{fig:spreadsheets}
 \end{figure}
@@ -323,7 +247,7 @@ VisiCalc was a very early example of software assisting the understanding of mod
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/eps/influenceExplorer.eps}
+	\includegraphics[width=0.95\textwidth]{figures/png/influenceExplorer.png}
 	\caption{A screenshot of the Influence Explorer \cite{tweedie1995}.}
 	\label{fig:influenceExplorer}
 \end{figure}
@@ -334,7 +258,7 @@ The Influence Explorer by Tweedie et al. is a good example of a more complex int
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=6cm]{figures/eps/vensim.eps}
+	\includegraphics[width=6cm]{figures/png/vensim.png}
 	\caption[A screenshot of the strip graphs in Vensim.]{A screenshot of the strip graphs in Vensim.  Reprinted from \textit{European Journal of Operational Research}, Vol 59, \citeauthor{eberlein1992}, Understanding models with Vensim\texttrademark, 216--219, \textcopyright  \citeyear{eberlein1992}, with permission from Elsevier.}
 	\label{fig:vensim}
 \end{figure}
