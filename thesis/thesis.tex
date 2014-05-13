@@ -21,6 +21,8 @@
 \renewcommand{\citep}[1]{\citeauthor{#1}~(\citeyear{#1})}
 \renewcommand{\cite}[1]{(\citeauthor{#1},~\citeyear{#1})}
 
+\newcommand{\answerText}[2][red]{\textcolor{#1}{\textit{#2}}}
+
 \makeatletter
 \newcommand{\redub}{}
 \def\redub#1{%
@@ -94,9 +96,7 @@
 
 \begin{appendices}
 
-\section{Evaluation Protocol}
 \include{protocol}
-
 \include{questions}
 
 \end{appendices}
