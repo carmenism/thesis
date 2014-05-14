@@ -10,6 +10,8 @@
 \usepackage{setspace}
 \usepackage[table]{xcolor}
 
+\usepackage{verbatimbox}
+
 \usepackage[toc,page]{appendix}
 
 \renewcommand{\citep}[1]{\citeauthor{#1}~(\citeyear{#1})}
@@ -90,6 +92,7 @@
 
 \begin{appendices}
 
+\include{parameters}
 \include{protocol}
 \include{questions}
 \include{gradingKey}
