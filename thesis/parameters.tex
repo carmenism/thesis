@@ -1,0 +1,80 @@
+\chapter{MS-PROD Input Parameters}
+
+%Guild Membership	Flatfish	Groundfish	Groundfish	Flatfish	Flatfish	Groundfish	Small pelagics	Small pelagics	Elasmobranchs	Elasmobranchs
+%$N_0$ & 8000 & 22563 & 316000 & 4301 & 7288 & 40048.8 & 209400 & 77600	60683 & 40000 \\
+%$K$ & 230000 & 700000 & 700000 & 230000 & 230000 & 700000 & 350000 & 350000 & 450000 & 450000 \\						
+%$r$ & 0.66 & 0.64 & 0.52 & 0.74 & 0.6 & 0.232 & 0.62 & 0.32 & 0.2 & 0.2 \\
+Following are the input parameter values used for the development and evaluation of our visualization to the MS-PROD model.  These values were given to us by one of the model authors, Robert Gamble, and were unchanged except for catchability and effort.  In MS-PROD, effort ($E$) and catchability ($q$) can be set to different values for each of the thirty years for each species.  However, we kept these values the same across all years to simplify the controls needed to interact with the model.  Some terms have been abbreviated to allow these tables to fit; the abbreviations are defined following the tables.  Additionally, the names of the species did not fit into the coefficient matrices, therefore letters were assigned to each species in the first table for use in subsequent tables.
+
+
+{\rowcolors{2}{gray!10}{gray!3}
+\addvbuffer[2em 2em]{ \begin{tabular}{ | l | l | r | r | l | l | r | r | r | } \hline
+\rowcolor{gray!35} \textbf{Species} & \textbf{Guild} & \textbf{$N_0$} & \textbf{$K$} & \textbf{$r$} & \textbf{$q$} & \textbf{$E$} & \textbf{Dem.} & \textbf{Pel.} \\ \hline
+(a) Yellowtail Fl. & F & 8000 & 230000 & 0.66 & 0.1 & 1 & 1 & 0 \\ 
+(b) Cod & G & 22563 & 700000 & 0.64 & 0.22 & 1 & 1 & 0 \\ 
+(c) Haddock & G & 316000 & 700000 & 0.52 & 0.28 & 1 & 1 & 0 \\ 
+(d) Winter Fl. & F & 4301 & 230000 & 0.74 & 0.3 & 1 & 1 & 0 \\
+(e) Windowpane & F & 7288 & 230000 & 0.6 & 0.25 & 1 & 1 & 0 \\ 
+(f) Redfish & G & 40048.8 & 700000 & 0.232 & 0.2 & 1 & 1 & 0 \\ 
+(g) Herring & SP & 209400 & 350000 & 0.62 & 0.24 & 1 & 0 & 1 \\
+(h) Mackerel & SP & 77600 & 350000 & 0.32 & 0.14 & 1 & 0 & 1 \\
+(i) Skates & E & 60683 & 450000 & 0.2 & 0.13 & 1 & 1 & 0 \\
+(j) Spiny Dogfish & E & 40000 & 450000 & 0.2 & 0.13 & 1 & 1 & 0 \\ \hline
+\end{tabular}
+}
+}
+
+\section{Competition Coefficient Matrix}
+
+{\rowcolors{2}{gray!10}{gray!3}
+\addvbuffer[1em 2em]{ \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | } \hline
+\rowcolor{gray!35} & (a) & (b) & (c) & (d) & (e) & (f) & (g) & (h) & (i) & (j) \\ \hline
+on (a) & 0 & 0.05 & 0.424 & 0.3 & 0.4 & 0.076 & 0 & 0 & 0.3 & 0 \\
+on (b) & 0.12 & 0 & 0.5 & 0.05 & 0.12 & 0.276 & 0 & 0 & 0.01 & 0.05 \\
+on (c) & 0.3 & 0.6 & 0 & 0.2 & 0.15 & 0.125 & 0 & 0 & 0.2 & 0.1 \\
+on (d) & 0.5 & 0.101 & 0.141 & 0 & 0.4 & 0.041 & 0 & 0 & 0.6 & 0.4 \\
+on (e) & 0.32 & 0.248 & 0.233 & 0.18 & 0 & 0.219 & 0 & 0 & 0.2 & 0 \\
+on (f) & 0.119 & 0.3 & 0.132 & 0.12 & 0.15 & 0 & 0 & 0 & 0.1 & 0.2 \\
+on (g) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.4 & 0 & 0 \\
+on (h) & 0 & 0 & 0 & 0 & 0 & 0 & 0.6 & 0 & 0 & 0 \\
+on (i) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.5 \\
+on (j) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0.8 & 0 \\ \hline
+\end{tabular}
+}
+}
+
+\section{Predation Coefficient Matrix}
+
+{\rowcolors{2}{gray!10}{gray!3}
+\addvbuffer[1em 2em]{ \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | } \hline
+\rowcolor{gray!35} & (a) & (b) & (c) & (d) & (e) & (f) & (g) & (h) & (i) & (j) \\ \hline
+on (a) & 0 & 7E-08 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+on (b) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3E-06 \\
+on (c) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+on (d) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+on (e) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+on (f) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+on (g) & 0 & 1E-06 & 0 & 0 & 0 & 1E-06 & 0 & 0 & 1E-06 & 1E-06 \\
+on (h) & 0 & 4E-07 & 0 & 0 & 0 & 3E-06 & 0 & 0 & 1E-07 & 4E-07 \\
+on (i)& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+on (j) & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+\end{tabular}
+}
+}
+
+\section{Abbreviation Key}
+
+\begin{tabular}{l l}
+Fl. & Flounder \\
+E & Elasmobranchs \\
+F & Flatfish \\
+G & Groundfish \\
+SP & Small pelagics \\
+$N_0$ &initial biomass \\
+$K$ & carrying capacity \\
+$r$ & growth rate \\
+$q$ & catchability \\
+$E$ & effort \\
+Dem. & demersal \\
+Pel. & pelagic \\
+\end{tabular}
