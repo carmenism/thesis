@@ -1,10 +1,10 @@
 \chapter{Evaluation}
 
-The intention behind this work has been to develop an interactive visualization that effectively portrays the MS-PROD model and its implications.  We conducted two types of evaluations to determine which design alternatives were best for conveying this information: a formal evaluation of the arcs with novice users and an informal evaluation with expert users.  These two evaluations and the resulting findings are described in details below. 
+The intention behind this work has been to develop an interactive visualization that effectively portrays the MS-PROD model and its implications.  We conducted two types of evaluations to determine which design alternatives were best for conveying this information: a formal evaluation of the arcs with novice users and an informal evaluation with expert users.  These two evaluations and the resulting findings are described in detail below. 
 
 \section{Formal Evaluation of Dynamic Arcs}
 
-We were interested in how different visualization alternatives enhance a user's understanding of the complex relationships between the fish species and the effects of those relationships.  In other words, is there a benefit to using dynamic, animated arcs---the most complicated representation of the relationships---over another method or even displaying no arcs at all?  To investigate this question, we designed and conducted a user study to the performance of different arc depiction alternatives.  The experimental conditions were as follows:
+We were interested in how different visualization alternatives enhance a user's understanding of the complex relationships between the fish species and the effects of those relationships.  In other words, is there a benefit to using dynamic, animated arcs---the most complicated representation of the relationships---over another method or even displaying no arcs at all?  To investigate this question, we designed and conducted a user study to measure the performance of different arc depiction alternatives.  The experimental conditions were as follows:
 
 \begin{enumerate}[(A)]
 \item No arcs
@@ -19,7 +19,7 @@ Our hypothesis was that the Condition A would be the least effective, as it requ
 
 The study was conducted at a screened-off table in a student union building at the University of New Hampshire.  A paid undergraduate research assistant conducted the study and responses from the study were graded by two paid undergraduate research assistants.
 
-The research assistant conducting the experiment explained the MS-PROD model and our visualization, and showed a training example before leaving the participant to the experiment.  Each participant conducted the experiment task for only one of the four conditions.  Explanations and training phases were tailored according to the experimental condition---e.g., arcs were explained only for conditions B, C, and D; the meaning of dynamic arcs were explained only for conditions C and D.  Feedback was received only during the training phase.  A single experiment lasted approximately fifteen minutes.
+The research assistant conducting the experiment explained the MS-PROD model and our visualization to the participants, and showed a training example before leaving the participant to the experiment.  Each participant conducted the experiment task for only one of the four conditions.  Explanations and training phases were tailored according to the experimental condition---i.e., arcs were explained only for conditions B, C, and D; the meaning of dynamic arcs were explained only for conditions C and D.  Feedback about the quality of the participant's answers was given only during the training phase.  A single experiment lasted approximately fifteen minutes.
 
 \subsection{Apparatus}
 
@@ -31,7 +31,7 @@ There were 80 participants who took part in the study, all of which were recruit
 
 \subsection{Task}
 
-Initially, all fishing effort sliders were set to the value of one.  Participants were  instructed to increase or decrease the fishing effort of a specific functional group---e.g., \textit{``Using the sliders, double the harvest effort on elasmobranchs.''}  An example of this type of window as it appeared to participants is shown in Figure~\ref{fig:eval_inst}.
+Initially, all fishing effort sliders were set to the value of one.  Participants were instructed to increase or decrease the fishing effort of a specific functional group---e.g., \textit{``Using the sliders, double the harvest effort on elasmobranchs.''}  An example of this type of instructional window as it appeared to participants is shown in Figure~\ref{fig:eval_inst}.
 
 \begin{figure}[h]
 	\centering
@@ -40,11 +40,9 @@ Initially, all fishing effort sliders were set to the value of one.  Participant
 	\label{fig:eval_inst}
 \end{figure}
 
-Next, the participants were asked to answer one or more questions of the form, ``\textit{What was the effect on (fish species)?}''  All questions, as well as their answers, can be seen in Appendix~\ref{sec:questions}, grouped together by instruction.  The questions were designed so that sometimes the fish species was a member of the function group for which the effort was just adjusted, while other times the fish species was not a member of that functional group, e.g.:
-\begin{quote}
-\textit{What is the effect on haddock?}
-\end{quote}
-Users answered this question with one of five options from a drop-down menu:
+Next, the participants were asked to answer one or more questions of the form, ``\textit{What was the effect on (fish species)?}''  E.g., \textit{``What was the effect on haddock?''}  All questions, as well as their answers, can be seen in Appendix~\ref{sec:questions}, grouped together by instruction.  %The questions were designed so that sometimes the fish species was a member of the function group for which the effort was just adjusted, while other times the fish species was not a member of that functional group.
+
+Users answered this ``What\ldots?'' question with one of five options from a drop-down menu:
 \begin{itemize}
 \item \textit{Increased a lot}
 \item \textit{Increased a little}
@@ -54,21 +52,46 @@ Users answered this question with one of five options from a drop-down menu:
 \end{itemize}
 An example of the evaluation window as it appeared to users is shown in Figure~\ref{fig:eval_what}.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\textwidth]{figures/png/eval_what.png}
-	\caption{An example of evaluation window where users recorded their answers to the ``What\ldots?'' questions.}
-	\label{fig:eval_what}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.48\textwidth]{figures/png/eval_what.png}
+%	\caption{An example of evaluation window where users recorded their answers to the ``What\ldots?'' questions.}
+%	\label{fig:eval_what}
+%\end{figure}
+
+
+
+\begin{figure}
+\centering
+
+\subfigure[The drop-down for selecting ``What\ldots?'' answers.]{\label{fig:eval_what}\includegraphics[width=0.48\textwidth]{figures/png/eval_what.png}} 
+\subfigure[The text box for entering ``Why?'' answers.]{\label{fig:eval_why}\includegraphics[width=0.48\textwidth]{figures/png/eval_why.png}}
+
+	\caption{Examples of the windows where participants entered answers.}
+	\label{fig:eval}
 \end{figure}
 
-Finally, the user was asked, ``\textit{Why? [Try to explain in no more than three sentences.]}''  A large text box was provided for the participant to type a response.  This is shown in Figure~\ref{fig:eval_why}. If this question was the last question in its set, then the sliders are all reset to one and a new instruction is given for the next set of questions. 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\textwidth]{figures/png/eval_why.png}
-	\caption{An example of evaluation window where users recorded their answers to the ``Why?'' questions.}
-	\label{fig:eval_why}
-\end{figure}
+
+
+Finally, the user was asked, ``\textit{Why? [Try to explain in no more than three sentences.]}''  A large text box was provided for the participant to type a response.  This is shown in Figure~\ref{fig:eval_why}. If this question was the last question in its set, then the sliders were all reset to one and a new instruction was given for the next set of questions until all questions were answered. 
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.48\textwidth]{figures/png/eval_why.png}
+%	\caption{An example of evaluation window where users recorded their answers to the ``Why?'' questions.}
+%	\label{fig:eval_why}
+%\end{figure}
+
+The questions were designed to fit in one of two difficulty categories:
+\begin{itemize}
+\item First-order
+\item Higher-order
+\end{itemize}
+
+First-order questions asked about a fish species whose biomass changed directly as a result of increased or decreased harvest effort.  In other words, the fish was a member of the functional group whose harvest effort was changed and either (a) its biomass decreased due to increased harvest effort or (b) its biomass increased due to decreased harvest effort---e.g.,  increase harvest on A $\rightarrow$ biomass of A decreases.  There were three questions of this type.
+
+Higher-order questions concerned a fish species whose biomass changed from a second-order or third-order effect.  In this case, the fish may or may not have been a member of the functional group for which the fishing effort changed.  If the fish was a member of the functional group, then perhaps its biomass did not change as expected because of the effects of competition or predation with other members of the functional group.  If the fish was not a member of the functional group for which fishing effort changed, then its biomass may have changed because of competition or predation with a member of that functional group---e.g., increase harvest on A $\rightarrow$ biomass of A decreases $\rightarrow$ biomass of B increases because A eats B.  More complex explanations involving several inter-species relationships are also possible---e.g., increase harvest on A $\rightarrow$ biomass of A decreases $\rightarrow$ biomass of B increases because A eats B $\rightarrow$ biomass of C decreases because B eats C.  There were four higher-order questions. 
 
 In total, there were three instructions for adjusting the harvest effort and seven questions.  All participants were given the same instructions and asked the same questions in the same order, regardless of condition.
 
@@ -77,7 +100,7 @@ In total, there were three instructions for adjusting the harvest effort and sev
 \begin{figure}
 \centering
 
-\subfigure[``What?'' scores.]{\label{fig:resultsWhat}\includegraphics[width=0.32\textwidth]{figures/png/results_what.png}} 
+\subfigure[``What\ldots?'' scores.]{\label{fig:resultsWhat}\includegraphics[width=0.32\textwidth]{figures/png/results_what.png}} 
 \subfigure[First-order ``Why?'' scores.]{\label{fig:resultsWhy1}\includegraphics[width=0.32\textwidth]{figures/png/results_why1.png}}
 \subfigure[Higher-order ``Why?'' scores.]{\label{fig:resultsWhy23}\includegraphics[width=0.32\textwidth]{figures/png/results_why23.png}}  
 
@@ -85,9 +108,28 @@ In total, there were three instructions for adjusting the harvest effort and sev
 	\label{fig:results}
 \end{figure}
 
-(Coming soon)
+The answers to the questions of the evaluation were graded by two undergraduate graders on a scale of 0 (i.e., completely wrong) to 3 (i.e., completely correct), with partial points allowed.  The average of the two scores was taken and these averages were used in our analyses.  The correlation coefficient (Pearson's $r$) between the scores assigned by each grader was 0.744.
 
-% Correlation coefficient 0.744319493
+The summarized results of our evaluation can be found in Figure~\ref{fig:results}, where mean scores are shown by condition.  For our analyses, we divided the questions into three categories:
+\begin{enumerate}
+\item ``What\ldots?'' questions
+\item First-order ``Why?'' questions
+\item Higher-order ``Why?'' questions
+\end{enumerate}
+Separate ANOVAs (analysis of variance) were run with Tukey HSD (Honestly Significant Differences) tests for each of these three types of questions.  There were no significant differences between the four conditions for the seven ``What\ldots?'' questions and the three first-order ``Why?'' questions.    However, there was a significant effect for the four conditions with the higher-order ``Why?'' questions, shown by $([F(1, 76] = 12.6; p < 0.001)$ and the HSD test, with no other significant differences (see Figure~\ref{fig:resultsWhy23}).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.85\textwidth]{figures/png/results_arts_science.png}
+	\caption{Mean scores for arts versus sciences students for the higher-order ``Why?'' questions.}
+	\label{fig:results_arts_science}
+\end{figure}
+
+Additional ANOVAs were run to look for effects of gender and whether the student was a science or liberal arts student.  These factors showed no significant effect on the higher-order ``Why?'' questions according to our analyses.  However, despite this, the effect for science versus liberals approached significance; the effects of this are illustrated in Figure~\ref{fig:results_arts_science}.  %The mean for science students in Condition A was over three times the mean for liberal arts students, while the gap was smaller for the other conditions.  This could possibly suggest that science students have a small advantage because they are used to analyzing time series in their classes, which helped them with the worst depiction of the inter-species relationships.
+
+\subsection{Discussion}
+
+%Our results strongly suggest that using either static arcs
 
 \section{Informal Evaluations}
 
