@@ -19,15 +19,19 @@ Our hypothesis was that the Condition A would be the least effective, as it requ
 
 The study was conducted at a screened-off table in a student union building at the University of New Hampshire.  A paid undergraduate research assistant conducted the study and responses from the study were graded by two paid undergraduate research assistants.
 
-The research assistant conducting the experiment explained the MS-PROD model and our visualization to the participants, and showed a training example before leaving the participant to the experiment.  Each participant conducted the experiment task for only one of the four conditions.  Explanations and training phases were tailored according to the experimental condition---i.e., arcs were explained only for conditions B, C, and D; the meaning of dynamic arcs were explained only for conditions C and D.  Feedback about the quality of the participant's answers was given only during the training phase.  A single experiment lasted approximately fifteen minutes.
+Each participant conducted the experiment task for only one of the four conditions.  The experiment began with a brief training session which was tailored according to the experimental condition---i.e., arcs were explained only for conditions B, C, and D; the meaning of dynamic arcs were explained only for conditions C and D.  Feedback about the quality of the participant's answers was given only during the training phase.  
+
+In the remainder of the experiment, the participant followed on screen instructions to manipulate one of the sliders controlling the fish catch.  The participant then answered questions about the resulting effects and the reasons for the effects.  A single experiment lasted approximately fifteen minutes.
 
 \subsection{Apparatus}
 
 We conducted the experiment using a standard Dell laptop with an extra Dell monitor.  The window with the model visualization was maximized on the extra screen, while the window with the experiment questions was maximized on the laptop screen.  Participants used the mouse to interact with the model visualization and recorded their answers using the laptop keyboard.
 
-\subsection{Participants}
+\subsection{Participants} \label{sec:participants}
 
-There were 80 participants who took part in the study, all of which were recruited by a poster affixed to the backside of the privacy screen.  They could have been undergraduate or graduate students; we only required that participants had to be at least 18 years of age.  Participants were voluntary and were compensated with a pack of pens or a notebook.  They were required to read and sign an IRB consent form before participating in the study, shown in Appendix~\ref{sec:irbConsent}.
+There were 80 participants who took part in the study, all of which were recruited by a poster affixed to the backside of the privacy screen.  Participants were randomly assigned to the four conditions, such that there were 20 in each condition.  They could have been undergraduate or graduate students; we only required that participants had to be at least 18 years of age.  Participants were voluntary and were compensated with a pack of pens or a notebook.  They were required to read and sign an IRB consent form before participating in the study, shown in Appendix~\ref{sec:irbConsent}.
+
+Participants were asked to provide their gender and their college at the university.  There were 28 females and 52 males who took part in the study.  There were 31 students from College of Liberal Arts (COLA), 20 from the Peter T. Paul College of Business and Economics, 15 from the College of Life Sciences, eight from the College of Health and Human Services, five from the College of Engineering and Physical Sciences, and one from the Thompson School of Applied Sciences.  We created a pseudo-category from the reported colleges based on quantitative skills.  Students were placed in the ``low quantitative'' category if they reported being as a student of COLA and ``high quantitative'' if the were from any other school.  The reasoning was that low quantitative students were less likely to have quantitative-analytic skills.  There were 31 low quantitative students and 49 high quantitative students.
 
 \subsection{Task}
 
@@ -71,17 +75,7 @@ An example of the evaluation window as it appeared to users is shown in Figure~\
 	\label{fig:eval}
 \end{figure}
 
-
-
-
 Finally, the user was asked, ``\textit{Why? [Try to explain in no more than three sentences.]}''  A large text box was provided for the participant to type a response.  This is shown in Figure~\ref{fig:eval_why}. If this question was the last question in its set, then the sliders were all reset to one and a new instruction was given for the next set of questions until all questions were answered. 
-
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.48\textwidth]{figures/png/eval_why.png}
-%	\caption{An example of evaluation window where users recorded their answers to the ``Why?'' questions.}
-%	\label{fig:eval_why}
-%\end{figure}
 
 The questions were designed to fit in one of two difficulty categories:
 \begin{itemize}
@@ -121,23 +115,22 @@ Separate ANOVAs (analysis of variance) were run with Tukey HSD (Honestly Signifi
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.85\textwidth]{figures/png/results_arts_science.png}
-	\caption[Mean scores for arts versus sciences students for the higher-order ``Why?'' questions]{Mean scores for arts versus sciences students for the higher-order ``Why?'' questions.}
+	\caption[Mean scores for low quantitative versus high quantitative students for the higher-order ``Why?'' questions]{Mean scores for low quantitative versus high quantitative students for the higher-order ``Why?'' questions.}
 	\label{fig:results_arts_science}
 \end{figure}
 
-Additional ANOVAs were run to look for effects of gender and whether the student was a ``science'' or liberal arts student.  We created a pseudo-category called ``science'' for participants who reported being part of the College of Engineering and Physical Sciences, College of Health and Human Services, College of Life Sciences, School of Marine Science and Ocean Engineering, Peter T. Paul College of Business and Economics, and the Thompson School of Applied Science; this included everyone except for participants from the College of Liberal Arts.  The gender and ``science'' versus liberal arts factors showed no significant effect on the higher-order ``Why?'' questions according to our analyses.  However, despite this, the effect for ``science'' versus liberal arts approached significance; the effects of this are illustrated in Figure~\ref{fig:results_arts_science}.  %The mean for science students in Condition A was over three times the mean for liberal arts students, while the gap was smaller for the other conditions.  This could possibly suggest that science students have a small advantage because they are used to analyzing time series in their classes, which helped them with the worst depiction of the inter-species relationships.
+Additional ANOVAs were run to look for effects of gender and whether the student was a ``low quantitative'' or ``high quantitative'' student, as defined in Section~\ref{sec:participants}.  The gender and quantitative factors showed no significant effect for the higher-order ``Why?'' questions according to our analyses.  Nevertheless, the quantitative effect approached significance as seen by $(F[1, 3] = 5.26; p = 0.1)$; the effects of this are illustrated in Figure~\ref{fig:results_arts_science}.
 
 \subsection{Discussion}
 
 Our results strongly suggest that using either static or dynamic arcs is better than using no arcs at all for asking more difficult (i.e., higher-order) questions about the complex, underlying relationships between the species.  The type of causal relationship depiction did not matter as much when it came to simpler (i.e., ``What\ldots?'' and first-order ``Why?'') questions.  For the ``What\ldots?'' questions, this is not surprising, as these questions were concerned with reading a change in a time series chart, for which the inter-species relationships were totally irrelevant.  Similarly, the first-order ``Why?'' questions involved direct effects of the changes in fishing effort, so understanding of the inter-species relationships was unnecessary.  Only the higher-order questions involved the competition and/or predation relationships, leading to a significance to the presence or absence of arcs.
 
-Though the difference in mean score between ``science'' and liberal arts students, shown in Figure~\ref{fig:results_arts_science}, was not significant, it is interesting.  In Condition A (no arcs), the mean for science students was over three times the mean for liberal arts students.  This could possibly suggest that ``science'' students have more experience with quantitative analysis and reasoning, therefore they were able to perform better in the absence of arcs.  The gap narrowed in the other conditions; under Condition B (static arcs), ``science'' students had scores over twice as high as the liberal arts students on average, while the means were similar in Conditions C (dynamic arcs) and D (animated and dynamic arcs).  Again, there was not enough significance, so no conclusions should be drawn, but this may imply that dynamic arcs enabled liberal arts students to produce higher quality answers.  Perhaps an evaluation with more participants would produce a significant result concerning the type of student.
+Though the difference in mean score between low and high quantitative students, shown in Figure~\ref{fig:results_arts_science}, was not significant, it is interesting.  In Condition A (no arcs), the mean for high quantitative students was over three times the mean for low quantitative students.  This could possibly suggest that high quantitative students were able to perform better in the absence of arcs since they have more experience with quantitative analysis and reasoning.  The gap narrowed in the other conditions; under Condition B (static arcs), high quantitative students had scores over twice as high as the low quantitative students on average, while the means were similar in Conditions C (dynamic arcs) and D (animated and dynamic arcs).  Again, this effect failed to reach significance, so no strong conclusions should be drawn, but this may imply that dynamic arcs enabled low quantitative students to produce higher quality answers.  Perhaps an evaluation with more participants would produce a significant result concerning the type of student.
 
 Despite our efforts to provide a thorough and detailed grading key (see Appendix~\ref{sec:gradingScheme}), the correlation coefficient for the scores assigned by the two undergraduate graders was low.  Perhaps the task of assigning scores was difficult due to its subjective nature.  
 
 \section{Informal Evaluations}
 
-%Originally, we had intended to conduct semi-structured interviews with expert users such as the original author models and fishery managers where we would ask the users to rate each alternative depiction of the different features.  However, we determined that would be a long and perhaps tedious task for each participant given the number of different depictions.  Therefore,
 We interviewed three expert users in an informal environment in order to determine their preferences of the alternative depiction of the different features.  The informal interviews consisted of explaining and demonstrating the visualization to the participants and asking them to describe which alternative depictions they prefer, if any, and why.  Overall, the expert users who participated in the informal evaluations liked the visualization in general, particularly the dynamic, animated arcs.  More detailed findings of these informal evaluations are below; the comments were reconstructed from notes made in the meetings.
 
 \subsection{Michael Fogerty and Robert Gamble} %Dr Fogerty
