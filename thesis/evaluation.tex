@@ -7,10 +7,10 @@ The intention behind this work has been to develop an interactive visualization 
 We were interested in how different visualization alternatives enhance a user's understanding of the complex relationships between the fish species and the effects of those relationships.  In other words, is there a benefit to using dynamic, animated arcs---the most complicated representation of the relationships---over another method or even displaying no arcs at all?  To investigate this question, we designed and conducted a user study to measure the performance of different arc depiction alternatives.  The experimental conditions were as follows:
 
 \begin{enumerate}[(A)]
-\item No arcs
-\item Static arcs
-\item Dynamic arcs without animation
-\item Dynamic arcs with animation
+\item \textbf{No arcs} - Only the time series are displayed on the screen. 
+\item \textbf{Static arcs} - Arcs are drawn between the species to show predation or competition.  The width of the arc is based on the coefficient in the input parameter file.  All arcs are drawn at all times.
+\item \textbf{Dynamic arcs without animation} - The arcs change in width according to causal linkage, as described in Section~\ref{sec:arcDynamic}.
+\item \textbf{Dynamic arcs with animation} - The arcs are dynamic and feature animation to help indicate the direction of the relationship.
 \end{enumerate}
 
 Our hypothesis was that the Condition A would be the least effective, as it requires the user to guess why indirect or unexpected changes in biomass occurred since no arcs are drawn.  We also hypothesized that Condition C and Condition D would be more effective than Condition B, because dynamic arcs filter to show the relevant information, while static arcs show all information at once which could be overwhelming.  Finally, we hypothesized that Condition D would be at least slightly more effective than Condition C, since there are more visual cues for directionality with the animated arcs versus the non-animated arcs.

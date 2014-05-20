@@ -144,11 +144,11 @@ The predation and competition relationships are directed, where one species of f
 
 The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both as in Figure~\ref{fig:arcsBoth}.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.  Regardless of the selected arc type, all predation arcs are colored orange and all competition arcs are colored sky-blue.  The user can mouse over a particular arc, which causes that arc to highlight---while the other arcs fade---and displays a label which spells out the relationship in words and shows the input parameter matrix original coefficient---e.g., ``Skates compete with Winter Flounder (0.6).''
 
-\paragraph{Static}
+\paragraph{Static} \label{sec:arcStatic}
 
 With the static style of the arcs, all arcs are drawn at all times, as shown in all three subfigures of Figure~\ref{fig:betweenSpeciesArcs}.  The width of an arc corresponds to the magnitude of the relationship, as defined in the predation coefficient matrix or the competition coefficient matrix in the original parameter file.   A benefit of this type of arc is that it is possible to see all interactions between the species at all times.  However, the downside is that viewing all arcs at once can be overwhelming because the display becomes somewhat cluttered.
 
-\paragraph{Dynamic}
+\paragraph{Dynamic} \label{sec:arcDynamic}
 
 Dynamic arcs, shown in Figure~\ref{fig:arcs_dynamic}, were motivated by need to (1) clarify the sized change in a causal influence path and (2) eliminate or at least reduce the visual clutter created by the static arcs.  We considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences in between the current forecast and the baseline forecast.
 
@@ -174,7 +174,7 @@ Again, Figure~\ref{fig:arcs_dynamic} shows dynamic arcs which resulted from slig
 
 We have realized it is possible for dynamic arcs to be misinterpreted.  Users may incorrectly assume that absence of an arc indicates that the relationship is no longer present---e.g., if the predation arc from spiny dogfish to cod is not present, then the spiny dogfish are not eating the cod.  However, we believed that users would understand the true meaning of the arcs after a brief explanation---e.g., the arc between spiny dogfish and cod is no longer being drawn because there are no changes in the cod population that might be explained by the spiny dogfish.  When informally showing the model to users during and after development, we found that users properly interpreted the arcs after a demonstration or interaction with the model.  Another possible criticism of the dynamic arcs is that sometimes many arcs are drawn and it can become cluttered, such as when several sliders are pulled to the extremes.  However, generally less arcs are drawn in dynamic mode than static mode even in extreme cases.  Also, fishery managers may potentially be more interested in comparing the long-term effects of slight adjustments to fishing quota than dramatic adjustments that either eliminate fishing completely or wipe out entire stocks through overfishing.
 
-\paragraph{Dynamic with Animation}
+\paragraph{Dynamic with Animation} \label{sec:arcDynamicAnimated}
 
 \begin{figure}[h]
 	\centering
