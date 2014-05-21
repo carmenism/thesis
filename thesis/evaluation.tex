@@ -1,19 +1,19 @@
 \chapter{Evaluation}
 
-The intention behind this work has been to develop an interactive visualization that effectively portrays the MS-PROD model and its implications.  We conducted two types of evaluations to determine which design alternatives were best for conveying this information: a formal evaluation of the arcs with novice users and an informal evaluation with expert users.  These two evaluations and the resulting findings are described in detail below. 
+The intention behind this work has been to develop an interactive visualization that effectively portrays the MS-PROD model and its implications.  Two types of evaluations were conducted to determine which design alternatives were best for conveying this information: a formal evaluation of the arcs with novice users and an informal evaluation with expert users.  These two evaluations and the resulting findings are described in detail below. 
 
 \section{Formal Evaluation of Dynamic Arcs}
 
 We were interested in how different visualization alternatives enhance a user's understanding of the complex relationships between the fish species and the effects of those relationships.  In other words, is there a benefit to using dynamic, animated arcs---the most complicated representation of the relationships---over another method or even displaying no arcs at all?  To investigate this question, we designed and conducted a user study to measure the performance of different arc depiction alternatives.  The experimental conditions were as follows:
-
 \begin{enumerate}[(A)]
 \item \textbf{No arcs} - Only the time series are displayed on the screen. 
-\item \textbf{Static arcs} - Arcs are drawn between the species to show predation or competition.  The width of the arc is based on the coefficient in the input parameter file.  All arcs are drawn at all times.
+\item \textbf{Static arcs} - Arcs are drawn between the time series to show predation or competition.  The width of the arc is based on the coefficient in the input parameter file.  All arcs are drawn at all times.
 \item \textbf{Dynamic arcs without animation} - The arcs change in width according to causal linkage, as described in Section~\ref{sec:arcDynamic}.
 \item \textbf{Dynamic arcs with animation} - The arcs are dynamic and feature animation to help indicate the direction of the relationship.
 \end{enumerate}
+The ``blended'' depiction of change and absolute biomass markers were displayed in all four conditions.
 
-Our hypothesis was that the Condition A would be the least effective, as it requires the user to guess why indirect or unexpected changes in biomass occurred since no arcs are drawn.  We also hypothesized that Condition C and Condition D would be more effective than Condition B, because dynamic arcs filter to show the relevant information, while static arcs show all information at once which could be overwhelming.  Finally, we hypothesized that Condition D would be at least slightly more effective than Condition C, since there are more visual cues for directionality with the animated arcs versus the non-animated arcs.
+Our hypothesis was that the Condition A would be the least effective, as it requires the user to guess why indirect or unexpected changes in biomass occurred since no arcs are drawn.  We also hypothesized that Conditions C and D would be more effective than Condition B, because dynamic arcs filter to show the relevant information, while static arcs show all information at once which could be overwhelming.  Finally, we hypothesized that Condition D would be at least slightly more effective than Condition C, since there are more visual cues for directionality with the animated arcs than with the non-animated arcs.
 
 \subsection{Method}
 
@@ -25,7 +25,7 @@ In the remainder of the experiment, the participant followed on screen instructi
 
 \subsection{Apparatus}
 
-We conducted the experiment using a standard Dell laptop with an extra Dell monitor.  The window with the model visualization was maximized on the extra screen, while the window with the experiment questions was maximized on the laptop screen.  Participants used the mouse to interact with the model visualization and recorded their answers using the laptop keyboard.
+We conducted the experiment using a standard Dell laptop with an extra Dell monitor.  The window with the model visualization was maximized on the extra screen, while the window with the experiment questions was maximized on the laptop screen.  Participants used the mouse to interact with the model visualization and recorded their answers using the laptop keyboard and mouse.
 
 \subsection{Participants} \label{sec:participants}
 
@@ -44,9 +44,7 @@ Initially, all fishing effort sliders were set to the value of one.  Participant
 	\label{fig:eval_inst}
 \end{figure}
 
-Next, the participants were asked to answer one or more questions of the form, ``\textit{What was the effect on (fish species)?}''  E.g., \textit{``What was the effect on haddock?''}  All questions, as well as their answers, can be seen in Appendix~\ref{sec:questions}, grouped together by instruction.  %The questions were designed so that sometimes the fish species was a member of the function group for which the effort was just adjusted, while other times the fish species was not a member of that functional group.
-
-Users answered this ``What\ldots?'' question with one of five options from a drop-down menu:
+Next, the participants were asked to answer one or more questions of the form, ``\textit{What was the effect on (fish species)?}''  E.g., \textit{``What was the effect on haddock?''}  All questions, as well as their answers, can be seen in Appendix~\ref{sec:questions}, grouped together by instruction.  Participants answered this ``What\ldots?''\ question with one of five options from a drop-down menu:
 \begin{itemize}
 \item \textit{Increased a lot}
 \item \textit{Increased a little}
@@ -54,22 +52,13 @@ Users answered this ``What\ldots?'' question with one of five options from a dro
 \item \textit{Decreased a little}
 \item \textit{Decreased a lot}
 \end{itemize}
-An example of the evaluation window as it appeared to users is shown in Figure~\ref{fig:eval_what}.
-
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.48\textwidth]{figures/png/eval_what.png}
-%	\caption{An example of evaluation window where users recorded their answers to the ``What\ldots?'' questions.}
-%	\label{fig:eval_what}
-%\end{figure}
-
-
+An example of the evaluation window with the drop-down menu as it appeared to users is shown in Figure~\ref{fig:eval_what}.
 
 \begin{figure}
 \centering
 
-\subfigure[The drop-down for selecting ``What\ldots?'' answers.]{\label{fig:eval_what}\includegraphics[width=0.48\textwidth]{figures/png/eval_what.png}} 
-\subfigure[The text box for entering ``Why?'' answers.]{\label{fig:eval_why}\includegraphics[width=0.48\textwidth]{figures/png/eval_why.png}}
+\subfigure[The drop-down for selecting ``What\ldots?''\ answers.]{\label{fig:eval_what}\includegraphics[width=0.48\textwidth]{figures/png/eval_what.png}} 
+\subfigure[The text box for entering ``Why?''\ answers.]{\label{fig:eval_why}\includegraphics[width=0.48\textwidth]{figures/png/eval_why.png}}
 
 	\caption[Examples of the windows where participants entered answers]{Examples of the windows where participants entered answers.}
 	\label{fig:eval}
@@ -83,47 +72,47 @@ The questions were designed to fit in one of two difficulty categories:
 \item Higher-order
 \end{itemize}
 
-First-order questions asked about a fish species whose biomass changed directly as a result of increased or decreased harvest effort.  In other words, the fish was a member of the functional group whose harvest effort was changed and either (a) its biomass decreased due to increased harvest effort or (b) its biomass increased due to decreased harvest effort---e.g.,  increase harvest on A $\rightarrow$ biomass of A decreases.  There were three questions of this type.
+First-order questions asked about a fish species whose biomass changed directly as a result of increased or decreased harvest effort.  In other words, the fish was a member of the functional group whose harvest effort was changed and either (a) its biomass decreased due to increased harvest effort or (b) its biomass increased due to decreased harvest effort---e.g.,  increase harvest on A $\rightarrow$ biomass of A decreases.  There were three ``Why?''\ questions of this type.
 
-Higher-order questions concerned a fish species whose biomass changed from a second-order or third-order effect.  In this case, the fish may or may not have been a member of the functional group for which the fishing effort changed.  If the fish was a member of the functional group, then perhaps its biomass did not change as expected because of the effects of competition or predation with other members of the functional group.  If the fish was not a member of the functional group for which fishing effort changed, then its biomass may have changed because of competition or predation with a member of that functional group---e.g., increase harvest on A $\rightarrow$ biomass of A decreases $\rightarrow$ biomass of B increases because A eats B.  More complex explanations involving several inter-species relationships are also possible---e.g., increase harvest on A $\rightarrow$ biomass of A decreases $\rightarrow$ biomass of B increases because A eats B $\rightarrow$ biomass of C decreases because B eats C.  There were four higher-order questions. 
+Higher-order questions concerned a fish species whose biomass changed from a second-order or third-order effect.  In this case, the fish may or may not have been a member of the functional group for which the fishing effort changed.  If the fish was a member of the functional group, then perhaps its biomass did not change as expected because of the effects of competition or predation with other members of the functional group.  If the fish was not a member of the functional group for which fishing effort changed, then its biomass may have changed because of competition or predation with a member of that functional group---e.g., increase harvest on A $\rightarrow$ biomass of A decreases $\rightarrow$ biomass of B increases because A eats B.  More complex explanations involving several inter-species relationships are also possible---e.g., increase harvest on A $\rightarrow$ biomass of A decreases $\rightarrow$ biomass of B increases because A eats B $\rightarrow$ biomass of C decreases because B eats C.  There were four higher-order ``Why?''\ questions. 
 
-In total, there were three instructions for adjusting the harvest effort and seven questions.  All participants were given the same instructions and asked the same questions in the same order, regardless of condition.
+In total, there were three instructions for adjusting the harvest effort and seven pairs of ``What?''\ and ``Why?''\ questions.  All participants were given the same instructions and asked the same questions in the same order, regardless of condition.
 
 \subsection{Results}
 
 \begin{figure}
 \centering
 
-\subfigure[``What\ldots?'' scores.]{\label{fig:resultsWhat}\includegraphics[width=0.32\textwidth]{figures/png/results_what.png}} 
-\subfigure[First-order ``Why?'' scores.]{\label{fig:resultsWhy1}\includegraphics[width=0.32\textwidth]{figures/png/results_why1.png}}
-\subfigure[Higher-order ``Why?'' scores.]{\label{fig:resultsWhy23}\includegraphics[width=0.32\textwidth]{figures/png/results_why23.png}}  
+\subfigure[``What\ldots?''\ scores.]{\label{fig:resultsWhat}\includegraphics[width=0.32\textwidth]{figures/png/results_what.png}} 
+\subfigure[First-order ``Why?''\ scores.]{\label{fig:resultsWhy1}\includegraphics[width=0.32\textwidth]{figures/png/results_why1.png}}
+\subfigure[Higher-order ``Why?''\ scores.]{\label{fig:resultsWhy23}\includegraphics[width=0.32\textwidth]{figures/png/results_why23.png}}  
 
 	\caption[Results of the formal evaluation, shown as mean scores graphed by condition]{Results of the formal evaluation, shown as mean scores graphed by condition.  Scores were assigned on a scale from 0 to 3.}
 	\label{fig:results}
 \end{figure}
 
-The answers to the questions of the evaluation were graded on a scale of 0 (i.e., completely wrong) to 3 (i.e., completely correct), with partial points allowed.  ``What\ldots?'' questions, which were answered using a drop-down, were graded automatically by a script, while ``Why?'' questions were graded by two undergraduate graders.  The average of the two scores was taken and these averages were used in our analyses.  The correlation coefficient (Pearson's $r$) between the scores assigned by each grader was 0.744.
+The answers to the questions of the evaluation were graded on a scale of 0 (i.e., completely wrong) to 3 (i.e., completely correct), with partial points allowed.  ``What\ldots?''\ questions, which were answered using a drop-down, were graded automatically by a script, while ``Why?''\ questions were graded by two undergraduate graders.  The average of the two scores was taken and these averages were used in our analyses.  The correlation coefficient (Pearson's $r$) between the scores assigned by each grader was 0.744.
 
 The summarized results of our evaluation can be found in Figure~\ref{fig:results}, where mean scores are shown by condition.  For our analyses, we divided the questions into three categories:
 \begin{enumerate}
-\item ``What\ldots?'' questions
-\item First-order ``Why?'' questions
-\item Higher-order ``Why?'' questions
+\item ``What\ldots?''\ questions (seven questions)
+\item First-order ``Why?''\ questions (three questions)
+\item Higher-order ``Why?''\ questions (four questions)
 \end{enumerate}
-Separate ANOVAs (analysis of variance) were run with Tukey HSD (Honestly Significant Differences) tests for each of these three types of questions.  There were no significant differences between the four conditions for the seven ``What\ldots?'' questions and the three first-order ``Why?'' questions.    However, there was a significant effect for the four conditions with the higher-order ``Why?'' questions, shown by $(F[1, 76] = 12.6; p < 0.001)$ and the HSD test, with no other significant differences (see Figure~\ref{fig:resultsWhy23}).
+Separate ANOVAs (analysis of variance) were run with Tukey HSD (Honestly Significant Differences) tests for each of these three types of questions.  There were no significant differences between the four conditions for the seven ``What\ldots?''\ questions and the three first-order ``Why?''\ questions.    However, there was a significant effect for the four conditions with the higher-order ``Why?''\ questions, shown by $(F[1, 76] = 12.6; p < 0.001)$ and the HSD test, with no other significant differences (see Figure~\ref{fig:resultsWhy23}).
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.85\textwidth]{figures/png/results_arts_science.png}
-	\caption[Mean scores for low quantitative versus high quantitative students for the higher-order ``Why?'' questions]{Mean scores for low quantitative versus high quantitative students for the higher-order ``Why?'' questions.}
+	\caption[Mean scores for low quantitative versus high quantitative students for the higher-order ``Why?''\ questions]{Mean scores for low quantitative versus high quantitative students for the higher-order ``Why?''\ questions.}
 	\label{fig:results_arts_science}
 \end{figure}
 
-Additional ANOVAs were run to look for effects of gender and whether the student was a ``low quantitative'' or ``high quantitative'' student, as defined in Section~\ref{sec:participants}.  The gender and quantitative factors showed no significant effect for the higher-order ``Why?'' questions according to our analyses.  Nevertheless, the quantitative effect approached significance as seen by $(F[1, 3] = 5.26; p = 0.1)$; the effects of this are illustrated in Figure~\ref{fig:results_arts_science}.
+Additional ANOVAs were run to look for effects of gender and whether the student was a ``low quantitative'' or ``high quantitative'' student, as defined in Section~\ref{sec:participants}.  The gender and quantitative factors showed no significant effect for the higher-order ``Why?''\ questions according to our analyses.  Nevertheless, the quantitative effect approached significance as seen by $(F[1, 3] = 5.26; p = 0.1)$; the effects of this are illustrated in Figure~\ref{fig:results_arts_science}.
 
 \subsection{Discussion}
 
-Our results strongly suggest that using either static or dynamic arcs is better than using no arcs at all for asking more difficult (i.e., higher-order) questions about the complex, underlying relationships between the species.  The type of causal relationship depiction did not matter as much when it came to simpler (i.e., ``What\ldots?'' and first-order ``Why?'') questions.  For the ``What\ldots?'' questions, this is not surprising, as these questions were concerned with reading a change in a time series chart, for which the inter-species relationships were totally irrelevant.  Similarly, the first-order ``Why?'' questions involved direct effects of the changes in fishing effort, so understanding of the inter-species relationships was unnecessary.  Only the higher-order questions involved the competition and/or predation relationships, leading to a significance to the presence or absence of arcs.
+Our results strongly suggest that using either static or dynamic arcs is better than using no arcs at all for asking more difficult (i.e., higher-order) questions about the complex, underlying relationships between the species.  The type of causal relationship depiction did not matter as much when it came to simpler (i.e., ``What\ldots?''\ and first-order ``Why?'') questions.  For the ``What\ldots?''\ questions, this is not surprising, as these questions were concerned with reading a change in a time series chart, for which the inter-species relationships were totally irrelevant.  Similarly, the first-order ``Why?''\ questions involved direct effects of the changes in fishing effort, so understanding of the inter-species relationships was unnecessary.  Only the higher-order questions involved the competition and/or predation relationships, leading to a significance to the presence or absence of arcs.
 
 Though the difference in mean score between low and high quantitative students, shown in Figure~\ref{fig:results_arts_science}, was not significant, it is interesting.  In Condition A (no arcs), the mean for high quantitative students was over three times the mean for low quantitative students.  This could possibly suggest that high quantitative students were able to perform better in the absence of arcs since they have more experience with quantitative analysis and reasoning.  The gap narrowed in the other conditions; under Condition B (static arcs), high quantitative students had scores over twice as high as the low quantitative students on average, while the means were similar in Conditions C (dynamic arcs) and D (animated and dynamic arcs).  Again, this effect failed to reach significance, so no strong conclusions should be drawn, but this may imply that dynamic arcs enabled low quantitative students to produce higher quality answers.  Perhaps an evaluation with more participants would produce a significant result concerning the type of student.
 
@@ -153,4 +142,4 @@ Mr.\ Goethel found both the small multiple and four panel views useful.  He did 
 
 As for the different depictions of change, Mr.\ Goethel preferred the blended, shaded area between the two forecasts over instantaneous change only or the dotted line for the previous forecast.  He said he would always use the blended option because it was more informative.  For understanding the relationships between fish, he preferred the dynamic, animated arc over all other options.  This option allows the user to ``follow the flow [of the relationships] more easily,'' while he found it ``harder to see the conclusion'' of the effects of the harvest without animation.  He was excited to see a visualization of these relationships because they can be counter-intuitive even to someone with as much experience as him.
 
-Overall, Mr.\ Goethel was interested in the model, saying that its visualization would help to convince people that more complex models like MS-PROD are necessary.  He said fishery managers typically prefer single species models and make decisions for ten-year periods.  However, Mr.\ Goethel finds it important to considering multiple species as well as other factors and to think about management for longer time periods, like MS-PROD.  He said that MS-PROD ``might reflect reality more,'' and our visualization might help to persuading managers of this.  He said he recommended restricting access of the model to scientific community only for now and waiting before presenting it to the general public to avoid unexperienced users from drawing incorrect conclusions.
+Overall, Mr.\ Goethel was interested in the model, saying that its visualization would help to convince people that more complex models like MS-PROD are necessary.  He said fishery managers typically prefer single species models and make decisions for ten-year periods.  However, Mr.\ Goethel finds it important to consider multiple species as well as other factors and to think about management for longer time periods, like MS-PROD does.  He said that MS-PROD ``might reflect reality more,'' and our visualization might help to persuade managers of this.  He recommended restricting access to the model to the scientific community only for now and waiting before presenting it to the general public to avoid unexperienced users from drawing incorrect conclusions.
