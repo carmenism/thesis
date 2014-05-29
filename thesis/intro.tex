@@ -11,7 +11,7 @@ Fishery managers have only one ``lever'' to pull when it comes to fishery manage
 
 \section{Models}
 
-Both the short- and long-term effects of human exploitation on an ocean ecosystem, such as the species inhabiting the Gulf of Maine, are not easily understood.  Experiments which would allow ecosystem managers to investigate the impact of different levels of exploitation over many years are either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
+Both the short- and long-term effects of human exploitation on an ocean ecosystem, such as the species inhabiting the Gulf of Maine, are not easily understood.  Experiments that would allow ecosystem managers to investigate the impact of different levels of exploitation over many years are either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
 
 \subsection{Lotka-Volterra Equations}
 
@@ -31,7 +31,7 @@ The Lotka-Volterra model can be modified to take competition instead of predatio
 \end{align}
 where $r_i$ is the growth rate for species $i$, $K_i$ is the carrying capacity for species $i$, and $\alpha_{ij}$ is the effect species $j$ has on species $i$.  As with Lotka-Volterra, this model concerns only two species, but it can be generalized to include more than two.
 
-Both Lotka-Volterra and Leslie-Gower do not incorporate a factor which is critical when discussing fisheries management: the effect of harvest.  The Schaefer model adds a term to account for the effect of harvest on an individual species \cite{schaefer1957}:
+Both Lotka-Volterra and Leslie-Gower do not incorporate a factor that is critical when discussing fisheries management: the effect of harvest.  The Schaefer model adds a term to account for the effect of harvest on an individual species \cite{schaefer1957}:
 
 \begin{align}
    \frac{d N}{dt} &= r N \left(1 - \left(\frac{N}{K}\right)\right) - q E N
@@ -51,7 +51,7 @@ where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r
 
 This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Each species to be included in the simulation must be specified in the parameter file by listing growth rate, functional group membership, initial biomass, carrying capacity, and catchability.  Additionally, matrices representing inter-species relationships must be provided to describe the relationship between every pair of species.  Such matrices are required for \textit{predation}, where one species consumes the other, and \textit{competition}, where one species affects the other in any manner besides predation.  (In ecology, the word ``interaction'' is often used instead of ``competition,'' but we have chosen to use ``competition'' so that the term ``interaction'' will not be overloaded since ``interaction'' has a separate meaning in a visualization context.)
 
-The MS-PROD authors provided us with a parameter file which contains ten key species chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME), listed here by functional group (in bold):
+The MS-PROD authors provided us with a parameter file that contains ten key species chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME), listed here by functional group (in bold):
 \begin{itemize}
 	\item \textbf{Elasmobranchs:} Skates, Spiny Dogfish
 	\item \textbf{Flatfish:} Windowpane, Winter Flounder, Yellowfin Tuna
@@ -63,7 +63,7 @@ The MS-PROD model runs simulations for 30 years with an annual time step to pred
 
 \section{Visualization Methods}
 
-When designing any complex interactive visualization, a large number of design choices must be made.  This section reviews existing research of visualization methods which have relevance to the problem of creating an effective interface to a fisheries ecosystem model---in particular, methods for representing time series, networks, causality, and uncertainty.
+When designing any complex interactive visualization, a large number of design choices must be made.  This section reviews existing research of visualization methods that have relevance to the problem of creating an effective interface to a fisheries ecosystem model---in particular, methods for representing time series, networks, causality, and uncertainty.
 
 \subsection{Time Series}
 
@@ -150,7 +150,7 @@ One option for showing fish species interactions would be to use a force-directe
 	\label{fig:arcdiagram}
 \end{figure}
 
-An alternative for force-directed layout is an arc diagram.  The name arc diagram was coined by Wattenberg \citeyearpar{wattenberg2002}, though they were invented earlier.  Knuth used arc diagrams to illustrate interaction of characters in Victor Hugo's novel \textit{Les} \textit{Mis\'erables}, seen in Figure~\ref{fig:arcdiagram} \citeyearpar{knuth1993}.  Each character is represented with a circular node, where size indicates the number of appearances in the novel.  The nodes are arranged linearly, colored and ordered according to clusters of characters that appear together frequently.  Semi-transparent arcs are drawn between the characters which appear in the same chapter, with the thickness of the arc representing the number of such appearances.  While the arc diagram may fail to properly depict the structure of a network, Heer et al.\ point out it is advantageous because the one-dimensionality allows for other features to be easily displayed near the nodes \citeyearpar{heer2010}, such as text labels.
+An alternative for force-directed layout is an arc diagram.  The name arc diagram was coined by Wattenberg \citeyearpar{wattenberg2002}, though they were invented earlier.  Knuth used arc diagrams to illustrate interaction of characters in Victor Hugo's novel \textit{Les} \textit{Mis\'erables}, seen in Figure~\ref{fig:arcdiagram} \citeyearpar{knuth1993}.  Each character is represented with a circular node, where size indicates the number of appearances in the novel.  The nodes are arranged linearly, colored and ordered according to clusters of characters that appear together frequently.  Semi-transparent arcs are drawn between the characters who appear in the same chapter, with the thickness of the arc representing the number of such appearances.  While the arc diagram may fail to properly depict the structure of a network, Heer et al.\ point out it is advantageous because the one-dimensionality allows for other features to be easily displayed near the nodes \citeyearpar{heer2010}, such as text labels.
 
 \subsubsection{Directed Edges}
 
@@ -220,7 +220,7 @@ Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static an
 	\label{fig:uncertaintyAlternatives}
 \end{figure}
 
-Because a model is a simplification of reality, there are many reasons why it may be inaccurate.  There may be inaccurately estimated parameters used in the model, such as the predation matrix coeffecients or the starting values for the biomasses of the fish species.  Furthemore, relevant factors may not have been taken into account when designing the model, such as climate.  Inaccuracies may even result from approximation techniques, such as the use of a Runge-Kutta method.  Therefore, it is common for a model's output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuracies when the correct answer is known, while \textit{uncertainty} describes inaccuracies when the answer is unknown \cite{hunter1993}.  Due to uncertainty, model output is best understood as a range of expected values which is likely to contain the true value.  According to Potter et al., scientific data should be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated some different portrayals of uncertainty.
+Because a model is a simplification of reality, there are many reasons why it may be inaccurate.  There may be inaccurately estimated parameters used in the model, such as the predation matrix coeffecients or the starting values for the biomasses of the fish species.  Furthemore, relevant factors may not have been taken into account when designing the model, such as climate.  Inaccuracies may even result from approximation techniques, such as the use of a Runge-Kutta method.  Therefore, it is common for a model's output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuracies when the correct answer is known, while \textit{uncertainty} describes inaccuracies when the answer is unknown \cite{hunter1993}.  Due to uncertainty, model output is best understood as a range of expected values that is likely to contain the true value.  According to Potter et al., scientific data should be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated some different portrayals of uncertainty.
 %Uncertainty can arise at several stages---the conceptualization of the model, the collection of the model input, or due to data transformations \cite{}.
 
 Cox et al.\ explored methods for depicting uncertainty for hurricane advisories \citeyearpar{cox2013}.  The traditional error cone, shown in Figure~\ref{fig:uncertaintyCone}, is used by NOAA's National Hurricane Center, but it can be poorly understood by the average citizen.  Cox et al.\ designed their own alternative representation, shown in Figure~\ref{fig:uncertaintyHouse}, where many possible hurricane tracks are drawn to describe the range of possible outcomes.  Their user evaluation found that neither method was significantly better than the other for all cases, but a qualitative analysis showed that nearly all users prefer their new method over the error cone.
