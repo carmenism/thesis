@@ -7,13 +7,13 @@ The motivation of this research is to provide an interactive visualization to th
 	\item \textbf{The model itself:}  E.g., why does the abundance of one species increase when another species is caught? 
 \end{itemize} 
 
-To accomplish this goal, we determined our interactive interface of the MS-PROD model would need to visualize:
+To accomplish this goal, we determined that our interactive interface of the MS-PROD model would need to visualize:
 
 \begin{itemize}
-	\item The predicted biomass over time for all modeled species
-	\item Changes in predicted biomass as a result of changes in fishing effort for a subset of species
-	\item Causal relationships which help to explain why the model predicts the effects of changes in fishing effort for a subset of species
-	\item Uncertainty of the model
+	\item the predicted biomass over time for all modeled species;
+	\item changes in predicted biomass as a result of changes in fishing effort for a subset of species;
+	\item causal relationships which help to explain why the model predicts the effects of changes in fishing effort for a subset of species; and
+	\item uncertainty of the model
 \end{itemize} 
 
 Since setting fishing quotas is the only action fishery managers can take, we determined that the only interaction available to users would be to adjust the fishing effort level; all other model parameters are not modifiable once the model and its visualization are running.  This interaction is done by means of a set of sliders with the goal of allowing the user to immediately see the impact of management decisions on fisheries.  The user adjusts sliders which represent harvest effort and watches the biomass plots change instantaneously as the model is re-run according to the new effort values.  The sliders are set to one (1) by default and use a non-linear scale with higher resolution for values less than one, seen in Figure~\ref{fig:slider}; this allows the user to see the effects of reducing harvest effort by 25\% percent or tripling harvest effort.  Like Eberlein and Peterson, we aimed to turn the ``time consuming and tedious'' task of working with a model into a ``fast and fun'' interactive experience \citeyearpar{eberlein1992}.  Different views and features of the model visualization are described and discussed in the sections below.  
@@ -25,7 +25,7 @@ Since setting fishing quotas is the only action fishery managers can take, we de
 	\label{fig:slider}
 \end{figure}
 
-It is important to note that the MS-PROD model allows for different fishing effort values for each species for each year in the thirty-year period that the model produces forecasts for.  This is to reflect that fishing quotas can change from year to year.  Since there are ten species and thirty years, this means there are potentially 300 separate fishing effort values that could be set by a user.  However, it would be cluttered and confusing to have an effort slider for each of those 300 values.  Therefore, two simplifications were made.  First, fishing effort should be controlled by functional group rather than individual; the model authors requested this because it is more realistic than fishing by individual species.  Second, fishing effort for a functional group is constant across all thirty years; while this is unrealistic, it is easier to understand and perhaps, in a sustainable, ``perfect world,'' fishing quotas would not need adjusting over the years.  Thus, each slider controls the fishing effort for all thirty years for a particular functional group.
+It is important to note that the MS-PROD model allows for different fishing effort values for each species for each year in the thirty-year period for which the model produces forecasts.  This is to reflect that fishing quotas can change from year to year.  Since there are ten species and thirty years, this means there are potentially 300 separate fishing effort values that could be set by a user.  However, it would be cluttered and confusing to have an effort slider for each of those 300 values.  Therefore, two simplifications were made.  First, fishing effort should be controlled by functional group rather than individual; the model authors requested this because it is more realistic than fishing by individual species.  Second, fishing effort for a functional group is constant across all thirty years; while this is unrealistic, it is easier to understand and perhaps, in a sustainable, ``perfect world,'' fishing quotas would not need adjusting over the years.  Thus, each slider controls the fishing effort for all thirty years for a particular functional group.
 
 \section{Visualization of Predicted Biomass}
 
@@ -33,39 +33,39 @@ Our first challenge was to decide how to display the thirty-year biomass forecas
 
 \subsection{Alternative Screen Layouts}
 
-And early design decision concerned the issue of how many individual charts should be used to display the data and how to arrange those charts.  Two alternative screen layouts were developed for displaying these time series on line charts: a ``four panel'' view in Figure~\ref{fig:msprod_group} and a ``small multiple'' view in Figure~\ref{fig:msprod_species}, described in further detail below.  With both views, the time series for the species are organized by functional group.  A functional group is a biological grouping of species which perform similar functions within their ecosystem---e.g., mackerel and herring are both members of the ``small pelagic'' group since they live in the water column.
+An early design decision concerned the issue of how many individual charts should be used to display the data and how to arrange those charts.  Two alternative screen layouts were developed for displaying these time series on line charts: a ``four panel'' view in Figure~\ref{fig:msprod_group} and a ``small multiple'' view in Figure~\ref{fig:msprod_species}, described in further detail below.  With both views, the time series for the species are organized by functional group.  A functional group is a biological grouping of species which perform similar functions within their ecosystem---e.g., mackerel and herring are both members of the ``small pelagic'' group since they live in the water column.
 
-There were several reasons for the decision to arrange by functional group rather than placing all time series on a single line chart.  First, harvest effort is controlled by functional group using the sliders, so it must be somehow indicated which species are part of which functional group.  With multiple time series, this can be encoded through positioning by arranging the slider of a functional group to be near the time series of that group's species.  Second, it would have been impractical to simply place all time series on a single line chart because would have been difficult to select enough distinct colors to represent each of the ten species.  Furthermore, the biomass of some species is significantly larger than others.  By scaling the $y$-axis according to the largest biomass value of all species in the entire 30-year time span, the lines representing some species would have been crowded at the bottom of the chart and seemed to be flat even when they were not.
+There were a number of reasons behind the decision to arrange by functional group rather than placing all time series on a single line chart.  First, harvest effort is controlled by functional group using the sliders, so it must be somehow indicated which species are part of which functional group.  With multiple time series, this can be encoded through positioning by arranging the slider of a functional group to be near the time series of that group's species.  Second, the biomass of some species is significantly larger than others.  By scaling the $y$-axis according to the largest biomass value of all species in the entire 30-year time span, the lines representing some species would have been crowded at the bottom of the chart and seemed to be flat even when they were not.
 
 \subsubsection{Four Panel View}
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=14cm]{figures/png/msprod_group.png}
 	\caption[The ``four panel'' view of our MS-PROD visualization]{The ``four panel'' view of our MS-PROD visualization.}
 	\label{fig:msprod_group}
 \end{figure}
 
-It was observed that species of similar functional groups tend to have biomass values in similar numeric ranges, so a decision was made to have one line chart per functional group for displaying biomasses.  This view is called the ``four panel'' view and is shown in Figure~\ref{fig:msprod_group}.
+We observed that species of similar functional groups tend to have biomass values in similar numeric ranges, so we decided to have one line chart per functional group for displaying biomasses.  This view is called the ``four panel'' view and is shown in Figure~\ref{fig:msprod_group}.
 
-The major advantage of this ``four panel'' view is that comparison of species within a group is easy.  For MS-PROD, there are only two or three species per functional group, so the line chart for each group tends to not suffer from occlusion problems.  Direct and indirect effects of changes in harvest effort are easily differentiated with the ``four panel'' approach---e.g., if the user adjusts the effort slider only for elasmobranchs, yet sees the biomasses change on the groundfish chart, then the user can begin to understand there is some kind of relationship between elasmobranchs and groundfish.
+The major advantage of this ``four panel'' view is that comparison of species within a group is easy.  For MS-PROD, there are only two or three species per functional group, so the line chart for each group seldom suffers from occlusion problems.  Direct and indirect effects of changes in harvest effort are easily differentiated with the ``four panel'' approach---e.g., if the user adjusts the effort slider only for elasmobranchs, yet sees the biomasses change on the groundfish chart, the user can begin to understand there is some kind of relationship between elasmobranchs and groundfish.
 
 \subsubsection{Small Multiples View}
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=12cm]{figures/png/msprod_species.png}
 	\caption[The ``small multiples'' view of our MS-PROD visualization]{The ``small multiples'' view of our MS-PROD visualization.}
 	\label{fig:msprod_species}
 \end{figure}
 
-The alternative to the ``four panel'' view is to view each species on its own plot, which we call the ``small multiple'' view.  The main purpose of this view was to support the addition of arc graph connections between species, as are discussed later in Section~\ref{sec:interSpeciesArc}. Shown in Figure~\ref{fig:msprod_species}, each plot is sorted and colored according to functional group membership.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
+The alternative to the ``four panel'' view is to see each species on its own plot, which we call the ``small multiple'' view.  The main purpose of this view is to support the addition of arc graph connections between species, as discussed in Section~\ref{sec:interSpeciesArc}. Shown in Figure~\ref{fig:msprod_species}, each plot is sorted and colored according to functional group membership.  The harvest effort sliders are also colored by functional group and positioned near the plots of the corresponding group.  This allows for the ability to differentiate between direct and indirect effects of changes in harvest effort.
 
 With each species on its own plot, it is much easier to interpret the biomass predictions of an individual species, since the $y$-dimension of a plot can be scaled to the data of one species only.  It is also easier to perceive increases or decreases in biomass because no species suffer from the ``flattening'' that can occur when a series is displayed on the same plot as a series that has significantly higher values.  On the other hand, this makes biomass comparison between species somewhat difficult because all the y-axis scales are different and the user must either refer to the $y$-axis labels or hover over a specific point on a chart, which causes a label to appear, in order to determine the absolute value of the biomass at a point in time.
 
 \subsubsection{Absolute Biomass Indicators}
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=11cm]{figures/png/msprod_abssize.png}
 	\caption[Absolute biomass indicators overlaying the ``small multiples'' view]{Absolute biomass indicators overlaying the ``small multiples'' view.}
@@ -89,7 +89,7 @@ Absolute biomass indicators, seen in Figure~\ref{fig:msprod_abssize}, were intro
 	\label{fig:changeTypes}
 \end{figure}
 
-In order for modelers and other stakeholders to understand and compare decisions, the ability to perceive changes in biomass resulting from changes in the fishing effort is required.  Therefore, we have introduced a feature that allows the user to compare the forecast effects of a change in fishing effort to the forecasts of the \textit{status quo} [baseline]. There are three alternatives for displaying forecast differences with the baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted, as in Figure~\ref{fig:changeNone}.  In this case, the user must remember the previous curve in order to judge a change.  The second is a dotted gray line which shows the forecast of the baseline in addition to the current forecast, shown in Figure~\ref{fig:changeLine}.  The third is a shaded area originating from the curve of the current forecast that diminishes in opacity as it approaches the curve of the baseline forecast, as in Figure~\ref{fig:changeBlend}.
+In order for modelers and other stakeholders to understand and compare decisions, users must be able to perceive changes in biomass resulting from changes in the fishing effort.  Therefore, we introduced a feature that allows the user to compare the forecast effects of a change in fishing effort to the forecasts of the \textit{status quo} (the baseline). There are three alternatives for displaying forecast differences with the baseline.  The first is to simply have the biomass plots change instantaneously as the harvest effort sliders are adjusted, as in Figure~\ref{fig:changeNone}.  In this case, the user must remember the previous curve in order to judge a change.  The second is a dotted gray line which shows the forecast of the baseline in addition to the current forecast, shown in Figure~\ref{fig:changeLine}.  The third is a shaded area originating from the curve of the current forecast that diminishes in opacity as it approaches the curve of the baseline forecast, as in Figure~\ref{fig:changeBlend}.
 
 \begin{figure}[h]
 	\centering
@@ -106,7 +106,7 @@ This feature is available in both the ``four panel'' and ``small multiples'' vie
 
 \section{Visualization of Causal Relationships}
 
-Understanding of the model requires an understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}---and \textit{harvest}.  As defined earlier, predation is when one species consumes another and competition accounts for any way one species might impact another in a way that is not predation.  Harvest is the process of humans catching fish in the wild.  Our interface must explain to users which species impact each other, how harvesting impacts the species, and the magnitude of those relationships.  We have chosen to illustrate these relationships with a node-link diagram, where the nodes are the time series and effort sliders.
+Understanding the model requires an understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}---and \textit{harvest}.  As defined earlier, predation is when one species consumes another and competition accounts for any way one species might impact another in a way that is not predation.  Harvest is the process of humans catching fish in the wild.  Our interface must explain to users which species impact each other, how harvesting impacts the species, and the magnitude of those relationships.  We have chosen to illustrate these relationships with a node-link diagram, where the nodes are the time series and effort sliders.
 
 \subsection{Inter-Species Relationships}
 \label{sec:interSpeciesArc}
@@ -142,7 +142,7 @@ The predation and competition relationships are directed, where one species of f
 
 \subsubsection{Arc Type}
 
-The interface provides a few options for viewing the inter-species relationships.  Firstly, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both as in Figure~\ref{fig:arcsBoth}.  Secondly, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.  Regardless of the selected arc type, all predation arcs are colored orange and all competition arcs are colored sky-blue.  The user can mouse over a particular arc, which causes that arc to highlight---while the other arcs fade---and displays a label which spells out the relationship in words and shows the input parameter matrix original coefficient---e.g., ``Skates compete with Winter Flounder (0.6).''
+The interface provides a few options for viewing the inter-species relationships.  First, users have the ability to view either predation as in Figure~\ref{fig:arcsPredation}, competition as in Figure~\ref{fig:arcsCompetition}, or both as in Figure~\ref{fig:arcsBoth}.  Second, the arcs can be viewed statically, dynamically without animation, or dynamically with animation; these three arc types are described below.  Regardless of the selected arc type, all predation arcs are colored orange and all competition arcs are colored sky-blue.  The user can mouse over a particular arc, which causes that arc to highlight---while the other arcs fade---and displays a label that spells out the relationship in words and shows the input parameter matrix original coefficient---e.g., ``Skates compete with Winter Flounder (0.6).''
 
 \paragraph{Static} \label{sec:arcStatic}
 
@@ -150,9 +150,9 @@ With the static style of the arcs, all arcs are drawn at all times, as shown in 
 
 \paragraph{Dynamic} \label{sec:arcDynamic}
 
-Dynamic arcs, shown in Figure~\ref{fig:arcs_dynamic}, were motivated by need to (1) clarify the sized change in a causal influence path and (2) eliminate or at least reduce the visual clutter created by the static arcs.  We considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences in between the current forecast and the baseline forecast.
+Dynamic arcs, shown in Figure~\ref{fig:arcs_dynamic}, were motivated by need to (1) clarify the size change in a causal influence path and (2) eliminate or at least reduce the visual clutter created by the static arcs.  We considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences between the current forecast and the baseline forecast.
 
-The dynamic arcs are simplification of a time series of effects, where the width of each arc is proportional to a weight $w$:
+The dynamic arcs are a simplification of a time series of effects, where the width of each arc is proportional to a weight $w$:
 
 \begin{align}
 w = \frac{100000}{r_{0} + 100000} \cdot (s_{30} - s_{30}')
@@ -175,9 +175,9 @@ Additionally, the weight $w$ is negative if $s_{30} < s_{30}'$.  This is signifi
 	\label{fig:arcs_dynamic}
 \end{figure}
 
-Again, Figure~\ref{fig:arcs_dynamic} shows dynamic arcs which resulted from slightly increasing the fishing effort on elasmobranchs from 1.0 to about 1.25.  The spiny dogfish and skate biomasses both decreased as a result of the increase in fishing, as is indicated by the shaded area between the baseline forecast and the current forecast.  This is good from the perspective of all of the fish that either spiny dogfish or elasmobranchs predate on or compete with, therefore all of the arcs drawn from these two species show plus signs.  For example, spiny dogfish predate on cod, so the arc between them has plus signs.  The cod biomass increased, which seems to corroborate with the plus signs drawn on the arc.  There are also indirect effects that the arcs help to explain.  Cod competes with windowpane, so minus signs are drawn on the arc from cod to windowpane, which helps to explain the slight decrease in the windowpane biomass.
+Again, Figure~\ref{fig:arcs_dynamic} shows dynamic arcs that resulted from slightly increasing the fishing effort on elasmobranchs from 1.0 to about 1.25.  The spiny dogfish and skate biomasses both decreased as a result of the increase in fishing, as is indicated by the shaded area between the baseline forecast and the current forecast.  This is good from the perspective of all of the fish that either spiny dogfish or elasmobranchs predate on or compete with, therefore all of the arcs drawn from these two species show plus signs.  For example, spiny dogfish predate on cod, so the arc between them has plus signs.  The cod biomass increased, which seems to corroborate with the plus signs drawn on the arc.  There are also indirect effects that the arcs help to explain.  Cod competes with windowpane, so minus signs are drawn on the arc from cod to windowpane, which helps to explain the slight decrease in the windowpane biomass.
 
-We have realized it is possible for dynamic arcs to be misinterpreted.  Users may incorrectly assume that absence of an arc indicates that the relationship is no longer present---e.g., if the predation arc from spiny dogfish to cod is not present, then the spiny dogfish are not eating the cod.  However, we believed that users would understand the true meaning of the arcs after a brief explanation---e.g., the arc between spiny dogfish and cod is no longer being drawn because there are no changes in the cod population that might be explained by the spiny dogfish.  When informally showing the model to users during and after development, we found that users properly interpreted the arcs after a demonstration or interaction with the model.  Another possible criticism of the dynamic arcs is that sometimes many arcs are drawn and it can become cluttered, such as when several sliders are pulled to the extremes.  However, generally less arcs are drawn in dynamic mode than static mode even in extreme cases.  Also, fishery managers may potentially be more interested in comparing the long-term effects of slight adjustments to fishing quota than dramatic adjustments that either eliminate fishing completely or wipe out entire stocks through overfishing.
+We have realized it is possible for dynamic arcs to be misinterpreted.  Users may incorrectly assume that absence of an arc indicates that the relationship is no longer present---e.g., if the predation arc from spiny dogfish to cod is not present, then the spiny dogfish are not eating the cod.  However, we believed that users would understand the true meaning of the arcs after a brief explanation---e.g., the arc between spiny dogfish and cod is no longer being drawn because there are no changes in the cod population that might be explained by the spiny dogfish.  When informally showing the model to users during and after development, we found that users properly interpreted the arcs after a demonstration or interaction with the model.  Another possible criticism of the dynamic arcs is that sometimes many arcs are drawn and it can become cluttered, such as when several sliders are pulled to the extremes.  However, generally fewer arcs are drawn in dynamic mode than static mode even in extreme cases.  Also, fishery managers may potentially be more interested in comparing the long-term effects of slight adjustments to fishing quota than dramatic adjustments that either eliminate fishing completely or wipe out entire stocks through overfishing.
 
 \paragraph{Dynamic with Animation} \label{sec:arcDynamicAnimated}
 
@@ -192,7 +192,7 @@ The third and final type for viewing the inter-species arcs is dynamic arcs with
 
 \subsection{Harvest Influences}
 
-The other type of relationship that must be elucidated by the visualization is the harvest relationship.  While it is clear what the harvest effort value is for a particular slider, it could perhaps be clearer which species were directly affected by the harvest and how.  Therefore, a spline curve is drawn between a harvest type and a fish species, which corresponds to a fishing effort slider and a biomass small multiple, respectively, in the interface.  These links are drawn using Hermite spline curves which are colored yellow.  There are three styles for determining the width of these spline curves, which correspond to the styles for inter-species arcs: static, dynamic, and dynamic with animation.  The controls for setting the inter-species arc style also set the harvest spline curve style.  
+The other type of relationship that must be elucidated by the visualization is the harvest relationship.  While it is clear what the harvest effort value is for a particular slider, it could perhaps be clearer which species were directly affected by the harvest and how.  Therefore, a spline curve is drawn between a harvest type and a fish species, which correspond to a fishing effort slider and a biomass small multiple, respectively, in the interface.  These links are drawn using Hermite spline curves which are colored yellow.  There are three styles for determining the width of these spline curves, which correspond to the styles for inter-species arcs: static, dynamic, and dynamic with animation.  The controls for setting the inter-species arc style also set the harvest spline curve style.  
 
 \begin{figure}[h]
 	\centering
