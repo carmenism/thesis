@@ -7,11 +7,11 @@
 \renewcommand{\thepart}{{\Roman{part}}}				% <- Do this command only for
                                                 %    the first chapter!
 
-Fishery managers have only one ``lever'' to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Production models have been designed to help managers and fisherman understand the ecosystem they work within and the implications of their decisions.  In this context, a production model is a mathematical model, based on data, that simulates interactions between species and predicts species biomass as a function of fishing effort, climate change, and other variables.  MS-PROD is a multispecies production model developed by NOAA scientists Gamble and Link \citeyearpar{gamble2009}.  A visualization may enhance such a model by making its inner workings more explicit and may be useful for decision making. The goal of this research has been to explore design alternatives and evaluate the effectiveness of different modes of portrayal and interaction to make a visualization of the MS-PROD model that will be a valuable tool to the modelers and stakeholders alike. 
+Fishery managers have only one ``lever'' to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Production models have been designed to help managers and fishermen understand the ecosystem they work within and the implications of their decisions.  In this context, a production model is a mathematical model, based on data, that simulates interactions between species and predicts species biomass as a function of fishing effort, climate change, and other variables.  MS-PROD is a multispecies production model developed by NOAA scientists Gamble and Link \citeyearpar{gamble2009}.  A visualization may enhance such a model by making its inner workings more explicit and may be useful for decision making. The goal of this research has been to explore design alternatives and evaluate the effectiveness of different modes of portrayal and interaction to make a visualization of the MS-PROD model that will be a valuable tool to modelers and stakeholders alike. 
 
 \section{Models}
 
-Both the short- and long-term effects of human exploitation on an ocean ecosystem, such as the species inhabiting the Gulf of Maine, are not easily understood since experiments which would allow ecosystem managers to investigate the impact of different levels of exploitation over many years are either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
+Both the short- and long-term effects of human exploitation on an ocean ecosystem, such as the species inhabiting the Gulf of Maine, are not easily understood.  Experiments which would allow ecosystem managers to investigate the impact of different levels of exploitation over many years are either impractical or impossible to conduct on a large scale.  Fortunately, ecosystem models can be used instead to help gain a better understanding of an ecosystem.
 
 \subsection{Lotka-Volterra Equations}
 
@@ -23,7 +23,7 @@ Ecosystem models are abstract representations of an ecological system, and can r
 \end{align}
 where $N_1$ is the number of prey animals, $N_2$ is the number of predator animals, $t$ is time, $\alpha$ is the prey animals' growth rate, $\beta$ is the rate at which the predators destroys the prey animals, $\gamma$ is the death rate of the predators, and $\delta$ is the rate at which the predators increase from consuming the prey animals.  The model can be generalized to discuss an arbitrary number of species rather than just a single pair.
 
-The Lotka-Volterra model can be modified to take competition instead of predation into account, as in the Rosenzweig-MacArthur model \cite{rosenzweig1963} and the Leslie-Gower model \cite{leslie1960}.  These adaptations to the model also consider carrying capacity, which is the maximum number of a species that can be sustained indefinitely in a particular environment:
+The Lotka-Volterra model can be modified to take competition instead of predation into account, as in the Rosenzweig-MacArthur model \cite{rosenzweig1963} and the Leslie-Gower model \cite{leslie1960}.  These adaptations also consider carrying capacity, which is the maximum number of a species that can be sustained indefinitely in a particular environment:
 
 \begin{align}
    \frac{d N_1}{dt} &= r_1 N_1 \left(1 - \left(\frac{N_1 + \alpha_{12} N_2}{K_1}\right)\right)
@@ -38,7 +38,7 @@ Both Lotka-Volterra and Leslie-Gower do not incorporate a factor which is critic
 \end{align}
 where $N$ is the number (or biomass) of the species, $r$ is the growth rate, $K$ is the carrying capacity, $q$ is the catchability coefficient, and $E$ is the fishing effort.
 
-Simple models, when available and correct, are generally preferred; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, in reality, ecosystems are complex systems which require management that recognizes them as such \cite{christensen1996}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999}.  However, this approach has not often been implemented due to a lack of models which consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \citeyearpar{gamble2009}.
+Simple models, when available and correct, are generally preferred; since fewer components are needed to describe their real-world counterparts, they are more easily understood and implemented.  All three of these models are subjectively simple in that they only consider a few ecological factors each. However, in reality, ecosystems are complex systems that require management that recognizes them as such \cite{christensen1996}.  Thus, a more holistic approach called ecosystem-based fishery management (EBFM) has been advocated \cite{united1999}.  However, this approach has not often been implemented due to a lack of models that consider all necessary ecological factors.  Gamble and Link developed a multispecies production model (MS-PROD) to fill this gap \citeyearpar{gamble2009}.
 
 \subsection{The MS-PROD Model}
 
@@ -51,7 +51,7 @@ where $N_i$ is the number (or biomass) of species $i$, $t$ is a unit of time, $r
 
 This model is distinguished from other multispecies production models by describing stocks with explicit ecological and harvest factors.  Each species to be included in the simulation must be specified in the parameter file by listing growth rate, functional group membership, initial biomass, carrying capacity, and catchability.  Additionally, matrices representing inter-species relationships must be provided to describe the relationship between every pair of species.  Such matrices are required for \textit{predation}, where one species consumes the other, and \textit{competition}, where one species affects the other in any manner besides predation.  (In ecology, the word ``interaction'' is often used instead of ``competition,'' but we have chosen to use ``competition'' so that the term ``interaction'' will not be overloaded since ``interaction'' has a separate meaning in a visualization context.)
 
-The MS-PROD authors provided us with a parameter file which listed ten key species chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME), listed here by functional group (in bold):
+The MS-PROD authors provided us with a parameter file which contains ten key species chosen from the Northeast United States Continental Shelf Large Marine Ecosystem (NEUS LME), listed here by functional group (in bold):
 \begin{itemize}
 	\item \textbf{Elasmobranchs:} Skates, Spiny Dogfish
 	\item \textbf{Flatfish:} Windowpane, Winter Flounder, Yellowfin Tuna
@@ -59,7 +59,7 @@ The MS-PROD authors provided us with a parameter file which listed ten key speci
 	\item \textbf{Small Pelagics:} 	Herring, Mackerel
 \end{itemize}
 %Given an input parameter set of initial biomass values, a predation matrix, an interaction matrix, catchability values, and harvest effort values,
-The MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this outputted information is potentially valuable to fishery managers, it was lacking an interactive graphical user interface.  
+The MS-PROD model runs simulations for 30 years with an annual time step to predict individual biomasses.  While this output information is potentially valuable to fishery managers, it lacks an interactive graphical user interface.  
 
 \section{Visualization Methods}
 
@@ -139,7 +139,7 @@ The input parameters to the MS-PROD model includes predation and competition mat
 %	\label{fig:forcedirected}
 %\end{figure}
 
-One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \citeyearpar{gaichas2008}.  Here, the nodes represent an individual species in the Gulf of Alaska, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships.  Depending on the size of the network, a force-directed layout can be dense, like in Figure~\ref{fig:gaichas}, making it difficult to discern individual nodes or links.  Interactive methods can alleviate this by allowing the user to zoom or to click a node and see only the subset of the network directly connected to that node.
+One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \citeyearpar{gaichas2008}.  Here, the nodes represent an individual species in the Gulf of Alaska, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships.  Depending on the size of the network, a force-directed layout can be dense, as shown in Figure~\ref{fig:gaichas}, making it difficult to discern individual nodes or links.  Interactive methods can alleviate this by allowing the user to zoom or to click a node and see only the subset of the network directly connected to that node.
 
 \subsubsection{Arc Diagrams}
 
@@ -176,7 +176,7 @@ Node-link diagrams can have occlusion problems when they are highly-connected, s
 
 \subsection{Causality}
 
-Gamble and Link found that both inter-species relationships and harvesting by humans can contribute to changes in species biomass according to their MS-PROD model \cite{gamble2009}.  For example, an increase in biomass for one species could possibly hinder growth for another species.  This is a type of cause and effect relationship, therefore it is necessary to consider the various techniques for representing causality in a network, especially in an interactive context.
+Gamble and Link found that both inter-species relationships and harvesting by humans can contribute to changes in species biomass according to their MS-PROD model \cite{gamble2009}.  For example, an increase in biomass for one species could possibly hinder growth for another species.  Because this is a type of cause and effect relationship, it is necessary to consider the various techniques for representing causality in a network, especially in an interactive context.
 
 \begin{figure}
 \centering
@@ -220,28 +220,28 @@ Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static an
 	\label{fig:uncertaintyAlternatives}
 \end{figure}
 
-A model is a simplification of reality, therefore there are many reasons why it may be inaccurate.  There may be inaccurately estimated parameters used in the model, such as the predation matrix coeffecients or the starting values for the biomasses of the fish species.  Furthemore, relevant factors may not have been taken into account when designing the model, such as climate.  Inaccuracies may even result from approximation techniques, such as the use of a Runge-Kutta method.  Therefore, it is common for a model's output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuracies when the correct answer is known, while \textit{uncertainty} describes inaccuracies when the answer is unknown \cite{hunter1993}.  Due to uncertainty, model output is best understood as a range of expected values which is likely to contain the true value.  According to Potter et al., scientific data should be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated some different portrayals of uncertainty.
+Because a model is a simplification of reality, there are many reasons why it may be inaccurate.  There may be inaccurately estimated parameters used in the model, such as the predation matrix coeffecients or the starting values for the biomasses of the fish species.  Furthemore, relevant factors may not have been taken into account when designing the model, such as climate.  Inaccuracies may even result from approximation techniques, such as the use of a Runge-Kutta method.  Therefore, it is common for a model's output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuracies when the correct answer is known, while \textit{uncertainty} describes inaccuracies when the answer is unknown \cite{hunter1993}.  Due to uncertainty, model output is best understood as a range of expected values which is likely to contain the true value.  According to Potter et al., scientific data should be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated some different portrayals of uncertainty.
 %Uncertainty can arise at several stages---the conceptualization of the model, the collection of the model input, or due to data transformations \cite{}.
 
-Cox et al. explored methods for depicting uncertainty for hurricane advisories \citeyearpar{cox2013}.  The traditional error cone, as in Figure~\ref{fig:uncertaintyCone}, is used by NOAA's National Hurricane Center, but it can be poorly understood by the average citizen.  They designed their own alternative representation, as in Figure~\ref{fig:uncertaintyHouse}, where many possible hurricane tracks are drawn to describe the range of possible outcomes.  Their user evaluation found that neither method was significantly better than the other for all cases, but a qualitative analysis showed that nearly all users prefer their new method over the error cone.
+Cox et al.\ explored methods for depicting uncertainty for hurricane advisories \citeyearpar{cox2013}.  The traditional error cone, shown in Figure~\ref{fig:uncertaintyCone}, is used by NOAA's National Hurricane Center, but it can be poorly understood by the average citizen.  Cox et al.\ designed their own alternative representation, shown in Figure~\ref{fig:uncertaintyHouse}, where many possible hurricane tracks are drawn to describe the range of possible outcomes.  Their user evaluation found that neither method was significantly better than the other for all cases, but a qualitative analysis showed that nearly all users prefer their new method over the error cone.
 
 \section{Understanding Models}
 
-Users studying models can benefit from the aid of a visualization, because patterns and trends may be difficult---if not impossible---to discern from only a table of numerical values.  The learning process can be even further enhanced through interaction with the model.  If interactivity is supported by the visualization, then users can adjust parameter values, perceive a change (or perhaps no change) in the results, and begin to understand the degree of influence different parameters possess.
+Users studying models can benefit from the aid of a visualization, because patterns and trends may be difficult---if not impossible---to discern from only a table of numerical values.  The learning process can be even further enhanced through interaction with the model.  If interactivity is supported by the visualization, users can adjust parameter values, perceive a change (or perhaps no change) in the results, and begin to understand the degree of influence different parameters possess.
 
 \subsection{Spreadsheet Programs}
 
 \begin{figure}
 \centering
 
-\subfigure[A screenshot of VisiCalc.  GNU General Public License.]{\label{fig:visicalc}\includegraphics[height=4cm]{figures/png/visicalc.png}} 
+\subfigure[A screenshot of VisiCalc.  GNU General Public License.]{\label{fig:visicalc}\includegraphics[height=4cm]{figures/png/visicalc.png}} \qquad
 \subfigure[A chart made using Microsoft Excel.  Public domain.]{\label{fig:excel}\includegraphics[height=4cm]{figures/png/excel.png}}
 
 	\caption[Two examples of spreadsheet applications]{Two examples of spreadsheet applications.}
 	\label{fig:spreadsheets}
 \end{figure}
 
-VisiCalc was a very early example of software assisting the understanding of models through visualizations \cite{grad2007}.  As a business student, Bricklin wished there was a faster way to change the input or fix mistakes when working out financial models by hand \citeyearpar{bricklin1999}.  To address this, he worked with Frankston to develop VisiCalc, seen in Figure~\ref{fig:visicalc}.  As the world's first electronic spreadsheet, VisiCalc consisted of rows and columns containing either text, numerical values, or formulas.  Result cells were instantly updated according to changed inputs or adjusted formulas, allowing a user to work with models in a more efficient and dynamic manner.  VisiCalc was superseded by Lotus 1-2-3, which was in turn supplanted by Microsoft Excel.  Microsoft Excel remains popular and features graphing tools which can generate charts, such as in Figure~\ref{fig:excel}.
+VisiCalc was a very early example of software assisting the understanding of models through visualizations \cite{grad2007}.  As a business student, Bricklin wished there was a faster way to change the input or fix mistakes when working out financial models by hand \citeyearpar{bricklin1999}.  To address this, he worked with Frankston to develop VisiCalc, seen in Figure~\ref{fig:visicalc}.  As the world's first electronic spreadsheet, VisiCalc consisted of rows and columns containing either text, numerical values, or formulas.  Result cells were instantly updated according to changed inputs or adjusted formulas, allowing a user to work with models in a more efficient and dynamic manner.  VisiCalc was superseded by Lotus 1-2-3, which was in turn supplanted by Microsoft Excel.  Microsoft Excel remains popular and features graphing tools that can generate charts, such as in Figure~\ref{fig:excel}.
 
 \subsection{The Influence Explorer}
 
