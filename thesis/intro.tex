@@ -1,11 +1,7 @@
-% See UNHTHESIS.TEMPLATE for additional comments about this file.
-%
-
-\chapter{Introduction}                % <- Your first chapter title.
+\chapter{Introduction} 
 
 \pagenumbering{arabic}
-\renewcommand{\thepart}{{\Roman{part}}}				% <- Do this command only for
-                                                %    the first chapter!
+\renewcommand{\thepart}{{\Roman{part}}}	
 
 Fishery managers have only one ``lever'' to pull when it comes to fishery management: the ability to set harvest quotas.  Fishermen work within these quotas by exerting various levels of fishing effort.  Production models have been designed to help managers and fishermen understand the ecosystem they work within and the implications of their decisions.  In this context, a production model is a mathematical model, based on data, that simulates interactions between species and predicts species biomass as a function of fishing effort, climate change, and other variables.  MS-PROD is a multispecies production model developed by NOAA scientists Gamble and Link \citeyearpar{gamble2009}.  A visualization may enhance such a model by making its inner workings more explicit and may be useful for decision making. The goal of this research has been to explore design alternatives and evaluate the effectiveness of different modes of portrayal and interaction to make a visualization of the MS-PROD model that will be a valuable tool to modelers and stakeholders alike. 
 
@@ -132,13 +128,6 @@ The input parameters to the MS-PROD model includes predation and competition mat
 	\label{fig:gaichas}
 \end{figure}
 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=8cm]{figures/png/force.png}
-%	\caption{A force-directed node-link diagram \cite{Knuth:1993:SGP:164984}.}
-%	\label{fig:forcedirected}
-%\end{figure}
-
 One option for showing fish species interactions would be to use a force-directed layout as Gaichas and Francis did, seen in Figure~\ref{fig:gaichas} \citeyearpar{gaichas2008}.  Here, the nodes represent an individual species in the Gulf of Alaska, while the links represent a predator-prey interaction.  In a force-directed layout, nodes repel each other, while related nodes become pulled toward each other by links \cite{heer2010}.  The result is an aesthetically pleasing layout where there are relatively few link crossings and links are of approximately similar length.  The color of the node can be used to indicate group membership, while the size can represent the magnitude of some property of the node.  Likewise, the drawing style of the link can be varied to encode different types of relationships.  Depending on the size of the network, a force-directed layout can be dense, as shown in Figure~\ref{fig:gaichas}, making it difficult to discern individual nodes or links.  Interactive methods can alleviate this by allowing the user to zoom or to click a node and see only the subset of the network directly connected to that node.
 
 \subsubsection{Arc Diagrams}
@@ -197,7 +186,6 @@ Michotte and Thin\'es suggested that viewers infer causality when viewing an obj
 \subfigure[Static.]{\label{fig:kadabaStatic}\includegraphics[width=0.46\textwidth]{figures/png/kadaba_static.png}} 
 \subfigure[Animated.]{\label{fig:kadabaAnimated}\includegraphics[width=0.46\textwidth]{figures/png/kadaba_animated.png}}
 
-	%\caption{Two alternatives for visualizing causal influences \cite{kadaba2007}.}
 \caption[Two alternatives for visualizing causal influences]{Two alternatives for visualizing causal influences.  Reprinted from \textit{IEEE Transactions on Visualization and Computer Graphics}, Vol. 13, \citeauthor{kadaba2007}, Visualizing Causal Semantics using Animations, 1254--1261, \textcopyright \citeyear{kadaba2007}, with permission from IEEE.}
 
 	\label{fig:kadaba}
@@ -213,15 +201,12 @@ Kadaba et al.\ expanded upon Ware et al.'s VCV work to compare between static an
 \subfigure[Error cone.]{\label{fig:uncertaintyCone}\includegraphics[height=4.5cm]{figures/png/uncertainty_cone.png}} 
 \subfigure[Cox et al.'s method.]{\label{fig:uncertaintyHouse}\includegraphics[height=4.5cm]{figures/png/uncertainty_house.png}}
 
-	%\caption{Two visualizations of uncertainty for a hurricane advisory \cite{cox2013}.}
-
 \caption[Two visualizations of uncertainty for a hurricane advisory]{Two visualizations of uncertainty for a hurricane advisory.  Reprinted from \textit{International Journal for Uncertainty Quantification}, Vol. 3, \citeauthor{cox2013}, Visualizing Uncertainty in Predicted Hurricane Tracks, 143--156, \textcopyright \citeyear{cox2013}, with permission from Begell House, Inc.}
 
 	\label{fig:uncertaintyAlternatives}
 \end{figure}
 
 Because a model is a simplification of reality, there are many reasons why it may be inaccurate.  There may be inaccurately estimated parameters used in the model, such as the predation matrix coeffecients or the starting values for the biomasses of the fish species.  Furthemore, relevant factors may not have been taken into account when designing the model, such as climate.  Inaccuracies may even result from approximation techniques, such as the use of a Runge-Kutta method.  Therefore, it is common for a model's output to be regarded with some uncertainty.  To clarify, \textit{error} describes inaccuracies when the correct answer is known, while \textit{uncertainty} describes inaccuracies when the answer is unknown \cite{hunter1993}.  Due to uncertainty, model output is best understood as a range of expected values that is likely to contain the true value.  According to Potter et al., scientific data should be considered to be incomplete without representations of uncertainty \cite{potter2010}, so we have investigated some different portrayals of uncertainty.
-%Uncertainty can arise at several stages---the conceptualization of the model, the collection of the model input, or due to data transformations \cite{}.
 
 Cox et al.\ explored methods for depicting uncertainty for hurricane advisories \citeyearpar{cox2013}.  The traditional error cone, shown in Figure~\ref{fig:uncertaintyCone}, is used by NOAA's National Hurricane Center, but it can be poorly understood by the average citizen.  Cox et al.\ designed their own alternative representation, shown in Figure~\ref{fig:uncertaintyHouse}, where many possible hurricane tracks are drawn to describe the range of possible outcomes.  Their user evaluation found that neither method was significantly better than the other for all cases, but a qualitative analysis showed that nearly all users prefer their new method over the error cone.
 
