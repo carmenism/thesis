@@ -20,7 +20,7 @@ Since setting fishing quotas is the only action fishery managers can take, we de
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=8cm]{figures/png/slider.png}
+	\includegraphics[width=7cm]{figures/png/slider.png}
 	\caption[An example of a slider used to change harvest effort for the MS-PROD model]{An example of a slider used to change harvest effort for the MS-PROD model.}
 	\label{fig:slider}
 \end{figure}
@@ -106,7 +106,7 @@ This feature is available in both the ``four panel'' and ``small multiples'' vie
 
 \section{Visualization of Causal Relationships}
 
-Understanding the model requires an understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}---and \textit{harvest}.  As defined earlier, predation is when one species consumes another and competition accounts for any way one species might impact another in a way that is not predation.  Harvest is the process of humans catching fish in the wild.  Our interface must explain to users which species impact each other, how harvesting impacts the species, and the magnitude of those relationships.  We have chosen to illustrate these relationships with a node-link diagram, where the nodes are the time series and effort sliders.
+Understanding the model requires an understanding of the underlying relationships between species---namely, \textit{predation} and \textit{competition}---and \textit{harvest}.  As defined earlier, predation is when one species consumes another and competition accounts for any way one species might affect another in a way that is not predation.  Harvest is the process of humans catching fish in the wild.  Our interface must explain to users which species impact each other, how harvesting impacts the species, and the magnitude of those relationships.  We have chosen to illustrate these relationships with a node-link diagram, where the nodes are the time series and effort sliders.
 
 \subsection{Inter-Species Relationships}
 \label{sec:interSpeciesArc}
@@ -146,13 +146,13 @@ The interface provides a few options for viewing the inter-species relationships
 
 \paragraph{Static} \label{sec:arcStatic}
 
-With the static style of the arcs, all arcs are drawn at all times, as shown in all three subfigures of Figure~\ref{fig:betweenSpeciesArcs}.  The width of an arc corresponds to the magnitude of the relationship, as defined in the predation coefficient matrix or the competition coefficient matrix in the original parameter file.   A benefit of this type of arc is that it is possible to see all interactions between the species at all times.  However, the downside is that viewing all arcs at once can be overwhelming because the display becomes somewhat cluttered.
+With the static style of the arcs, all arcs are drawn at all times, as shown in all three sub-figures of Figure~\ref{fig:betweenSpeciesArcs}.  The width of an arc corresponds to the magnitude of the relationship, as defined in the predation coefficient matrix or the competition coefficient matrix in the original parameter file.   A benefit of this type of arc is that it is possible to see all interactions between the species at all times.  However, the downside is that viewing all arcs at once can be overwhelming because the display becomes somewhat cluttered.
 
 \paragraph{Dynamic} \label{sec:arcDynamic}
 
 Dynamic arcs, shown in Figure~\ref{fig:arcs_dynamic}, were motivated by need to (1) clarify the size change in a causal influence path and (2) eliminate or at least reduce the visual clutter created by the static arcs.  We considered the fact that many users might use our interface as a means of comparing two biomass forecasts that resulted from changes in fishing effort values.  Such users might wonder what specifically caused the differences between the two forecasts, especially if there are indirect, unintuitive effects.  Therefore, we designed dynamic arcs, which are drawn only selectively to help explain the differences between the current forecast and the baseline forecast.
 
-The dynamic arcs are a simplification of a time series of effects, where the width of each arc is proportional to a weight $w$:
+The dynamic arcs are a simplification of a time series of effects, where the width of each arc is proportional to both the original predation or competition coefficient and a weight $w$:
 
 \begin{align}
 w = \frac{100000}{r_{0} + 100000} \cdot (s_{30} - s_{30}')
@@ -168,7 +168,7 @@ Therefore, no arcs are drawn when the current forecast and the baseline forecast
 
 Additionally, the weight $w$ is negative if $s_{30} < s_{30}'$.  This is significant in explaining \textit{how} the change in the source species affects the recipient species---i.e., was the change that the source species experienced ``good'' or ``bad'' from the perspective of the recipient species?  Both relationships, competition and predation, inhibit the growth of the recipient species because the source species either consumes the recipient species itself or its resources.  Therefore, if the source species biomass decreases, then the recipient species biomass may be able to grow more.  Of course, other species may be dampening the growth of the recipient species, so the recipient species may not necessarily experience a growth, but the potential exists.  Conversely, if the source species biomass increases, then the recipient species may suffer more and experience a decrease in biomass.  We chose to use plus signs ($+$) for the cases where $w$ is negative---i.e., when the source species declines between forecasts which is ``good'' for the recipient species---and minus signs ($-$) for the cases where $w$ is positive---i.e., when the source species increases between forecasts which is ``bad'' for the recipient species---as Kadaba et al.\ used in their static causal visualizations \cite{kadaba2007}.  Plus signs were drawn in black and minus signs were drawn in white with a black outline to allow for some redundant coding.  Several signs are drawn along each arc to allow the user to easily determine the signage of a dynamic arc.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.98\textwidth]{figures/png/arcs_dynamic.png}
 	\caption[Dynamic arcs drawn as a result of slightly increasing the fishing effort on elasmobranchs]{Dynamic arcs drawn as a result of slightly increasing the fishing effort on elasmobranchs.}
@@ -240,5 +240,5 @@ Since models are simplifications of reality, their output is best understood as 
 
 The resulting uncertainty can be displayed in four styles.  First, a multi-line option shows the uncertainty by drawing one semi-transparent line for each run of the Monte Carlo simulation, as in Figure~\ref{fig:uncertaintyStreak}. This was inspired by Cox et al.'s method for displaying hurricane tracks that is shown in Figure~\ref{fig:uncertaintyHouse} \citeyearpar{cox2013}.  The second option displays a traditional box plot every five years, as in Figure~\ref{fig:uncertaintyBoxplots}.  Third, in Figure~\ref{fig:uncertaintyErrorbars}, a summary line is drawn, with bars every five years.  Lastly, Figure~\ref{fig:uncertaintyErrorbands} shows a summary line in solid black line with bands.
 
-In all options but the multi-line option, the user has the ability to display different statistical data in the selected style.  Users can select between mean and median for the ``summary'' lines.  Box plots, error bars, and error bands can represent either quartiles with minimum and maximum data values or two standard deviations.  This allows the user to easily explore the distribution of data under different representation with a few clicks of the mouse.  The multi-line option may appeal to less scientific users, while the other more traditional representations of statistical data may appeal to advanced users, such as modelers or fishery managers, but all users have all options at their disposal.
+In all options but the multi-line option, the user has the ability to display different statistical data in the selected style.  Users can select between mean and median for the ``summary'' lines.  Box plots, error bars, and error bands can represent either quartiles with minimum and maximum data values or two standard deviations.  This allows the user to easily explore the distribution of data under different representations with a few clicks of the mouse.  The multi-line option may appeal to less scientific users, while the other more traditional representations of statistical data may appeal to advanced users, such as modelers or fishery managers, but all users have all options at their disposal.
 
