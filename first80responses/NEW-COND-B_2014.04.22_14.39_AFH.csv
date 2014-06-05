@@ -1,0 +1,18 @@
+Condition,B,
+Initials,AFH,
+Gender,Male,
+College,COLSA,
+What is the effect on herring?,Decreased a little,3
+Why?,"Herring are a small pelagic, so by doubling the efforts more of them are being caught, thus a lower population. ",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,"Less flounder are being fished for, so their population increases. ",
+What is the effect on yellowtail flounder?,Increased a little,2
+Why?,"The flounder's population was already quite high, so it did not have much room to grow due to the decreased efforts. ",
+What is the effect on skates?,Decreased a lot,3
+Why?,"Skates are a elasmobranch, so when the efforts are doubled their populations significantly decrease. ",
+What is the effect on cod?,Increased a lot,3
+Why?,"Spiny dogfish predate on cod, so when their population decreased the cod had less of a struggle to survive.",
+What is the effect on haddock?,Decreased a little,2
+Why?,"The haddock decreased by a small amount, due to the fact that they are in competition with the elasmobranchs",
+What is the effect on windowpane?,Decreased a little,1
+Why?,"Skates compete with windowpane, and as such they directly affect the windowpane population when the skate population decreases. ",

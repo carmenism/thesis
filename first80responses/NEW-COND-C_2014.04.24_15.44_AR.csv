@@ -1,0 +1,18 @@
+Condition,C,
+Initials,AR,
+Gender,Male,
+College,COLA,
+What is the effect on herring?,Decreased a lot,2
+Why?,"There was an increase in the small pelagics harvesting efforts, there for the the Herring population decreased as well.",
+What is the effect on winter flounder?,Increased a little,1
+Why?,"harvesting efforts of the flatfish decreased by half, there for winter flounder population increased.",
+What is the effect on yellowtail flounder?,Increased a lot,0
+Why?,"Harvesting of flatfish decreased, there for yellowtail flounder population increased.",
+What is the effect on skates?,Decreased a lot,3
+Why?,"Harvesting efforts of the Elasmobranchs doubled, there for Skates population decreased.",
+What is the effect on cod?,Increased a lot,3
+Why?,"Harvesting efforts of the Elasmobranchs doubled, decreasing their population. This means that there are less Elasmobranchs to eat the cod, increasing their population.",
+What is the effect on haddock?,Decreased a little,2
+Why?,"Harvesting efforts of the Elasmobranch doubled, decreasing their population, meaning there is less food for the mackerel and herring to eat, decreasing their population, leaving less food for the haddock to eat.",
+What is the effect on windowpane?,Stayed about the same,0
+Why?,"Cod population increases while skate population decreases, both cod and skate compete with windowpane, resulting in an initial increase due to skate decrease then back to normal levels due to increase in cod population.",

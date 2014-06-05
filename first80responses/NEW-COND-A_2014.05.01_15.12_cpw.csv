@@ -1,0 +1,18 @@
+Condition,A,
+Initials,cpw,
+Gender,Male,
+College,Paul College,
+What is the effect on herring?,Decreased a lot,2
+Why?,"The fishing effort of small pelagoics increased, decreasing the herring population",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,"By decreasing the flatfish harvest effort, the population of white flounder increased significantly",
+What is the effect on yellowtail flounder?,Increased a little,2
+Why?,"As the flatfish harvest effort decreased, the yellowtail flounder population grew only by a small amount.",
+What is the effect on skates?,Decreased a lot,3
+Why?,"As the elasmobranchs harvest effort increased, the skate population decreased dramatically. This could be explained by the significant increase in the white flounder population.",
+What is the effect on cod?,Increased a little,1
+Why?,"As the elasmobranchs harvest effort increased, the cod population decreased slightly. This could be explained by a slight increase if food available as the populations of spiny dogfish and skates decreased.",
+What is the effect on haddock?,Decreased a little,2
+Why?,The haddock population decreased slightly with an increase in the elasmobranch fishing effort. This could be explained by an increase in the populations of preditors that previously where the pray of spiny dogfish and skates.,
+What is the effect on windowpane?,Decreased a lot,3
+Why?,The windowpane decreased significantly with an increase in the elasmobranch fishing effort. This could be explained by a decrease in the amount of food available for the windowpane because of the population increases in other fish that previously were controlled by spiny dogfish and skates.,
