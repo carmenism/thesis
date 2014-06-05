@@ -1,0 +1,18 @@
+Condition,D,
+Initials,HG,
+Gender,Female,
+College,COLSA,
+What is the effect on herring?,Decreased a little,3
+Why?,"Harvesting effort doubled, thus reducing herring population size",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,"Harvesting on the winter flounder decreased, therefore population increased",
+What is the effect on yellowtail flounder?,Stayed about the same,3
+Why?,"The yellowtail flounder is competitely effected by the haddock in a positive way, while the yellowtail flounder is competitely effected negatively by both the windowpane and white flounder. The white flounder and windowpane population increased due to decreased harvesting effort, thus increasing the competition between them and the yellowtail flounder. Therefore the positive effects from the competition with haddock is outweighed by the negative competitve effects windowpane and winter flounder.",
+What is the effect on skates?,Decreased a lot,3
+Why?,"Harvesting efforts on the skates were doubled, thus decreasing their population",
+What is the effect on cod?,Increased a lot,3
+Why?,"Increased harvesting efforts of the spiny dogfish reduced their population size. As a result, predation of the spiny dogfish on the cod was significantly reduced allowing the population of cod to increase significantly. ",
+What is the effect on haddock?,Decreased a little,2
+Why?,"Competion between cod and haddock increase. The cod population increases due to reduced competition from the spiny dogfish as harvesting efforts of the spiny dogfish doubled. With an increase in cod population, competition increases reducing the haddock population. ",
+What is the effect on windowpane?,Decreased a lot,3
+Why?,"Because harvesting efforts of the spiny dogfish doubled, predation of the cod by the spiny dogfish decreased. This increased the cod population. Since the cod competes with the windowpane, increased population of the cod reduces the population of the windowpane due to competition.",
