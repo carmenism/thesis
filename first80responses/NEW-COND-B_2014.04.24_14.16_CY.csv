@@ -1,0 +1,18 @@
+Condition,B,
+Initials,CY,
+Gender,Female,
+College,CHHS,
+What is the effect on herring?,Decreased a little,3
+Why?,Catching more Herring result in less Herring population.,
+What is the effect on winter flounder?,Increased a lot,3
+Why?,Catching less Winter Flounder result in increasing of the population of Winter Flounder.,
+What is the effect on yellowtail flounder?,Increased a little,2
+Why?,"Winter Flounder is competing with Yellotail Flounder, so when Winter Flounder increase a lot, the population of Yellowtail Flounder decrease.",
+What is the effect on skates?,Decreased a lot,3
+Why?,Catching more Skates result in less population of Skates.,
+What is the effect on cod?,Increased a lot,3
+Why?,"Cod are competing with Elasmobarachs, the decrease of Spiny Dogfish result in increasing of Cod.",
+What is the effect on haddock?,Decreased a little,2
+Why?,"Haddock is competing with Cod, so when population of Cod increase, Haddock decrease. ",
+What is the effect on windowpane?,Decreased a little,1
+Why?,"Skates compete WIndowpane, but Windowpane is also competing with Winter Flounder, so when the population of Winter Flounder increase, the population of Windowpane drop.",

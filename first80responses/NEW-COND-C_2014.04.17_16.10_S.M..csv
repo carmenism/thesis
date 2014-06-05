@@ -1,0 +1,18 @@
+Condition,C,
+Initials,S.M.,
+Gender,Male,
+College,COLA,
+What is the effect on herring?,Decreased a little,3
+Why?,The fishing of small pelagics increased therefore the population of herring decreased.,
+What is the effect on winter flounder?,Decreased a lot,0
+Why?,The Winter flounder population increased a lot because the fishing effort was halved,
+What is the effect on yellowtail flounder?,Increased a little,2
+Why?,"There is competition between the other two types of flatfish and because the population of the other two grew so much, there was not a lot of room for the yellowtail flounder population to grow.",
+What is the effect on skates?,Decreased a lot,3
+Why?,The fishing efforts doubled therefore the population of skates dropped dramatically.,
+What is the effect on cod?,Increased a lot,3
+Why?,"Dogfish prey on cod, so if the population of dogfish dropped dramatically then the population of cod will increase.",
+What is the effect on haddock?,Decreased a little,2
+Why?,Haddock compete directly with cod so if Cod populations explode then the haddock population will drop a little bit.,
+What is the effect on windowpane?,Decreased a little,1
+Why?,"Cod compete with Windowpane, so if the cod population increases than there will be less food for the windowpane population and it will decrease.",

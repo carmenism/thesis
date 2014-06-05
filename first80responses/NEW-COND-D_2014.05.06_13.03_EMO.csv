@@ -1,0 +1,18 @@
+Condition,D,
+Initials,EMO,
+Gender,Female,
+College,COLA,
+What is the effect on herring?,Decreased a lot,2
+Why?,"By doubling the harvest or catch of small pelagics fish, the herring species' population decreased.",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,"Since the level of anthropogenic predation decreased upon the flatfish species, the winter flounder population increased significantly. ",
+What is the effect on yellowtail flounder?,Increased a lot,0
+Why?,"Although the yellowtail flounder population did not increase as dramatically as the winter flounder species, its population levels did rise in a similar fashion (due to the decrease in flatfish harvesting).",
+What is the effect on skates?,Decreased a lot,3
+Why?,"Since skates are a subsection of the elasmobranchs, their population decreased when fishing efforts were doubled.",
+What is the effect on cod?,Increased a lot,3
+Why?,"Since spiny dogfish predate on cod, and their population was depleted by the increase in elasmobranchs harvest, the cod population flourished.",
+What is the effect on haddock?,Decreased a little,2
+Why?,"Since the population of the spiny dogfish and skates decreased, species in competition (yellowtail flounder and winter flounder) thrived. Haddock, which completes with yellowtail flounder, white flounder, windowpane, and cod, must then battle an influx of competetors for the same resources now that skate and spiny dogfish have been somewhat removed. ",
+What is the effect on windowpane?,Decreased a little,1
+Why?,"Similar to the effect on haddock with an increase in the elasmobranchs harvest effort, the windowpane species suffered as a result of overcompetition for limited resources.",

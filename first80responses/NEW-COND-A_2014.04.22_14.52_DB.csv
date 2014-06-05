@@ -1,0 +1,18 @@
+Condition,A,
+Initials,DB,
+Gender,Male,
+College,CEPS,
+What is the effect on herring?,Decreased a little,3
+Why?,"We are fishing more, past the point that the herring are able to replenish their population.",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,The decrease in fishing allows the winter flounder to build up a larger population.,
+What is the effect on yellowtail flounder?,Increased a little,2
+Why?,There does not appear to be a strong correlation between an increase in flatfish harvest effort and the population of yellowtail flounder after 30 years.,
+What is the effect on skates?,Decreased a lot,3
+Why?,Fishing volume becomes greater than population growth.,
+What is the effect on cod?,Increased a lot,3
+Why?,"There is an inverse relationship between elasmobranch populations and cod populations, possibly due to competition or predation.",
+What is the effect on haddock?,Decreased a little,2
+Why?,"There is a positive relationship between elasmobranch population and haddock populations, possibly because haddock eat elasmobranchs.",
+What is the effect on windowpane?,Decreased a lot,3
+Why?,"It's possible that windowpane eat elasmobranchs, or are competing with cod.",
