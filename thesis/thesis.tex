@@ -34,30 +34,27 @@
 }
 \makeatother
 
-
 \hyphenation{Hu-go}
-%\hyphenation{Mi-s\'e-ra-bles}
 
 \begin{document}
 
-
-\title{Using Interactive Visualization to Enhance Understanding of a Fisheries Model}     % Your title
-\author{Carmen Rose St.\ Jean}				   % Your name
+\title{Using Interactive Visualization to Enhance Understanding of a Fisheries Model}
+\author{Carmen Rose St.\ Jean}
 \prevdegrees{B.S., University of New Hampshire, 2010}
-\major{Computer Science}				   % Your new major
-\degree{Master of Science}				   % Your new degree
-\degreemonth{September}					   % When awarded.
-\degreeyear{2014}					   %
-\thesisdate{\today}					   % Date of document.
-\DOCUMENTtype{THESIS}                          % or DISSERTATION
-\Documenttype{Thesis}                          % or Dissertation
-\documenttype{thesis}                          % or dissertation
+\major{Computer Science}
+\degree{Master of Science}
+\degreemonth{September}
+\degreeyear{2014}
+\thesisdate{\today}
+\DOCUMENTtype{THESIS}
+\Documenttype{Thesis}
+\documenttype{thesis}
 \maketitle     
-                                                        % APPROVAL PAGE
-                                                        %======================
-\supervisor{Colin Ware}{Professor of Computer Science}    % <- One of these
-\committee{R. Daniel Bergeron}{Professor of Computer Science}     % <- As many as
-\committee{Matthew Plumlee}{Affiliate Assistant Professor in Computer Science}    %    you need...
+
+% approval page
+\supervisor{Colin Ware}{Professor of Computer Science}
+\committee{R. Daniel Bergeron}{Professor of Computer Science} 
+\committee{Matthew Plumlee}{Affiliate Assistant Professor in Computer Science}
 \makeapproval 
 
 \begin{dedication}
@@ -66,38 +63,20 @@ To my parents.
 \end{center}
 \end{dedication} 
 
-\begin{acknowledgments}
-I would like to thank God for this opportunity to do this thesis and for the ability to complete it.
+\include{ack}
 
-It was a great privilege to work under my advisor Colin Ware, whom I must thank for his encouragement, mentoring, and patience throughout the entire journey of writing my thesis.  His insights, criticisms, and faith in me over the last year helped me become a better researcher and a more confident person.
-
-I also want to thank my committee member, Matt Plumlee, who was especially helpful during the beginning of this research.  I must also thank my committee member Dan Bergeron for supporting this thesis.  Both of them were helpful with their advice and kindness over the course of this thesis and also during my entire time at UNH.
-
-Thank you also to Michael Fogarty and Robert Gamble for creating the MS-PROD model and for the great collaboration over the past year.  I appreciate all of the ideas and feedback and I hope that this visualization will be helpful to you.
-
-I am deeply grateful to John Kelley and Jason Greenlaw for their support and guidance both during and beyond my nowCOAST time.  They introduced me to Colin Ware and helped me realize what I was capable of by providing me with challenging opportunities.
-
-I owe my thanks to Phil Hatcher, for knowing I was capable of completing a master's degree before I did.  I would also like to express my appreciation to Mark Bochert for my year as his teaching assistant.  Thank you also to Mezgeb for providing feedback and good company during this thesis endeavor.
-
-I am indebted to my father, my mother, Uncle Roger, Danielle, Amanda, and Eric for getting me to where I am today.  Last but not least, thank you especially to Chris, for encouraging me to go back to school and providing me with reassurance whenever I felt overwhelmed.  
-
-\end{acknowledgments}
-
-
-\tableofcontents					% Always needed...}
-%\listoftables						% Delete if no tables.
+\tableofcontents
+%\listoftables
 %\addcontentsline{toc}{section}{LIST OF TABLES}
-\listoffigures						% Delete if no figures.
+\listoffigures
 \addcontentsline{toc}{section}{LIST OF FIGURES}
 
-% Abstract page
 \include{abstract}
 
 \include{intro}
 \include{reqAndDesign}
 \include{evaluation}
 \include{conclusion}
-
 
 \bibliographystyle{plainnat}
 
@@ -112,7 +91,5 @@ I am indebted to my father, my mother, Uncle Roger, Danielle, Amanda, and Eric f
 \include{consent}
 
 \end{appendices}
-
-
 
 \end{document}
