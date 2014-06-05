@@ -1,0 +1,18 @@
+Condition,D,
+Initials,RR,
+Gender,Male,
+College,COLSA,
+What is the effect on herring?,Decreased a little,3
+Why?,Doubling the fishing effort on small pelagics decreased the herring population because hering depend on small pelagics as a food source.,
+What is the effect on winter flounder?,Increased a lot,3
+Why?,"Halving the fishing effort of flatfish reduces the number of winter flounder removed from the environment, increasing the amount remaining in the sea.",
+What is the effect on yellowtail flounder?,Increased a little,2
+Why?,"Yellowtail flounder only increased a little in population because while less fish are removed from the sea from fishing, yellowtail flounder competes for resources with both windowpane, and winter flounder.",
+What is the effect on skates?,Decreased a lot,3
+Why?,Skates are part of the elasmobranchs so doubling the fishing effort on these organisms significantly depletes the number of these fish left in the environment.,
+What is the effect on cod?,Increased a lot,3
+Why?,The population of cod increases by a lot when the fishing effort on elasmobranchs doubles because Spiny Dogfish prey on cod.,
+What is the effect on haddock?,Decreased a little,2
+Why?,"The haddock population decreases by only a little because with a significant increase in the cod population, haddock is outcompeted for resources by cod",
+What is the effect on windowpane?,Decreased a lot,3
+Why?,"Windowpane population decreases by a lot because they compete for resources with cod, haddock, and skates ",

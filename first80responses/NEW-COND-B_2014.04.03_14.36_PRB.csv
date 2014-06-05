@@ -1,0 +1,18 @@
+Condition,B,
+Initials,PRB,
+Gender,Male,
+College,COLA,
+What is the effect on herring?,Decreased a little,3
+Why?,"As the small pelogics harvest effort increases, the herring decreases",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,As Flatfish harvest effort decreases the winter flounder increases a lot,
+What is the effect on yellowtail flounder?,Stayed about the same,3
+Why?,"As the Flatfish harvest effort decreases, yellowtail flounder stays about the same",
+What is the effect on skates?,Decreased a lot,3
+Why?,"As the Elasmobranchs harvest effort doubles, the amount of skates decreases a lot",
+What is the effect on cod?,Increased a lot,3
+Why?,"Spiny Dogfish predate on Cod, the number of Cod increase because the harvest effort increased by 2X",
+What is the effect on haddock?,Decreased a little,2
+Why?,"The Dpiny Dogfish compete with the Haddock, their numbers decrease a little",
+What is the effect on windowpane?,Decreased a little,1
+Why?,Skates compete with with Windopane and both fish decrease in numbers,

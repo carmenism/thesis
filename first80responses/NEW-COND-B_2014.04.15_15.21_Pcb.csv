@@ -1,0 +1,18 @@
+Condition,B,
+Initials,Pcb,
+Gender,Male,
+College,Paul College,
+What is the effect on herring?,Decreased a little,3
+Why?,"By doubling the Harvest efforts on Small Pelogics, more Small Pelogics are being caught. (Killed) This in turn lowers the amount of Herring left at year 30 because there is a smaller population.",
+What is the effect on winter flounder?,Increased a lot,3
+Why?,"By halfing the Harvest efforts of Flatfish, you are decreasing the harvest efforts directly to Winter Flounder. At year 30, Winter Flounder increased dramatically because of the lesser harvest effort today.",
+What is the effect on yellowtail flounder?,Stayed about the same,3
+Why?,"By halfing the fishing effort now, there is less Yellowtail Flounder being caught. This prevents the amount of Yellowtail Flounder to decrease in the future.",
+What is the effect on skates?,Decreased a lot,3
+Why?,"By doubling the efforts of fishing on Elasmobranchs, you are directly impacted the number of Skates in the future because you are killing more now.",
+What is the effect on cod?,Increased a lot,3
+Why?,"By doubling the efforts of harvesting on Elasmobranchs, you are directly decreasing the amount of Spiny Dogfish in the future. Being a predator of Cod, less cod are being hunted by Spiny Dogfish. This increases the number of Cod alive in the future.",
+What is the effect on haddock?,Decreased a little,2
+Why?,"By doubling the harvesting efforts on Elasmobranches, you are killing more Skates in the future. Skates feed on Yellowtail Flounder, meaning the lower level of Skates will feed less on Yellowtail Flounder, increasing the number of Yellowtail Flounder. Yellowtail Flounder feed on Haddock, and the fact that there are more yellowtail flounder around results in the number of Haddock decreasing as shown in the chart.",
+What is the effect on windowpane?,Decreased a lot,3
+Why?,"By doubling the efforts of harvest on Elasmobranchs, you are decreasing the number of Skates in the futrue. Skates compete directly with Winter Flounder, which are increasing in number in the future due to the lower amount of Skates to compete with. Also, Winter Flounder compete directly with Windowpane. This heightened number of Winter Flounder means a lower amount of food for the Windowpane to consume, lowering the number of Windowpane at year 30.",
